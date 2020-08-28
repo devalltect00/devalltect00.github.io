@@ -1,0 +1,94 @@
+/* body { */
+
+/* /&  */
+
+/* body, html{ */
+
+/* /&  */
+
+body {
+	/* background-image: linear-gradient(to bottom right, red, yellow); */
+
+	/* background-image: linear-gradient(to bottom right, rgb(#bbb), rgb(#ddd)); */
+
+	background-image: linear-gradient(to bottom right, rgb(211, 211, 211), rgb(243, 243, 243));
+
+	/*
+
+	width: 100%;
+	height: 100%;
+
+	*/
+
+	width: 100vw;
+	height: 100vh;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+}
+
+hr {
+	/* width: 40%; */
+
+	/* // // */
+
+	/* box-shadow: 2px 2px 2px 2px black; 8 */
+
+	/* box-shadow: 2px 2px black; */
+
+	width: 80%;
+
+	/* margin: 20px; */
+
+	margin: 40px;
+}
+
+.container-p {
+
+	/* margin: 10px; */
+
+	margin: 20px;
+}
+
+.p-h {
+	font-size: 20px;
+}
+
+.red {
+	color: red;
+}
+
+footer {
+
+	/* height: 100px; */
+
+	/* height: 100%; */
+
+	height: 100px;
+	background-color: #eee;
+
+	/* // // */
+
+	/* bottom: 0px; */
+
+	bottom: 10px;
+}
+
+.p-mid {
+
+	/* background-color: #eee; */
+
+	/* background-image: linear-gradient(to bottom right, rgb(189, 189, 189), rgb(243, 243, 243)); */
+
+
+	/* background-image: linear-gradient(to right, rgb(197, 197, 197), rgb(243, 243, 243)); */
+
+	/*
+
+	padding: 4px;
+	width: 80%;
+
+	*/
+}

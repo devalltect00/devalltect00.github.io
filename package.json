@@ -1,0 +1,88 @@
+{
+  "name": "devalltect00-homepage",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A bilingual Astro gateway to the Devalltect portfolio, documentation, projects, and engineering profiles.",
+  "license": "MIT",
+  "author": {
+    "name": "Devalltect / Rizky Fernandes",
+    "email": "devalltect00@gmail.com",
+    "url": "https://devalltect00.github.io/"
+  },
+  "homepage": "https://devalltect00.github.io/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devalltect00/devalltect00.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devalltect00/devalltect00.github.io/issues"
+  },
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "pnpm test:unit && pnpm test:repository",
+    "test:unit": "vitest run",
+    "test:repository": "node --test scripts/repository/tests/*.test.mjs",
+    "repository:metadata:sync": "node scripts/repository/src/sync_metadata.mjs --provider github",
+    "repository:metadata:dry-run": "node scripts/repository/src/sync_metadata.mjs --provider github --dry-run",
+    "validate": "pnpm format:check && pnpm lint && pnpm check && pnpm test && pnpm build",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "astro": "^7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@testing-library/dom": "^10.4.2",
+    "eslint": "^10.11.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "jsdom": "^30.1.0",
+    "prettier": "^3.9.8",
+    "prettier-plugin-astro": "^1.0.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^5.0.1"
+  },
+  "devalltect": {
+    "github": {
+      "topics": [
+        "astro",
+        "typescript",
+        "portfolio",
+        "developer-portal",
+        "bilingual",
+        "static-site",
+        "github-pages",
+        "devalltect"
+      ]
+    },
+    "gitlab": {
+      "topics": [
+        "astro",
+        "typescript",
+        "portfolio",
+        "developer-portal",
+        "bilingual",
+        "static-site",
+        "devalltect"
+      ]
+    }
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "sharp": true
+  }
+}

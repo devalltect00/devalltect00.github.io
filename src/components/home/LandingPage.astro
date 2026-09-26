@@ -1,0 +1,23 @@
+---
+import Contact from "./Contact.astro";
+import Explore from "./Explore.astro";
+import Hero from "./Hero.astro";
+import Principles from "./Principles.astro";
+import Projects from "./Projects.astro";
+import type { Locale, SiteCopy } from "../../types/site";
+
+interface Props {
+  locale: Locale;
+  copy: SiteCopy;
+}
+
+const { locale, copy } = Astro.props;
+---
+
+<main>
+  <Hero copy={copy.hero} />
+  <Explore copy={copy.explore} />
+  <Projects locale={locale} copy={copy.projects} />
+  <Principles copy={copy.principles} />
+  <Contact copy={copy.contact} />
+</main>

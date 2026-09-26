@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCopy } from "../i18n";
+const copy = getCopy("en");
+---
+
+<BaseLayout locale="en" copy={copy}>
+  <main class="not-found shell">
+    <p class="eyebrow">404 / Route not found</p>
+    <h1>This path wandered off.</h1>
+    <p>The page may have moved, but the main gateway is still close by.</p>
+    <a class="button button--primary" href="/">
+      Return home
+    </a>
+  </main>
+</BaseLayout>

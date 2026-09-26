@@ -1,0 +1,34 @@
+feat(homepage): publish the Devalltect ecosystem gateway v1.0.0
+
+Establish the first stable Devalltect Homepage release as a focused bilingual
+gateway to the portfolio, documentation portal, public repositories, and
+maintained developer tools.
+
+- build a static Astro 7 and strict TypeScript application for root GitHub
+  Pages hosting;
+- provide English and Indonesian routes from centralized, typed project and
+  translation data;
+- introduce reusable navigation, hero, gateway, project, principle, contact,
+  theme, and footer components;
+- preserve responsive light and dark themes, keyboard navigation, visible
+  focus, semantic structure, and reduced-motion behavior;
+- add validated public environment overrides for the portfolio and
+  documentation entrypoints with safe canonical fallbacks;
+- configure pnpm, ESLint, Prettier, Vitest, pre-commit, repository metadata
+  synchronization, and project-specific VS Code tooling;
+- add GitHub CI and artifact-based Astro Pages deployment while documenting
+  the required GitHub Actions Pages source;
+- document setup, architecture decisions, maintenance, security, badges, and
+  deployment expectations;
+- validate formatting, lint rules, Astro diagnostics, tests, and the static
+  production build before release.
+
+Tag: v1.0.0
+Previous release: none
+Strategy: Semantic Versioning
+
+Tags:
+- Type: #feature #release #documentation
+- Project: #devalltect-homepage #developer-portal
+- Platform: #astro #typescript #pnpm #github-pages
+- Quality: #i18n #accessibility #responsive-ui #static-site

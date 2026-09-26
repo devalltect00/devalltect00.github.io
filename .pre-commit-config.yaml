@@ -1,0 +1,38 @@
+# =========================================================
+# 🪝 PRE-COMMIT CONFIGURATION
+# =========================================================
+# Fast file hygiene and project-owned formatting run before commits. More
+# expensive TypeScript and lint validation run at pre-push.
+
+exclude: ^(\.next/|out/|node_modules/|coverage/|playwright-report/|test-results/|\.pnpm-store/|\.portfolio-cache/|public/images/projects/)
+
+minimum_pre_commit_version: "4.0.0"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+        exclude: ^(tsconfig\.json|\.vscode/)
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-added-large-files
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier formatting check
+        ## entry: pnpm format:check
+        entry: pnpm exec prettier --write
+        language: system
+        ## pass_filenames: false
+        files: \.(css|html|js|jsx|json|md|mdx|mjs|ts|tsx|ya?ml)$
+
+      - id: astro-check
+        name: Astro and TypeScript check
+        entry: pnpm check
+        language: system
+        pass_filenames: false

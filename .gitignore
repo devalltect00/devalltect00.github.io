@@ -1,0 +1,52 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# test and browser output
+coverage/
+playwright-report/
+test-results/
+
+# local Python tooling used by repository-maintenance commands
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+dev_venv/
+prod_venv/
+publish_venv/
+other_venv/
+venv_dev/
+venv_prod/
+venv_publish/
+venv_other/
+
+# local tooling and generated artifacts
+.config/custy/backups/
+.config/custy/logs/

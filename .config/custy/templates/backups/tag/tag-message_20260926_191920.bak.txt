@@ -1,0 +1,43 @@
+🚀 Devalltect Homepage v1.0.0 — Bilingual Ecosystem Gateway
+
+Devalltect Homepage v1.0.0 is the first stable release of the concise public
+gateway to the Devalltect portfolio, documentation, maintained projects, and
+engineering profiles.
+
+### Highlights
+
+- English and Indonesian experiences at `/` and `/id/`.
+- Direct routes to Portfolio v2, Devalltect Docs, GitHub, and GitLab.
+- Curated cards for maintained Devalltect tools and their current versions.
+- Responsive light and dark themes with accessible navigation and motion.
+- Fast Astro static output with minimal browser JavaScript.
+- Safe configurable portfolio and documentation destinations for alternate
+  deployments.
+
+### For developers
+
+- Astro 7, strict TypeScript, Node.js 24, and pnpm 12.5.1.
+- Centralized project, destination, and bilingual content records.
+- Formatting, lint, Astro diagnostics, unit tests, and production-build
+  validation.
+- Repository metadata synchronization with dry-run support.
+- GitHub Actions validation and artifact-based root Pages deployment.
+- Project guidance for maintenance, security, release safeguards, and editor
+  setup.
+
+### Deployment note
+
+GitHub Pages must use **GitHub Actions** as its build source. The automatic
+Jekyll branch builder cannot process Astro source files.
+
+### Release information
+
+- Version: `v1.0.0`
+- Previous tagged release: none
+- Strategy: Semantic Versioning
+- Locales: English and Bahasa Indonesia
+- Production: https://devalltect00.github.io/
+- Status: Stable
+
+_Release: v1.0.0_
+_Author: Devalltect / Rizky Fernandes_

@@ -1,0 +1,9 @@
+{
+  "name": "Devalltect",
+  "short_name": "Devalltect",
+  "description": "The front door to the Devalltect project ecosystem.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf8",
+  "theme_color": "#99015b"
+}

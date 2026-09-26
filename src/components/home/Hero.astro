@@ -1,0 +1,65 @@
+---
+import Icon from "../common/Icon.astro";
+import { site } from "../../data/site";
+import type { SiteCopy } from "../../types/site";
+
+interface Props {
+  copy: SiteCopy["hero"];
+}
+
+const { copy } = Astro.props;
+---
+
+<section class="hero shell" id="home">
+  <div class="hero__content reveal">
+    <p class="eyebrow">{copy.eyebrow}</p>
+    <h1>
+      <span>{copy.titleLead}</span>
+      <span class="gradient-text">{copy.titleAccent}</span>
+    </h1>
+    <p class="hero__description">{copy.description}</p>
+    <div class="hero__actions">
+      <a
+        class="button button--primary"
+        href={site.portfolioUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {copy.primaryAction}
+        <Icon name="arrow" size={18} />
+      </a>
+      <a
+        class="button button--secondary"
+        href={site.documentationUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {copy.secondaryAction}
+      </a>
+    </div>
+    <p class="hero__signal">
+      <span></span>
+      {copy.signal}
+    </p>
+  </div>
+
+  <div class="hero-art reveal reveal--delay" aria-hidden="true">
+    <div class="hero-art__halo"></div>
+    <div class="hero-art__orbit hero-art__orbit--one">
+      <span></span>
+    </div>
+    <div class="hero-art__orbit hero-art__orbit--two">
+      <span></span>
+    </div>
+    <div class="hero-art__core">
+      <span>DEV</span>
+      <strong>ALL</strong>
+      <span>TECT</span>
+    </div>
+    <p>
+      creative systems
+      <br />
+      with practical purpose
+    </p>
+  </div>
+</section>

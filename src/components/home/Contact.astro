@@ -1,0 +1,59 @@
+---
+import Icon from "../common/Icon.astro";
+import { site } from "../../data/site";
+import type { SiteCopy } from "../../types/site";
+
+interface Props {
+  copy: SiteCopy["contact"];
+}
+
+const { copy } = Astro.props;
+---
+
+<section class="section contact shell reveal" id="contact">
+  <div>
+    <p class="eyebrow">{copy.eyebrow}</p>
+    <h2>{copy.title}</h2>
+  </div>
+  <div class="contact__body">
+    <p>{copy.description}</p>
+    <a
+      class="button button--primary"
+      href={site.portfolioUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {copy.action}
+      <Icon name="arrow" size={18} />
+    </a>
+    <div class="contact__links">
+      <a href={`mailto:${site.email}`} aria-label="Email">
+        <Icon name="mail" />
+      </a>
+      <a
+        href={site.githubUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+      >
+        <Icon name="github" />
+      </a>
+      <a
+        href={site.gitlabUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitLab"
+      >
+        <Icon name="gitlab" />
+      </a>
+      <a
+        href={site.linkedInUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+      >
+        <Icon name="linkedin" />
+      </a>
+    </div>
+  </div>
+</section>

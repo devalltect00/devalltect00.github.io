@@ -1,0 +1,93 @@
+---
+import ThemeToggle from "../theme/ThemeToggle.astro";
+import type { Locale, SiteCopy } from "../../types/site";
+
+interface Props {
+  locale: Locale;
+  copy: SiteCopy["navigation"];
+}
+
+const { locale, copy } = Astro.props;
+const languageHref = locale === "en" ? "/id/" : "/";
+const languageShort = locale === "en" ? "ID" : "EN";
+---
+
+<header class="site-header" data-site-header>
+  <div class="site-header__inner shell">
+    <a
+      class="wordmark"
+      href={locale === "en" ? "/" : "/id/"}
+      aria-label={`${copy.home} — Devalltect`}
+    >
+      <span class="wordmark__mark" aria-hidden="true">
+        D
+      </span>
+      <span class="wordmark__text">DEVALLTECT</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav
+      class="site-nav"
+      id="site-navigation"
+      aria-label="Primary navigation"
+      data-site-nav
+    >
+      <a href="#explore">{copy.explore}</a>
+      <a href="#projects">{copy.projects}</a>
+      <a href="#principles">{copy.principles}</a>
+      <a href="#contact">{copy.contact}</a>
+    </nav>
+
+    <div class="site-actions">
+      <a
+        class="language-link"
+        href={languageHref}
+        lang={locale === "en" ? "id" : "en"}
+        aria-label={copy.languageLabel}
+        title={copy.languageLabel}
+      >
+        {languageShort}
+      </a>
+      <ThemeToggle label={copy.themeLabel} />
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupNavigation() {
+    const toggle =
+      document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+    const navigation = document.querySelector<HTMLElement>("[data-site-nav]");
+    if (!toggle || !navigation || toggle.dataset.ready === "true") return;
+    toggle.dataset.ready = "true";
+
+    const close = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      navigation.dataset.open = "false";
+    };
+
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.setAttribute("aria-expanded", String(open));
+      navigation.dataset.open = String(open);
+    });
+    navigation
+      .querySelectorAll("a")
+      .forEach((link) => link.addEventListener("click", close));
+  }
+
+  setupNavigation();
+  document.addEventListener("astro:after-swap", setupNavigation);
+</script>

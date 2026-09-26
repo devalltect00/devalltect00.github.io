@@ -1,0 +1,53 @@
+---
+import Icon from "../common/Icon.astro";
+import { projects } from "../../data/projects";
+import type { Locale, SiteCopy } from "../../types/site";
+
+interface Props {
+  locale: Locale;
+  copy: SiteCopy["projects"];
+}
+
+const { locale, copy } = Astro.props;
+---
+
+<section class="section shell" id="projects">
+  <div class="section-heading reveal">
+    <p class="eyebrow">{copy.eyebrow}</p>
+    <h2>{copy.title}</h2>
+    <p>{copy.description}</p>
+  </div>
+  <div class="project-grid">
+    {projects.map((project, index) => (
+      <article
+        class={`project-card project-card--${project.accent} reveal`}
+        style={`--delay: ${index * 65}ms`}
+      >
+        <div class="project-card__topline">
+          <span>{project.category}</span>
+          <span>{project.version}</span>
+        </div>
+        <div class="project-card__symbol" aria-hidden="true">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+        </div>
+        <h3>{project.name}</h3>
+        <p>{project.description[locale]}</p>
+        <ul class="tag-list" aria-label={`${project.name} technologies`}>
+          {project.technologies.map((technology) => (
+            <li>{technology}</li>
+          ))}
+        </ul>
+        <div class="project-card__links">
+          <a href={project.documentation} target="_blank" rel="noreferrer">
+            {copy.documentation}
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href={project.repository} target="_blank" rel="noreferrer">
+            {copy.repository}
+            <Icon name="arrow" size={15} />
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

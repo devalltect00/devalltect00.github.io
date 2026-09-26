@@ -1,0 +1,94 @@
+---
+import "@fontsource-variable/dm-sans";
+import "@fontsource-variable/space-grotesk";
+import "../styles/global.css";
+import Navigation from "../components/navigation/Navigation.astro";
+import SiteFooter from "../components/common/SiteFooter.astro";
+import { site } from "../data/site";
+import type { Locale, SiteCopy } from "../types/site";
+
+interface Props {
+  locale: Locale;
+  copy: SiteCopy;
+}
+const { locale, copy } = Astro.props;
+const title =
+  locale === "en"
+    ? "Devalltect — Ideas become useful software"
+    : "Devalltect — Ide menjadi perangkat lunak berguna";
+const description = copy.hero.description;
+const canonicalPath = locale === "en" ? "/" : "/id/";
+const canonicalUrl = new URL(canonicalPath, site.url);
+---
+
+<!doctype html>
+<html lang={locale} data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fafaf8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Devalltect" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={new URL("/", site.url)} />
+    <link rel="alternate" hreflang="id" href={new URL("/id/", site.url)} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", site.url)} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem("devalltect-theme");
+          document.documentElement.dataset.theme =
+            saved === "dark" ? "dark" : "light";
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">
+      Skip to content
+    </a>
+    <Navigation locale={locale} copy={copy.navigation} />
+    <div id="main-content">
+      <slot />
+    </div>
+    <SiteFooter message={copy.footer} />
+    <script>
+      function setupRevealMotion() {
+        const nodes = document.querySelectorAll<HTMLElement>(
+          ".reveal:not([data-reveal-ready])",
+        );
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          nodes.forEach((node) => node.classList.add("is-visible"));
+          return;
+        }
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.13, rootMargin: "0px 0px -7%" },
+        );
+        nodes.forEach((node) => {
+          node.dataset.revealReady = "true";
+          observer.observe(node);
+        });
+      }
+      setupRevealMotion();
+      document.addEventListener("astro:after-swap", setupRevealMotion);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+---
+import Icon from "../common/Icon.astro";
+import { site } from "../../data/site";
+import type { Destination, SiteCopy } from "../../types/site";
+
+interface Props {
+  copy: SiteCopy["explore"];
+}
+
+const { copy } = Astro.props;
+const sources = [
+  { id: "portfolio", href: site.portfolioUrl, icon: "portfolio" },
+  { id: "docs", href: site.documentationUrl, icon: "docs" },
+  { id: "github", href: site.githubUrl, icon: "github" },
+  { id: "gitlab", href: site.gitlabUrl, icon: "gitlab" },
+] as const;
+
+const destinations: Destination[] = sources.map((source) => ({
+  ...source,
+  ...copy.labels[source.id],
+  external: true,
+}));
+---
+
+<section class="section section--tinted" id="explore">
+  <div class="shell">
+    <div class="section-heading reveal">
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h2>{copy.title}</h2>
+      <p>{copy.description}</p>
+    </div>
+    <div class="gateway-grid">
+      {destinations.map((destination, index) => (
+        <a
+          class="gateway-card reveal"
+          href={destination.href}
+          target="_blank"
+          rel="noreferrer"
+          style={`--delay: ${index * 70}ms`}
+        >
+          <span class="gateway-card__icon">
+            <Icon name={destination.icon} />
+          </span>
+          <span class="gateway-card__index">0{index + 1}</span>
+          <h3>{destination.title}</h3>
+          <p>{destination.description}</p>
+          <span class="gateway-card__link">
+            {destination.label}
+            <Icon name="arrow" size={17} />
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

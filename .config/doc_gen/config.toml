@@ -1,0 +1,65 @@
+[tool.doc-gen]
+
+[tool.doc-gen.cli.execution]
+dry_run = false
+debug = false
+
+[tool.doc-gen.initialization]
+force = false
+ask = false
+
+[tool.doc-gen.cli.structure]
+target_directory = "."
+profile = "custom"
+smart_mode = false
+max_depth = 5
+show_files = true
+verbose = false
+collapse_dirs = [
+    ".astro",
+    ".pnpm-store",
+    ".venv",
+    "coverage",
+    "dev_venv",
+    "dist",
+    "logs",
+    "node_modules",
+    "other_venv",
+    "playwright-report",
+    "prod_venv",
+    "publish_venv",
+    "test-results",
+    ".ruff_cache",
+    "__pycache__",
+    "backups",
+    "temp",
+    "tmp",
+    "venv",
+    "venv_dev",
+    "venv_other",
+    "venv_prod",
+    "venv_publish",
+]
+
+[tool.doc-gen.cli.structure.generate]
+output_file = "docs/project_structure.md"
+
+[tool.doc-gen.cli.structure.print]
+
+[tool.doc-gen.cli.structure.analyze]
+
+[tool.doc-gen.logging]
+level = "CRITICAL"
+markup = true
+rich_tracebacks = true
+show_time = false
+show_level = false
+console_format = "%(message)s"
+
+[tool.doc-gen.logging.file]
+level = "DEBUG"
+log_dir = "logs"
+log_file = "doc_gen.log"
+max_bytes = "10MB"
+backup_count = 5
+file_format = "%(asctime)s | %(levelname)s | %(name)s | %(message)s"

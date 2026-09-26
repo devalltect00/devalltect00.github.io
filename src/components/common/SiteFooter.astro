@@ -1,0 +1,55 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../../data/site";
+
+interface Props {
+  message: string;
+}
+const { message } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div>
+      <a class="wordmark wordmark--footer" href="/">
+        <span class="wordmark__mark" aria-hidden="true">
+          D
+        </span>
+        <span class="wordmark__text">DEVALLTECT</span>
+      </a>
+      <p>{message}</p>
+    </div>
+    <div class="site-footer__meta">
+      <div class="site-footer__links">
+        <a
+          href={site.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+        >
+          <Icon name="github" size={19} />
+        </a>
+        <a
+          href={site.gitlabUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitLab"
+        >
+          <Icon name="gitlab" size={19} />
+        </a>
+        <a
+          href={site.linkedInUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <Icon name="linkedin" size={19} />
+        </a>
+      </div>
+      <p>
+        © {year} {site.author}
+      </p>
+    </div>
+  </div>
+</footer>

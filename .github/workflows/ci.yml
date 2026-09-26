@@ -1,0 +1,33 @@
+name: 🧪 Continuous Integration
+
+on:
+  push:
+    branches: [main, develop, dev]
+  pull_request:
+    branches: [main, develop, dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_PORTFOLIO_URL: ${{ vars.PUBLIC_PORTFOLIO_URL }}
+  PUBLIC_DOCUMENTATION_URL: ${{ vars.PUBLIC_DOCUMENTATION_URL }}
+
+jobs:
+  validate:
+    name: 🧪 Validate Astro gateway
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: 📦 Enable pnpm
+        run: corepack enable
+      - name: 📦 Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: ✅ Validate homepage
+        run: pnpm validate

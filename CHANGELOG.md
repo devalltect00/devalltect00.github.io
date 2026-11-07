@@ -14,23 +14,12 @@ Unreleased
 
 **Summary**
 
-Extend homepage checkpoint 3687134 with exact public build intent preflight.
+Extend checkpoint 98f67a6 with candidate-only automation.
 
 ### ✨ Features
 
 #### Content
 
-- Prepare anonymous approved public packages into an immutable ignored local cache.
-- Recheck complete Go-compatible identity and hashes before pinned static builds.
-- Render enabled Astro projects and concise Profile content in English and Indonesian.
-- Preserve explicit optional links, distinct technology labels and authoritative empty states.
-- Keep credentials, raw cache, nonrendered records and CMS requests out of browser output.
-- Add adversarial parsing, HTTP and filesystem tests plus real offline browser proofs.
-- Verify initial, updated and empty builds against public HTTP and signed Worker fixtures.
-- Fix navigation contrast and the mobile footer link name without changing the design system.
-- Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
-- Document operations, security evidence, read-only CI proof and native editable diagrams.
-- Keep hosted dispatch and durable Astro destination receipts as separate future work.
 - Parse strict bounded requests with lossless sequence and snapshot/projection identity.
 - Reject stale source data before cache writes and mismatched intent before replacing dist.
 - Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
@@ -42,6 +31,24 @@ Extend homepage checkpoint 3687134 with exact public build intent preflight.
 - Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
 - Synchronize setup/security guides and mirrored native implementation diagrams.
 - Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
+- Prepare anonymous approved public packages into an immutable ignored local cache.
+- Recheck complete Go-compatible identity and hashes before pinned static builds.
+- Render enabled Astro projects and concise Profile content in English and Indonesian.
+- Preserve explicit optional links, distinct technology labels and authoritative empty states.
+- Keep credentials, raw cache, nonrendered records and CMS requests out of browser output.
+- Add adversarial parsing, HTTP and filesystem tests plus real offline browser proofs.
+- Verify initial, updated and empty builds against public HTTP and signed Worker fixtures.
+- Fix navigation contrast and the mobile footer link name without changing the design system.
+- Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
+- Document operations, security evidence, read-only CI proof and native editable diagrams.
+- Keep hosted dispatch and durable Astro destination receipts as separate future work.
+- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
+- Guard workflow context before checkout and pin checkout without persisting credentials.
+- Validate explicit dispatch context before writing a public build request.
+- Correlate run and one-day public candidate artifact names with the permanent request UUID.
+- Test malformed/partial contexts and workflow authority/input policy.
+- Document provider credential scope, local verification, native diagrams and pending completion gates.
+- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
 
 **Tags**
 

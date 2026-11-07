@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" agent="Devalltect" version="29.0.0">
+  <diagram id="astro-candidate-1" name="01 — Owner and provider boundaries">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Owner and provider boundaries" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="A candidate request is not a successful build, deployment or CMS publication receipt." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Owner confirmation&#10;&#10;Releases → Delivery and recovery&#10;Astro candidate builds&#10;Responsive light/dark screen&#10;Safe status + request reference" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Authenticated Go API&#10;&#10;Owner-only GET / POST&#10;Existing session + CSRF checks&#10;Only caller input: attempt UUID&#10;Frozen approval supplies content IDs" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Durable admission&#10;&#10;Workspace + current Owner fence&#10;Active source / pending Astro job&#10;Append-only claim; lifetime limit 3&#10;Commit before network I/O" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Fixed GitHub client&#10;&#10;Repository / workflow / branch checks&#10;Exact reviewed consumer-code SHA&#10;One POST; fixed api.github.com&#10;No redirects / proxy / URL following" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Fenced outcome + audit&#10;&#10;Repeat Owner/source/target/lease&#10;Accepted: retain positive run ID&#10;Rejected: proved zero POSTs&#10;Unknown: retain uncertainty" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Safe UI; job still pending&#10;&#10;Refresh reads durable SQL only&#10;No automatic provider polling/retry&#10;Candidate workflow: public dist only&#10;No Pages deployment or callback" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5k · 7 November 2026 · Migration 00022 · Optional provider disabled by default · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-candidate-2" name="02 — Durable state and retry safety">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Durable state and retry safety" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Network and SQL cannot share a transaction. Lost acknowledgement must not create another dispatch." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Permanent claim&#10;&#10;UUID unique across delivery ledgers&#10;Monotonic ordinal orders admissions&#10;30-second lease; no TTL reset&#10;Actor + immutable target incarnation" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Fixed preflight&#10;&#10;Failure: rejected, zero POST sent&#10;Fresh UUID only within budget 3&#10;Corrected settings may be retried&#10;Success: proceed to one POST" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Exactly one dispatch POST&#10;&#10;Six public identity/correlation inputs&#10;HTTP 200 + exact positive run ID&#10;Bounded bytes and 14-second budget&#10;Any ambiguous POST → uncertain" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Accepted&#10;&#10;Exact same UUID replays locally&#10;No new POST or fresh attempt&#10;Run ID is correlation, not success&#10;No artifact or deployment certified" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Uncertain / expired claim&#10;&#10;May already have created a run&#10;Refresh status; no fresh dispatch&#10;Rotation does not erase history&#10;No reconciliation control yet" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Future observation gate&#10;&#10;Independently inspect run metadata&#10;Reconcile retained exact attempt&#10;Verify artifact and deployed output&#10;Only then add fenced Astro receipt" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5k · 7 November 2026 · Migration 00022 · Optional provider disabled by default · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b3" target="b5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="380" />
+              <mxPoint x="600" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="b4" target="b6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="640" />
+              <mxPoint x="210" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-candidate-3" name="03 — Evidence and remaining gates">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Evidence and remaining gates" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Local fixtures prove implemented controls. They do not prove hosted configuration or zero vulnerabilities." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Backend evidence&#10;&#10;Real isolated PostgreSQL 18 tests&#10;Concurrent admission → one call&#10;Expiry / rollback / Owner revocation&#10;85.94% handwritten Go coverage" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Admin + consumer evidence&#10;&#10;188 Flutter tests; analysis clean&#10;94.39% executable Dart coverage&#10;25 Astro unit / 12 repository tests&#10;Exact code guard before checkout" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Credential boundary&#10;&#10;API token: repository Actions write&#10;Broader than one workflow allowlist&#10;Protect code + deployment approvals&#10;Candidate runtime: contents read" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Safe diagnostics&#10;&#10;Constant structured event names&#10;Safe actor/release/attempt identifiers&#10;No raw provider body / token logs&#10;Immutable outcome + audit transaction" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Local verification limits&#10;&#10;No live dispatch or Pages deploy&#10;No editing DB migration applied&#10;No new Linux race / device run&#10;One uncalled module advisory retained" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Next implementation gates&#10;&#10;Run observation + reconciliation&#10;Exact artifact + independent Go proof&#10;Verified deployed provenance&#10;Atomic attempt-fenced Astro receipt" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5k · 7 November 2026 · Migration 00022 · Optional provider disabled by default · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

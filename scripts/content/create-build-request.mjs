@@ -1,8 +1,10 @@
 /** CI inputs are data, never shell source. This creates only a new ignored public intent, never credentials or approval. */
 import fs from "node:fs";
+import { assertDispatchContext } from "../../src/core/cms/dispatch.ts";
 import { buildRequestSchema } from "../../src/server/cms/request.ts";
 try {
   if (process.argv.length !== 2) throw Error();
+  assertDispatchContext(process.env);
   const request = buildRequestSchema.parse({
     schema_version: 1,
     scope: "astro-project-profile-build-v1",

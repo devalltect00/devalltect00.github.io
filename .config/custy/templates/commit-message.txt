@@ -1,26 +1,22 @@
-feat(content): bind Astro CMS candidates to exact release requests
+feat(content): correlate Astro candidates with exact Owner dispatches
 
-Extend homepage checkpoint 3687134 with exact public build intent preflight.
+Extend checkpoint 98f67a6 with candidate-only automation.
 
-- Parse strict bounded requests with lossless sequence and snapshot/projection identity.
-- Reject stale source data before cache writes and mismatched intent before replacing dist.
-- Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
-- Mark actual localized project and Profile fields for independent Go semantic verification.
-- Generate Go requests and verify every real compiled initial, updated and empty fixture output.
-- Add a manually triggered candidate workflow with pinned actions and read repository permissions.
-- Keep untrusted inputs in environment data and fix the fetch origin in operator configuration.
-- Retain only public dist for one day without Pages deployment or CMS callback authority.
-- Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
-- Synchronize setup/security guides and mirrored native implementation diagrams.
-- Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
+- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
+- Guard workflow context before checkout and pin checkout without persisting credentials.
+- Validate explicit dispatch context before writing a public build request.
+- Correlate run and one-day public candidate artifact names with the permanent request UUID.
+- Test malformed/partial contexts and workflow authority/input policy.
+- Document provider credential scope, local verification, native diagrams and pending completion gates.
+- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
 
 Tag: none
-Previous checkpoint: 3687134
-Phase: Exact public CMS candidate build checkpoint
+Previous checkpoint: 98f67a6
+Phase: Owner-controlled exact Astro candidate admission
 
 Tags:
 - Type: #feature, #security, #testing, #documentation
 - Platform: #astro, #typescript, #github-actions
-- Content: #projects, #profile, #localization
+- Content: #projects, #profile, #publishing
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

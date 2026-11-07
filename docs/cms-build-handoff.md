@@ -142,3 +142,7 @@ locally/private-side. Both sources are stopped before builds/browsing.
 
 See [security evidence](security/cms-build-handoff-verification.md) and the native
 [three-page diagram](diagrams/cms-build-handoff.drawio).
+
+## Follow-up: Owner candidates (M5k)
+
+Read [Owner correlation](cms-owner-candidates.md) for the six required workflow inputs, exact workflow-code guard and `astro-cms-candidate-<attempt UUID>` one-day artifact name. Earlier four-input notes describe M5j history. Candidate acceptance does not authorize deployment or CMS completion.

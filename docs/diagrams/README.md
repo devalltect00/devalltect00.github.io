@@ -19,3 +19,7 @@ independent semantic output and candidate authority/remaining gates. Previews:
 [01](previews/cms-build-handoff-01.png), [02](previews/cms-build-handoff-02.png),
 [03](previews/cms-build-handoff-03.png). This is local build evidence, not hosted deployment
 or durable CMS job completion.
+
+## Owner candidate correlation (M5k)
+
+[cms-owner-candidates.drawio](cms-owner-candidates.drawio) mirrors the CMS three-page native diagram. Previews: [01](previews/cms-owner-candidates-01.png), [02](previews/cms-owner-candidates-02.png), [03](previews/cms-owner-candidates-03.png). Read [operations](../cms-owner-candidates.md); candidate acceptance leaves publication pending.

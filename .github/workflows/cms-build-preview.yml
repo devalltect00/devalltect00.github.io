@@ -1,7 +1,16 @@
 name: Build exact CMS candidate (no deployment)
+run-name: CMS Astro candidate ${{ inputs.dispatch_id }}
 on:
   workflow_dispatch:
     inputs:
+      dispatch_id:
+        description: Permanent public CMS candidate request UUID
+        required: true
+        type: string
+      expected_head_sha:
+        description: Exact reviewed consumer-code commit (not a content digest)
+        required: true
+        type: string
       release_id:
         description: Exact approved public release UUID
         required: true
@@ -30,6 +39,8 @@ jobs:
     env:
       # The operator fixes this root HTTPS origin in repository variables; workflow inputs cannot choose a fetch destination.
       HOMEPAGE_CMS_PUBLIC_ORIGIN: ${{ vars.HOMEPAGE_CMS_PUBLIC_ORIGIN }}
+      HOMEPAGE_CMS_DISPATCH_ID: ${{ inputs.dispatch_id }}
+      HOMEPAGE_EXPECTED_HEAD_SHA: ${{ inputs.expected_head_sha }}
       HOMEPAGE_CMS_RELEASE: ${{ inputs.release_id }}
       HOMEPAGE_EXPECTED_SEQUENCE: ${{ inputs.sequence }}
       HOMEPAGE_EXPECTED_SNAPSHOT_DIGEST: ${{ inputs.snapshot_digest }}
@@ -38,7 +49,16 @@ jobs:
       PUBLIC_PORTFOLIO_URL: ${{ vars.PUBLIC_PORTFOLIO_URL }}
       PUBLIC_DOCUMENTATION_URL: ${{ vars.PUBLIC_DOCUMENTATION_URL }}
     steps:
+      - name: Validate correlation and workflow code before checkout
+        shell: bash
+        run: |
+          [[ "$HOMEPAGE_CMS_DISPATCH_ID" =~ ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$ ]] || exit 1
+          [[ "$HOMEPAGE_EXPECTED_HEAD_SHA" =~ ^[a-f0-9]{40}$ ]] || exit 1
+          [[ "$GITHUB_SHA" == "$HOMEPAGE_EXPECTED_HEAD_SHA" ]] || exit 1
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ inputs.expected_head_sha }}
+          persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "24"
@@ -53,7 +73,7 @@ jobs:
       - name: Retain public candidate for one day
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: astro-cms-candidate
+          name: astro-cms-candidate-${{ inputs.dispatch_id }}
           path: dist/
           include-hidden-files: true
           if-no-files-found: error

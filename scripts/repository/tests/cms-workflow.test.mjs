@@ -30,3 +30,24 @@ test("CMS candidate inputs stay in environment data and cannot choose the source
   assert.match(source, /--request "\$HOMEPAGE_CMS_REQUEST"/);
   assert.doesNotMatch(source, /--allow-loopback|curl|wget|eval\b/);
 });
+
+test("CMS candidate correlation checks run before checkout and checkout uses the exact reviewed commit", () => {
+  assert.ok(
+    source.indexOf("Validate correlation and workflow code") <
+      source.indexOf("uses: actions/checkout@"),
+  );
+  assert.match(
+    source,
+    /run-name: CMS Astro candidate \$\{\{ inputs\.dispatch_id \}\}/,
+  );
+  assert.match(source, /ref: \$\{\{ inputs\.expected_head_sha \}\}/);
+  assert.match(source, /persist-credentials: false/);
+  assert.match(
+    source,
+    /\[\[ "\$GITHUB_SHA" == "\$HOMEPAGE_EXPECTED_HEAD_SHA" \]\]/,
+  );
+  assert.match(
+    source,
+    /name: astro-cms-candidate-\$\{\{ inputs\.dispatch_id \}\}/,
+  );
+});

@@ -54,3 +54,7 @@ Independent run observation/reconciliation, verified artifact download,
 deployed-output verification and an atomic Astro receipt remain future work.
 The CMS Astro job stays pending. See [previous exact build handoff](cms-build-handoff.md)
 and [editable diagram](diagrams/cms-owner-candidates.drawio).
+
+## Follow-up: explicit run checks (M5l)
+
+[Run observation](cms-run-observations.md) now documents private Owner metadata checks and immutable association after response loss. Accepted/uncertain dispatch history stays intact. Metadata never certifies content, deployment or destination completion; the workflow itself is unchanged.

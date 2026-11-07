@@ -1,22 +1,20 @@
-feat(content): correlate Astro candidates with exact Owner dispatches
+docs(content): explain Astro run observation and pending proof gates
 
-Extend checkpoint 98f67a6 with candidate-only automation.
+Extend checkpoint 5ef4fb9 with synchronized consumer documentation.
 
-- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
-- Guard workflow context before checkout and pin checkout without persisting credentials.
-- Validate explicit dispatch context before writing a public build request.
-- Correlate run and one-day public candidate artifact names with the permanent request UUID.
-- Test malformed/partial contexts and workflow authority/input policy.
-- Document provider credential scope, local verification, native diagrams and pending completion gates.
-- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
+- Document the private CMS known-run checks and immutable metadata association.
+- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
+- Mirror the three-page draw.io diagram and reviewed previews.
+- Record local verification and the remaining destination completion gates.
+- Preserve homepage source, workflow permissions, authored content and dependencies.
 
 Tag: none
-Previous checkpoint: 98f67a6
-Phase: Owner-controlled exact Astro candidate admission
+Previous checkpoint: 5ef4fb9
+Phase: Owner Astro run observation and metadata reconciliation
 
 Tags:
-- Type: #feature, #security, #testing, #documentation
-- Platform: #astro, #typescript, #github-actions
+- Type: #documentation, #security, #testing
+- Platform: #astro, #github-actions
 - Content: #projects, #profile, #publishing
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" agent="Devalltect" version="29.0.0">
+  <diagram id="astro-observe-1" name="01 — Owner run metadata flow">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Owner run metadata flow" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="An Owner action reads GitHub metadata and retains evidence; publication stays pending." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Owner explicit check&#10;&#10;Known accepted run ID is fixed&#10;Lost response: enter numeric run ID&#10;Confirm one metadata inspection&#10;Opening/refreshing reads SQL only" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Authenticated preflight&#10;&#10;Current Owner + session / CSRF&#10;Active distributed source; pending job&#10;Latest admitted target / attempt&#10;Capture prior observation revision" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Fixed provider GET&#10;&#10;Exact repository / workflow / SHA&#10;First run attempt + correlation title&#10;Same head repository; no PRs&#10;Bounded bytes; no URL following" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Finite metadata result&#10;&#10;Queued / in progress / completed&#10;Explicit finite conclusion + timestamps&#10;Matching run is correlation only&#10;Inputs / artifact bytes unverified" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Fenced evidence + audit&#10;&#10;Recheck current source and Owner&#10;Compare prior revision atomically&#10;Append metadata and audit together&#10;Never rewrite dispatch outcome" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Owner sees retained state&#10;&#10;Safe error and request reference&#10;Prior evidence survives failed checks&#10;No automatic polling or redispatch&#10;Astro publication remains pending" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5l · 7 November 2026 · Migration 00023 · Explicit metadata checks only · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-observe-2" name="02 — Immutable observation rules">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Immutable observation rules" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Provider time is coarse; a database ordinal, exact run binding and current authority fence every write." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Admissible candidate&#10;&#10;Accepted or expired/uncertain claim&#10;Exact target / frozen projection&#10;No live dispatch or no-send rejection&#10;Run belongs to this attempt only" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Prepare then release locks&#10;&#10;Capture current observation ordinal&#10;Finish SQL transaction before HTTP&#10;Read one known provider run&#10;No remote mutation or callback" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Validate run metadata&#10;&#10;Fixed code / branch / workflow&#10;Exact title and first run attempt&#10;Admission window + bounded skew&#10;No arbitrary returned URL requests" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Repeated evidence&#10;&#10;Identical tuple: return retained row&#10;No duplicate audit or history reset&#10;Normalize SQL timestamp precision&#10;Up to 64 distinct observations" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  New revision rules&#10;&#10;Older metadata: reject&#10;Equal time: terminal advance only&#10;Completed result cannot change&#10;Concurrent prior ordinal must match" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Immutable association&#10;&#10;Append observation + actor audit&#10;Uncertain dispatch stays historical&#10;No fresh dispatch is unlocked&#10;Content and deployment still pending" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5l · 7 November 2026 · Migration 00023 · Explicit metadata checks only · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-observe-3" name="03 — Verification and remaining gates">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Verification and remaining gates" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Metadata correlation is not an authentication token, dispatch-input attestation or deployed-content proof." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Provider / API evidence&#10;&#10;Adversarial loopback metadata tests&#10;Identity / fork / rerun / URL guards&#10;Genuine Owner/native/browser tests&#10;CSRF and strict input validation" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Real SQL evidence&#10;&#10;Audit failure rolls back metadata&#10;Source / Owner revoked during I/O&#10;Six concurrent reads; one revision&#10;Expiry / capacity / dedupe / immutability" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Responsive admin controls&#10;&#10;Mobile dark and desktop layouts&#10;Confirmation + pending disable&#10;Visible references; prior data kept&#10;Lossless numeric string run IDs" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Authority limits&#10;&#10;Same private dispatch token reused&#10;Actions write is broader than GET&#10;Copied titles cannot prove inputs&#10;No hosted setup or deploy claimed" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  No completion shortcut&#10;&#10;Original outcomes stay immutable&#10;No dispatch / rerun / cancel / archive&#10;Observed success is metadata only&#10;No destination job is marked done" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Next implementation gates&#10;&#10;Bounded artifact retrieval/provenance&#10;Go proof of frozen expected content&#10;Independent deployed-output proof&#10;Atomic attempt-fenced Astro receipt" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5l · 7 November 2026 · Migration 00023 · Explicit metadata checks only · Astro publication stays pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

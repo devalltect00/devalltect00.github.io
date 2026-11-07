@@ -14,12 +14,19 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint 98f67a6 with candidate-only automation.
+Extend checkpoint 5ef4fb9 with synchronized consumer documentation.
 
 ### ✨ Features
 
 #### Content
 
+- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
+- Guard workflow context before checkout and pin checkout without persisting credentials.
+- Validate explicit dispatch context before writing a public build request.
+- Correlate run and one-day public candidate artifact names with the permanent request UUID.
+- Test malformed/partial contexts and workflow authority/input policy.
+- Document provider credential scope, local verification, native diagrams and pending completion gates.
+- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
 - Parse strict bounded requests with lossless sequence and snapshot/projection identity.
 - Reject stale source data before cache writes and mismatched intent before replacing dist.
 - Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
@@ -42,17 +49,20 @@ Extend checkpoint 98f67a6 with candidate-only automation.
 - Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
-- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
-- Guard workflow context before checkout and pin checkout without persisting credentials.
-- Validate explicit dispatch context before writing a public build request.
-- Correlate run and one-day public candidate artifact names with the permanent request UUID.
-- Test malformed/partial contexts and workflow authority/input policy.
-- Document provider credential scope, local verification, native diagrams and pending completion gates.
-- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
+
+### 📚 Documentation
+
+#### Content
+
+- Document the private CMS known-run checks and immutable metadata association.
+- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
+- Mirror the three-page draw.io diagram and reviewed previews.
+- Record local verification and the remaining destination completion gates.
+- Preserve homepage source, workflow permissions, authored content and dependencies.
 
 **Tags**
 
-feature • content
+feature • docs • content
 
 ## v1.0.0 (2026-09-26)
 

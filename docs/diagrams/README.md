@@ -23,3 +23,7 @@ or durable CMS job completion.
 ## Owner candidate correlation (M5k)
 
 [cms-owner-candidates.drawio](cms-owner-candidates.drawio) mirrors the CMS three-page native diagram. Previews: [01](previews/cms-owner-candidates-01.png), [02](previews/cms-owner-candidates-02.png), [03](previews/cms-owner-candidates-03.png). Read [operations](../cms-owner-candidates.md); candidate acceptance leaves publication pending.
+
+## Astro run observation (M5l)
+
+[cms-run-observations.drawio](cms-run-observations.drawio) contains three native editable pages: Owner/provider read flow, immutable revision rules, and proof limits/remaining gates. Previews: [01](previews/cms-run-observations-01.png), [02](previews/cms-run-observations-02.png), [03](previews/cms-run-observations-03.png). Run metadata leaves publication pending.

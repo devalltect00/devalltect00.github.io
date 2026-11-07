@@ -77,3 +77,7 @@ receipt remain future work. A valid local payload is not hosted publication.
 
 Keep generated ZIP/payload/evidence files in the existing ignored CMS `.tmp/` or
 Astro `.cms-cache/` directory. They are local outputs, not repository source.
+
+## Subsequent staging boundary
+
+M5p now implements [exact optional artifact staging](cms-pages-staging.md). Earlier upload TODOs describe the historical M5o checkpoint. Owner coordination and protected deployment/deployed-output completion remain separate.

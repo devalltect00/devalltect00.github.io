@@ -46,7 +46,7 @@ function portable(name) {
         p !== ".." &&
         !/[. ]$/.test(p) &&
         (!p.startsWith(".") || (i === 0 && p === ".well-known")) &&
-        !/^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])$/i.test(p.split(".")[0]),
+        !/^(CON|PRN|AUX|NUL|COM[0-9]|LPT[0-9])$/i.test(p.split(".")[0]),
     );
 }
 /** NUL padding must be canonical; high bytes and hidden suffixes cannot alias another file. */
@@ -255,6 +255,21 @@ export function verifyPagesPayload(payload, evidence) {
       bytes: evidence.source.expanded_bytes,
       payloadSHA256: evidence.payload_sha256,
     });
+  } catch {
+    invalid();
+  }
+}
+
+/** Check the exact uncompressed TAR that upload-artifact will receive, without extracting any member. */
+export function verifyPagesTar(payload, evidence, tar) {
+  try {
+    verifyPagesPayload(payload, evidence);
+    if (!Buffer.isBuffer(tar) || tar.length > MAX_TAR) invalid();
+    const raw = inflateRawSync(payload.subarray(10), {
+      maxOutputLength: MAX_TAR,
+    });
+    if (!raw.equals(tar)) invalid();
+    return true;
   } catch {
     invalid();
   }

@@ -54,3 +54,6 @@ venv_other/
 # Approved public build inputs and local proof output are never source/deployment artifacts.
 .cms-cache/
 venv_*/
+
+# Generated Go coverage.
+**/coverage.out

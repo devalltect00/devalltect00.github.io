@@ -6,3 +6,6 @@ docs/project_structure.md
 
 .cms-cache
 venv_*
+
+# Optional Pages Go tool uses gofmt.
+**/*.go

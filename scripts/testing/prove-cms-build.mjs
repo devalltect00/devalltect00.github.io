@@ -242,6 +242,57 @@ try {
         path.join(requestRoot, "pages-" + stage, "candidate.tar.gz"),
         path.join(requestRoot, "pages-" + stage, "pages-evidence.json"),
       ]);
+
+    if (goFlag >= 0) {
+      const stageRoot = path.join(requestRoot, "pages-" + stage);
+      await command(
+        "stage-request-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "run",
+          "./cmd/cms",
+          "astro-build",
+          "stage-request",
+          "--package",
+          packageFile,
+          "--request",
+          requestFile,
+          "--zip",
+          path.join(stageRoot, "candidate.zip"),
+          "--artifact-proof",
+          path.join(stageRoot, "artifact-proof.json"),
+          "--stage-id",
+          "33333333-3333-4333-8333-333333333333",
+          "--out",
+          path.join(stageRoot, "stage-request.json"),
+        ],
+        {},
+        process.argv[goFlag + 1],
+      );
+      await command(
+        "stage-pack-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "-C",
+          path.resolve("scripts/pages-tool"),
+          "run",
+          ".",
+          "pack",
+          "--request",
+          path.join(stageRoot, "stage-request.json"),
+          "--zip",
+          path.join(stageRoot, "candidate.zip"),
+          "--out",
+          path.join(stageRoot, "artifact.tar"),
+        ],
+      );
+      await command("stage-tar-" + stage, process.execPath, [
+        "scripts/content/verify-pages-payload.mjs",
+        path.join(stageRoot, "candidate.tar.gz"),
+        path.join(stageRoot, "pages-evidence.json"),
+        path.join(stageRoot, "artifact.tar"),
+      ]);
+    }
     const marker = JSON.parse(
       await fs.readFile("dist/.well-known/homepage-content.json", "utf8"),
     );
@@ -482,6 +533,8 @@ try {
                 "independent-go-semantic-html",
                 "go-pages-payload",
                 "independent-node-pages-inventory",
+                "public-go-stage-repack",
+                "independent-node-upload-tar",
               ]
             : []),
           "invalid-pin-retains-dist",

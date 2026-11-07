@@ -14,7 +14,24 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint 685a49e with complete Pages handoff verification.
+Extend checkpoint 9bd1121 with exact verified-TAR staging.
+
+### 🧪 Tests
+
+#### Content
+
+- Independently validate bounded gzip/USTAR bytes and the complete Go file inventory.
+- Reject links, aliases, metadata substitutions, changed assets and malformed endings.
+- Add six standalone adversarial Node tests without a private repository dependency.
+- Check Go payloads after every initial/update/empty real compiled fixture.
+- Synchronize public operations/security guidance and three editable diagram pages.
+- Preserve authored content, application dependencies and both hosted workflows.
+- Keep protected provider deployment and CMS completion as separate gates.
+- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
+- Exercise authenticated metadata and token-free download with synthetic provider authority.
+- Retain standalone public CI without private Go or credential requirements.
+- Synchronize consumer guidance, security evidence and three-page editable diagrams.
+- Preserve workflow permissions, authored content, dependencies and publication gates.
 
 ### 📚 Documentation
 
@@ -31,23 +48,6 @@ Extend checkpoint 685a49e with complete Pages handoff verification.
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-
-### 🧪 Tests
-
-#### Content
-
-- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
-- Exercise authenticated metadata and token-free download with synthetic provider authority.
-- Retain standalone public CI without private Go or credential requirements.
-- Synchronize consumer guidance, security evidence and three-page editable diagrams.
-- Preserve workflow permissions, authored content, dependencies and publication gates.
-- Independently validate bounded gzip/USTAR bytes and the complete Go file inventory.
-- Reject links, aliases, metadata substitutions, changed assets and malformed endings.
-- Add six standalone adversarial Node tests without a private repository dependency.
-- Check Go payloads after every initial/update/empty real compiled fixture.
-- Synchronize public operations/security guidance and three editable diagram pages.
-- Preserve authored content, application dependencies and both hosted workflows.
-- Keep protected provider deployment and CMS completion as separate gates.
 
 ### ✨ Features
 
@@ -83,9 +83,21 @@ Extend checkpoint 685a49e with complete Pages handoff verification.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
 
+#### Publishing
+
+- Add a standard-library-only fixed-target GitHub acquisition and canonical repack tool.
+- Separate API credentials from bounded public-IP-pinned signed downloads.
+- Reject changed provenance, reruns, unsafe archives and source/payload pin mismatches.
+- Upload only the verified TAR through an off-by-default manual environment-gated workflow.
+- Keep Pages and OIDC-write permissions absent and preserve normal hosted workflows.
+- Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
+- Verify genuine private/public repacks through independent complete Node TAR checks.
+- Synchronize public guidance, security evidence and editable staging diagrams.
+- Keep authenticated CMS coordination and actual deployment/completion as future gates.
+
 **Tags**
 
-feature • docs • tests • content
+feature • docs • tests • publishing
 
 ## v1.0.0 (2026-09-26)
 

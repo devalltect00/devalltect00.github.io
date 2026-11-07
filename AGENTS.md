@@ -86,3 +86,7 @@ M5n documents private bounded recovery in docs/cms-candidate-recovery.md. Do not
 ## Exact Pages payload boundary
 
 M5o adds the local verifier in scripts/content/pages-payload.mjs; read docs/cms-pages-payload.md. No extraction or provider access is allowed there. Keep complete asset inventory and strict gzip/USTAR bounds, and never promote an unsigned public manifest into deployment authority.
+
+## Exact Pages staging boundary
+
+M5p adds the optional standard-library Go stager in scripts/pages-tool and cms-pages-stage.yml. Read docs/cms-pages-staging.md. Keep the uploader disabled by default, main/first-attempt/code/environment gated, with no Pages/OIDC-write permission. Run standalone Go tests/vet plus public validation and joint private compiled proofs when either writer/contract changes.

@@ -3,7 +3,11 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
-import { verifyPagesPayload, MAX_TAR } from "../../content/pages-payload.mjs";
+import {
+  verifyPagesPayload,
+  verifyPagesTar,
+  MAX_TAR,
+} from "../../content/pages-payload.mjs";
 /** Public synthetic file hash, never a credential. */
 const hash = (b) => createHash("sha256").update(b).digest("hex");
 /** Build canonical USTAR numeric fields for tests, independently of Go's tar implementation. */
@@ -201,6 +205,27 @@ test("Pages supports canonical USTAR prefixes without permitting private hidden 
   evidence.entries[0].name = ".private/file";
   assert.throws(
     () => verifyPagesPayload(payload, evidence),
+    /PAGES_PAYLOAD_UNVERIFIED/,
+  );
+});
+
+test("Exact upload TAR must equal the independently verified payload bytes", () => {
+  const { payload, evidence, files } = fixture();
+  const raw = tar(files);
+  assert.equal(verifyPagesTar(payload, evidence, raw), true);
+  raw[512] ^= 1;
+  assert.throws(
+    () => verifyPagesTar(payload, evidence, raw),
+    /PAGES_PAYLOAD_UNVERIFIED/,
+  );
+});
+test("Reserved COM0 names follow the same strict Go and Node portability policy", () => {
+  const { files, evidence } = fixture();
+  files[4][0] = "zero/COM0.txt";
+  const payload = gzip(tar(files));
+  evidence.entries[4].name = files[4][0];
+  assert.throws(
+    () => verifyPagesPayload(payload, repin(evidence, payload)),
     /PAGES_PAYLOAD_UNVERIFIED/,
   );
 });

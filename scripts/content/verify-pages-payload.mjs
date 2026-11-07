@@ -1,6 +1,11 @@
 /** Explicit local Pages handoff checker. Never loads CMS settings or uploads/extracts archive members. */
 import fs from "node:fs/promises";
-import { verifyPagesPayload, MAX_PAYLOAD } from "./pages-payload.mjs";
+import {
+  verifyPagesPayload,
+  verifyPagesTar,
+  MAX_PAYLOAD,
+  MAX_TAR,
+} from "./pages-payload.mjs";
 /** Read only a bounded regular file; input paths are operator-selected, never supplied by public content. */
 async function read(name, max) {
   const s = await fs.lstat(name);
@@ -22,12 +27,14 @@ async function read(name, max) {
   }
 }
 try {
-  if (process.argv.length !== 4) throw Error();
+  if (process.argv.length !== 4 && process.argv.length !== 5) throw Error();
   const raw = await read(process.argv[2], MAX_PAYLOAD),
     manifest = JSON.parse(
       (await read(process.argv[3], 1024 * 1024)).toString("utf8"),
     );
   verifyPagesPayload(raw, manifest);
+  if (process.argv.length === 5)
+    verifyPagesTar(raw, manifest, await read(process.argv[4], MAX_TAR));
   console.log(
     "Exact Pages payload and complete file inventory verified locally. No deployment or CMS receipt.",
   );

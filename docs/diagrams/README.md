@@ -39,3 +39,7 @@ or durable CMS job completion.
 ## Exact Pages payload preparation (M5o)
 
 [cms-pages-payload.drawio](cms-pages-payload.drawio) has three editable pages: frozen ZIP-to-Pages flow, complete byte/inventory chain, and trust/remaining gates. Previews: [01](previews/cms-pages-payload-01.png), [02](previews/cms-pages-payload-02.png), [03](previews/cms-pages-payload-03.png). No hosted upload or destination receipt is implied.
+
+## Exact Pages artifact staging (M5p)
+
+[cms-pages-staging.drawio](cms-pages-staging.drawio) has three editable pages: checked request/upload flow, credentials and identity, and trust/remaining gates. Previews: [01](previews/cms-pages-staging-01.png), [02](previews/cms-pages-staging-02.png), [03](previews/cms-pages-staging-03.png). Artifact staging is not hosted publication.

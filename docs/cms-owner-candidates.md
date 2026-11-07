@@ -58,3 +58,7 @@ and [editable diagram](diagrams/cms-owner-candidates.drawio).
 ## Follow-up: explicit run checks (M5l)
 
 [Run observation](cms-run-observations.md) now documents private Owner metadata checks and immutable association after response loss. Accepted/uncertain dispatch history stays intact. Metadata never certifies content, deployment or destination completion; the workflow itself is unchanged.
+
+## Subsequent recovery boundary
+
+M5n implements private [bounded candidate recovery](cms-candidate-recovery.md). Earlier recovery TODOs are historical. This does not alter either workflow or complete/deploy the homepage; actual deployment, deployed-output proof and an atomic receipt remain future gates.

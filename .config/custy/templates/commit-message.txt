@@ -1,20 +1,21 @@
-test(content): verify compiled Astro archives through the Go artifact boundary
+docs(content): explain bounded Astro candidate recovery
 
-Extend checkpoint c01a528 with candidate content proof.
+Extend checkpoint fa81d01 with the private recovery boundary.
 
-- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
-- Exercise authenticated metadata and token-free download with synthetic provider authority.
-- Retain standalone public CI without private Go or credential requirements.
-- Synchronize consumer guidance, security evidence and three-page editable diagrams.
-- Preserve workflow permissions, authored content, dependencies and publication gates.
+- Document finite terminal failure, missing-artifact and expired-artifact evidence.
+- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
+- Record current authority, provider trust, permissions and deployment limitations.
+- Synchronize three editable recovery diagram pages and reviewed PNG previews.
+- Retain candidate/Pages workflows, authored content and compiled proof behavior.
+- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
 
 Tag: none
-Previous checkpoint: c01a528
-Phase: Exact Astro artifact retrieval and frozen-content proof
+Previous checkpoint: fa81d01
+Phase: Astro candidate recovery documentation
 
 Tags:
-- Type: #testing, #security, #documentation
-- Platform: #astro, #typescript, #golang
-- Content: #projects, #profile, #publishing
+- Type: #documentation, #security
+- Platform: #astro, #github
+- Content: #publishing, #recovery, #diagrams
 - Delivery: #checkpoint, #untagged
-- Quality: #tested, #documented
+- Quality: #verified, #documented

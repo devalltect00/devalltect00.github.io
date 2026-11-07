@@ -38,3 +38,7 @@ and [three-page diagram](diagrams/cms-run-observations.drawio).
 ## Follow-up: candidate ZIP proof (M5m)
 
 [Archive verification](cms-artifact-verification.md) now documents the private Owner content proof and optional compiled ZIP test hook. Metadata-only endpoints above remain separate. Workflow/deployment/completion authority is unchanged.
+
+## Subsequent recovery boundary
+
+M5n implements private [bounded candidate recovery](cms-candidate-recovery.md). Earlier recovery TODOs are historical. This does not alter either workflow or complete/deploy the homepage; actual deployment, deployed-output proof and an atomic receipt remain future gates.

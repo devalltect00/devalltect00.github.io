@@ -31,3 +31,7 @@ or durable CMS job completion.
 ## Exact candidate ZIP proof (M5m)
 
 [cms-artifact-verification.drawio](cms-artifact-verification.drawio) has three editable pages: credential-separated retrieval, in-memory ZIP/frozen content, and durable proof/remaining gates. Previews: [01](previews/cms-artifact-verification-01.png), [02](previews/cms-artifact-verification-02.png), [03](previews/cms-artifact-verification-03.png). Deployment and publication remain pending.
+
+## Bounded candidate recovery (M5n)
+
+[cms-candidate-recovery.drawio](cms-candidate-recovery.drawio) contains three native editable pages: explicit Owner/provider retirement, finite eligibility and preserved history/budget, and verification/remaining gates. Previews: [01](previews/cms-candidate-recovery-01.png), [02](previews/cms-candidate-recovery-02.png), [03](previews/cms-candidate-recovery-03.png). New requests remain separate; deployment/completion stay pending.

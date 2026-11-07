@@ -135,3 +135,5 @@ and [editable diagrams](docs/diagrams/cms-builds.drawio).
 [Exact-release handoffs](docs/cms-build-handoff.md) now bind candidate builds to a
 strict public request and support independent Go checks of generated pages. The
 optional manual candidate workflow retains a public artifact; it does not deploy.
+
+[Bounded candidate recovery](docs/cms-candidate-recovery.md) now documents explicit retirement and a separately confirmed fresh request within the unchanged three-admission limit. Deployment and destination completion remain pending.

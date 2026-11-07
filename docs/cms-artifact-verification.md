@@ -37,3 +37,7 @@ bytes, independent deployed-output checks, bounded expired/failed-run recovery
 and an atomic Astro receipt remain future gates. The existing marker/title/hash
 alone is not authentication or publication success. See [security evidence](security/cms-artifact-verification-report.md)
 and [native diagram](diagrams/cms-artifact-verification.drawio).
+
+## Subsequent recovery boundary
+
+M5n implements private [bounded candidate recovery](cms-candidate-recovery.md). Earlier recovery TODOs are historical. This does not alter either workflow or complete/deploy the homepage; actual deployment, deployed-output proof and an atomic receipt remain future gates.

@@ -14,7 +14,17 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint c01a528 with candidate content proof.
+Extend checkpoint fa81d01 with the private recovery boundary.
+
+### 🧪 Tests
+
+#### Content
+
+- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
+- Exercise authenticated metadata and token-free download with synthetic provider authority.
+- Retain standalone public CI without private Go or credential requirements.
+- Synchronize consumer guidance, security evidence and three-page editable diagrams.
+- Preserve workflow permissions, authored content, dependencies and publication gates.
 
 ### 📚 Documentation
 
@@ -25,6 +35,12 @@ Extend checkpoint c01a528 with candidate content proof.
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
+- Document finite terminal failure, missing-artifact and expired-artifact evidence.
+- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
+- Record current authority, provider trust, permissions and deployment limitations.
+- Synchronize three editable recovery diagram pages and reviewed PNG previews.
+- Retain candidate/Pages workflows, authored content and compiled proof behavior.
+- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
 
 ### ✨ Features
 
@@ -59,16 +75,6 @@ Extend checkpoint c01a528 with candidate content proof.
 - Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
-
-### 🧪 Tests
-
-#### Content
-
-- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
-- Exercise authenticated metadata and token-free download with synthetic provider authority.
-- Retain standalone public CI without private Go or credential requirements.
-- Synchronize consumer guidance, security evidence and three-page editable diagrams.
-- Preserve workflow permissions, authored content, dependencies and publication gates.
 
 **Tags**
 

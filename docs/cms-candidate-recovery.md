@@ -58,3 +58,7 @@ See [security/verification](security/cms-candidate-recovery-verification.md) and
 candidate. Controlled exact-byte deployment, independent deployed-output checks
 and an atomic CMS receipt are still future gates. No hosted run or deployment is
 performed by this documentation checkpoint.
+
+## Subsequent payload preparation
+
+M5o implements [exact local Pages payload preparation](cms-pages-payload.md). Controlled provider upload/deployment, deployed-output checks and atomic completion remain future; recovery does not grant those actions.

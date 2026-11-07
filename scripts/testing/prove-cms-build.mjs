@@ -232,9 +232,16 @@ try {
         {
           CMS_ASTRO_ARTIFACT_PACKAGE: packageFile,
           CMS_ASTRO_ARTIFACT_DIST: path.resolve("dist"),
+          CMS_ASTRO_PAGES_OUTPUT: path.join(requestRoot, "pages-" + stage),
         },
         process.argv[goFlag + 1],
       );
+    if (goFlag >= 0)
+      await command("pages-" + stage, process.execPath, [
+        "scripts/content/verify-pages-payload.mjs",
+        path.join(requestRoot, "pages-" + stage, "candidate.tar.gz"),
+        path.join(requestRoot, "pages-" + stage, "pages-evidence.json"),
+      ]);
     const marker = JSON.parse(
       await fs.readFile("dist/.well-known/homepage-content.json", "utf8"),
     );
@@ -470,7 +477,13 @@ try {
           "offline-build-and-browsing",
           "exact-build-marker",
           "exact-release-request",
-          ...(goFlag >= 0 ? ["independent-go-semantic-html"] : []),
+          ...(goFlag >= 0
+            ? [
+                "independent-go-semantic-html",
+                "go-pages-payload",
+                "independent-node-pages-inventory",
+              ]
+            : []),
           "invalid-pin-retains-dist",
           "en-id-desktop-mobile-light-dark-accessibility",
         ],

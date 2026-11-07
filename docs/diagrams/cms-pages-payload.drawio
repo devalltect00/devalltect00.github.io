@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" agent="Devalltect" version="29.0.0">
+  <diagram id="astro-pages-1" name="01 — Exact local Pages payload handoff">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Exact local Pages payload handoff" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="A trusted source ZIP pin and independent frozen content precede a complete deployment-format archive." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Trusted frozen inputs&#10;&#10;Approved public package + exact request&#10;Candidate ZIP + trusted retained hash&#10;No CMS settings / SQL / network&#10;No caller deployment destination" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Independent Go candidate check&#10;&#10;Exact compressed ZIP digest&#10;Complete path / CRC / byte bounds&#10;Derive expected EN / ID visitor facts&#10;No extraction or new Astro build" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Canonical in-memory USTAR&#10;&#10;Preserve all regular-file bytes&#10;Sorted names; implicit directories&#10;Mode 0644; UID / GID / time zero&#10;No links / PAX / special members" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Deterministic gzip + manifest&#10;&#10;Portable fixed metadata&#10;Exact compressed hash and length&#10;Every file name / size / SHA-256&#10;Retain original ZIP + content evidence" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Independent Node check&#10;&#10;One bounded gzip member + CRC&#10;Every USTAR header and file body&#10;Exact inventory / padding / ending&#10;No extraction / execution / fetching" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  New local output only&#10;&#10;CLI exclusively creates archive file&#10;Public JSON evidence on stdout&#10;Existing files never replaced&#10;Hosted deployment remains pending" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5o · 8 November 2026 · Local exact Pages payload · No new migration · Hosted deployment / completion pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-pages-2" name="02 — Complete byte and inventory chain">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Complete byte and inventory chain" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="All assets are covered by integrity checks; public hashes are not authentication or approval." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Original source identity&#10;&#10;Trusted expected whole ZIP SHA-256&#10;Match frozen exact release request&#10;Go derives public project / Profile&#10;Malformed / wrong source fails" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Preserve binary + empty files&#10;&#10;Images / fonts / CSS / JavaScript&#10;Exact content including zero bytes&#10;Every file appears once in manifest&#10;Empty directories omitted only" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Bounded wrappers&#10;&#10;8 MiB ZIP; 32 MiB expanded&#10;256 entries; ordinary USTAR subset&#10;Finite TAR / gzip / manifest sizes&#10;15-second local context checks" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Reject ambiguous archives&#10;&#10;Links / PAX / unsafe paths / aliases&#10;Mode / owner / time substitutions&#10;CRC / body / padding mismatch&#10;Multiple gzip members / extra tails" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Separate proof responsibilities&#10;&#10;Go: frozen visitor semantics + ZIP&#10;Node: compressed payload + all files&#10;Manifest must come from trusted Go&#10;No general malware certification" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Future deployment authority&#10;&#10;Public manifest is unsigned data&#10;Pin to retained current server proof&#10;Repeat Owner / source / target fences&#10;Separate protected provider mutation" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5o · 8 November 2026 · Local exact Pages payload · No new migration · Hosted deployment / completion pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeWidth=2;strokeColor=#247F91;" edge="1" parent="1" source="b5" target="b6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-pages-3" name="03 — Verification and remaining gates">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Verification and remaining gates" style="text;html=0;align=left;verticalAlign=middle;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Local handoff tests do not establish hosted Pages acceptance or destination completion." style="text;html=0;align=left;whiteSpace=wrap;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="01  Go archive + CLI tests&#10;&#10;Binary / empty / USTAR prefix bytes&#10;Stable output for reordered ZIPs&#10;Wrong pin / content / cancellation&#10;Exclusive output; safe failures" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="02  Independent Node tests&#10;&#10;Exact shape + lossless identity&#10;All assets / headers / CRC / tails&#10;Reject links / aliases / PAX&#10;Bound decompression before parsing" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="03  Genuine compiled fixtures&#10;&#10;Initial / updated / empty builds&#10;Independent + signed source modes&#10;Go payload then Node inventory check&#10;Sources stopped before build / browse" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="140" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="04  Honest limits&#10;&#10;Trusted local operator directories&#10;Unsigned manifest is not authority&#10;Pinned compressor determinism only&#10;No hosted acceptance or new device run" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="05  Upgrade and scope&#10;&#10;Migration 25 verified read-only&#10;No new schema / API / Flutter change&#10;No dependency / permission / secret&#10;Existing workflows remain unchanged" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="430" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="06  Remaining implementation&#10;&#10;Controlled artifact wrapping / upload&#10;Protected exact-byte deployment&#10;Independent deployed-output proof&#10;Atomic fenced Astro success receipt" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=20;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="405" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="M5o · 8 November 2026 · Local exact Pages payload · No new migration · Hosted deployment / completion pending" style="text;html=0;align=left;fontSize=14;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="665" width="1120" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

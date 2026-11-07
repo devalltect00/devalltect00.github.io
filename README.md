@@ -137,3 +137,5 @@ strict public request and support independent Go checks of generated pages. The
 optional manual candidate workflow retains a public artifact; it does not deploy.
 
 [Bounded candidate recovery](docs/cms-candidate-recovery.md) now documents explicit retirement and a separately confirmed fresh request within the unchanged three-admission limit. Deployment and destination completion remain pending.
+
+[Exact Pages payload preparation](docs/cms-pages-payload.md) now provides a local verified-byte archive handoff and independent complete-file checks. Hosted deployment/completion remain pending.

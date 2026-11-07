@@ -14,7 +14,23 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint fa81d01 with the private recovery boundary.
+Extend checkpoint 685a49e with complete Pages handoff verification.
+
+### 📚 Documentation
+
+#### Content
+
+- Document finite terminal failure, missing-artifact and expired-artifact evidence.
+- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
+- Record current authority, provider trust, permissions and deployment limitations.
+- Synchronize three editable recovery diagram pages and reviewed PNG previews.
+- Retain candidate/Pages workflows, authored content and compiled proof behavior.
+- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
+- Document the private CMS known-run checks and immutable metadata association.
+- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
+- Mirror the three-page draw.io diagram and reviewed previews.
+- Record local verification and the remaining destination completion gates.
+- Preserve homepage source, workflow permissions, authored content and dependencies.
 
 ### 🧪 Tests
 
@@ -25,22 +41,13 @@ Extend checkpoint fa81d01 with the private recovery boundary.
 - Retain standalone public CI without private Go or credential requirements.
 - Synchronize consumer guidance, security evidence and three-page editable diagrams.
 - Preserve workflow permissions, authored content, dependencies and publication gates.
-
-### 📚 Documentation
-
-#### Content
-
-- Document the private CMS known-run checks and immutable metadata association.
-- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
-- Mirror the three-page draw.io diagram and reviewed previews.
-- Record local verification and the remaining destination completion gates.
-- Preserve homepage source, workflow permissions, authored content and dependencies.
-- Document finite terminal failure, missing-artifact and expired-artifact evidence.
-- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
-- Record current authority, provider trust, permissions and deployment limitations.
-- Synchronize three editable recovery diagram pages and reviewed PNG previews.
-- Retain candidate/Pages workflows, authored content and compiled proof behavior.
-- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
+- Independently validate bounded gzip/USTAR bytes and the complete Go file inventory.
+- Reject links, aliases, metadata substitutions, changed assets and malformed endings.
+- Add six standalone adversarial Node tests without a private repository dependency.
+- Check Go payloads after every initial/update/empty real compiled fixture.
+- Synchronize public operations/security guidance and three editable diagram pages.
+- Preserve authored content, application dependencies and both hosted workflows.
+- Keep protected provider deployment and CMS completion as separate gates.
 
 ### ✨ Features
 

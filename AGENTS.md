@@ -82,3 +82,7 @@ The separate candidate workflow cannot deploy or finish a CMS job; keep its
 repository authority/input policy tests in scripts/repository/tests.
 
 M5n documents private bounded recovery in docs/cms-candidate-recovery.md. Do not turn missing output or a public marker into deployment/completion authority. Keep candidate workflow read-only and dist-only; no budget reset, rerun or cancellation is implied.
+
+## Exact Pages payload boundary
+
+M5o adds the local verifier in scripts/content/pages-payload.mjs; read docs/cms-pages-payload.md. No extraction or provider access is allowed there. Keep complete asset inventory and strict gzip/USTAR bounds, and never promote an unsigned public manifest into deployment authority.

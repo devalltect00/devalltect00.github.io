@@ -160,7 +160,8 @@ a {
   justify-content: center;
 }
 .site-nav a {
-  color: var(--text-secondary);
+  /* Sticky navigation must retain contrast over every underlying section. */
+  color: var(--text-primary);
   font-size: 0.88rem;
   font-weight: 650;
   position: relative;
@@ -918,4 +919,17 @@ a {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Approved text may be long; gateway cards stay readable without clipping localized names or technology labels. */
+.hero__content .eyebrow,
+.hero__description,
+.project-card h3,
+.project-card p,
+.tag-list li {
+  overflow-wrap: anywhere;
+}
+.contact__links,
+.site-footer__links {
+  flex-wrap: wrap;
 }

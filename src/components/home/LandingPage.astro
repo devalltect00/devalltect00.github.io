@@ -15,7 +15,7 @@ const { locale, copy } = Astro.props;
 ---
 
 <main>
-  <Hero copy={copy.hero} />
+  <Hero copy={copy.hero} locale={locale} />
   <Explore copy={copy.explore} />
   <Projects locale={locale} copy={copy.projects} />
   <Principles copy={copy.principles} />

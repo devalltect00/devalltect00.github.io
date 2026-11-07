@@ -65,3 +65,12 @@ base path. Pages must use the **GitHub Actions** source.
 
 Do not create commits, tags, releases, pushes, or provider metadata mutations
 without explicit approval. Run metadata synchronization in dry-run mode first.
+
+## CMS build boundary
+
+Read docs/cms-builds.md before changing CMS mode. src/core/cms owns public wire
+validation; src/server/cms owns Node-only preparation/integrity; src/data/homepage.ts
+owns one explicit process-environment build pin. Keep the cache out of dist/client
+code. Empty CMS content remains empty; only an absent selector enables authored
+mode. No public marker authorizes approval, deployment or job completion. Run
+pnpm test:cms after changes to projection/build output in addition to pnpm validate.

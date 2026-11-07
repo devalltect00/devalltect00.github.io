@@ -50,3 +50,7 @@ venv_other/
 # local tooling and generated artifacts
 .config/custy/backups/
 .config/custy/logs/
+
+# Approved public build inputs and local proof output are never source/deployment artifacts.
+.cms-cache/
+venv_*/

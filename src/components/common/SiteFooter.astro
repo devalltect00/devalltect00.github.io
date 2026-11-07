@@ -1,18 +1,22 @@
 ---
+import { homepageContent } from "../../data/homepage.ts";
+import type { SiteCopy } from "../../types/site";
 import Icon from "./Icon.astro";
 import { site } from "../../data/site";
 
 interface Props {
   message: string;
+  labels: SiteCopy["contact"]["labels"];
 }
-const { message } = Astro.props;
+const { message, labels } = Astro.props;
+const state = homepageContent();
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="shell site-footer__inner">
     <div>
-      <a class="wordmark wordmark--footer" href="/">
+      <a class="wordmark wordmark--footer" href="/" aria-label="Devalltect">
         <span class="wordmark__mark" aria-hidden="true">
           D
         </span>
@@ -22,33 +26,24 @@ const year = new Date().getFullYear();
     </div>
     <div class="site-footer__meta">
       <div class="site-footer__links">
-        <a
-          href={site.githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-        >
-          <Icon name="github" size={19} />
-        </a>
-        <a
-          href={site.gitlabUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitLab"
-        >
-          <Icon name="gitlab" size={19} />
-        </a>
-        <a
-          href={site.linkedInUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-        >
-          <Icon name="linkedin" size={19} />
-        </a>
+        {state.contacts
+          .filter((link) => link.kind !== "email")
+          .map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={labels[link.kind]}
+            >
+              <Icon name={link.icon} size={19} />
+            </a>
+          ))}
       </div>
       <p>
-        © {year} {site.author}
+        © {year}{" "}
+        {state.source === "authored"
+          ? site.author
+          : (state.profile?.displayName ?? site.name)}
       </p>
     </div>
   </div>

@@ -3,3 +3,6 @@ dist
 node_modules
 pnpm-lock.yaml
 docs/project_structure.md
+
+.cms-cache
+venv_*

@@ -10,9 +10,27 @@ export interface Destination {
   external: boolean;
 }
 
+/** Public contacts use only local icon kinds and explicitly approved destinations. */
+export interface ContactLink {
+  kind:
+    | "email"
+    | "website"
+    | "github"
+    | "gitlab"
+    | "linkedin"
+    | "documentation"
+    | "telegram"
+    | "youtube"
+    | "devto";
+  href: string;
+  icon: "mail" | "github" | "gitlab" | "linkedin" | "arrow";
+}
 export interface Project {
   id: string;
   name: string;
+  localizedName?: Record<Locale, string>;
+  status?: "maintained" | "in-progress" | "completed" | "archived" | "planned";
+  website?: string;
   description: Record<Locale, string>;
   category: string;
   version: string;
@@ -57,6 +75,10 @@ export interface SiteCopy {
     description: string;
     documentation: string;
     repository: string;
+    website: string;
+    empty: string;
+    technologies: string;
+    statuses: Record<NonNullable<Project["status"]>, string>;
   };
   principles: {
     eyebrow: string;
@@ -69,6 +91,8 @@ export interface SiteCopy {
     title: string;
     description: string;
     action: string;
+    noContacts: string;
+    labels: Record<ContactLink["kind"], string>;
   };
   footer: string;
 }

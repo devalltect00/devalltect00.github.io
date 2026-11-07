@@ -69,3 +69,15 @@ pnpm validate
 
 No commit, tag, release, deployment, push, or remote metadata mutation was
 performed as part of this preparation.
+
+## 2026-11-07 — Pinned CMS project/Profile build preview
+
+- Added explicit anonymous public preparation and immutable local release pins.
+- Reused the concise bilingual gateway for selected Astro projects and public Profile.
+- Preserved authoritative empty states, explicit optional links and distinct tech labels.
+- Added real source-offline builds, Go normalization, browser/theme/Axe checks and CI proof.
+- Remediated existing dependency advisories and sticky navigation contrast.
+- Added native editable diagrams and independent security/operational guides.
+
+This is a development checkpoint, not a release or hosted CMS job receipt. Existing
+Pages deployment remains authored pending separately reviewed dispatch integration.

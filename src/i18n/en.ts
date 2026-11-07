@@ -54,6 +54,17 @@ export const en: SiteCopy = {
     },
   },
   projects: {
+    website: "Visit project",
+    empty: "No projects have been published for this homepage yet.",
+    technologies: "technologies",
+    statuses: {
+      maintained: "Maintained",
+      "in-progress": "In progress",
+      completed: "Completed",
+      archived: "Archived",
+      planned: "Planned",
+    },
+
     eyebrow: "02 / The ecosystem",
     title: "Small tools, connected by a larger workflow.",
     description:
@@ -88,6 +99,18 @@ export const en: SiteCopy = {
     ],
   },
   contact: {
+    noContacts: "Public contact links have not been added.",
+    labels: {
+      email: "Email",
+      website: "Website",
+      github: "GitHub",
+      gitlab: "GitLab",
+      linkedin: "LinkedIn",
+      documentation: "Documentation",
+      telegram: "Telegram",
+      youtube: "YouTube",
+      devto: "DEV Community",
+    },
     eyebrow: "04 / Continue the journey",
     title: "There is more behind every project.",
     description:

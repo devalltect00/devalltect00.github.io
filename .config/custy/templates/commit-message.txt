@@ -1,34 +1,26 @@
-feat(homepage): publish the Devalltect ecosystem gateway v1.0.0
+feat(content): preview approved CMS content in pinned Astro builds
 
-Establish the first stable Devalltect Homepage release as a focused bilingual
-gateway to the portfolio, documentation portal, public repositories, and
-maintained developer tools.
+Extend homepage checkpoint 514a8b4 with an explicit static CMS build consumer.
 
-- build a static Astro 7 and strict TypeScript application for root GitHub
-  Pages hosting;
-- provide English and Indonesian routes from centralized, typed project and
-  translation data;
-- introduce reusable navigation, hero, gateway, project, principle, contact,
-  theme, and footer components;
-- preserve responsive light and dark themes, keyboard navigation, visible
-  focus, semantic structure, and reduced-motion behavior;
-- add validated public environment overrides for the portfolio and
-  documentation entrypoints with safe canonical fallbacks;
-- configure pnpm, ESLint, Prettier, Vitest, pre-commit, repository metadata
-  synchronization, and project-specific VS Code tooling;
-- add GitHub CI and artifact-based Astro Pages deployment while documenting
-  the required GitHub Actions Pages source;
-- document setup, architecture decisions, maintenance, security, badges, and
-  deployment expectations;
-- validate formatting, lint rules, Astro diagnostics, tests, and the static
-  production build before release.
+- Prepare anonymous approved public packages into an immutable ignored local cache.
+- Recheck complete Go-compatible identity and hashes before pinned static builds.
+- Render enabled Astro projects and concise Profile content in English and Indonesian.
+- Preserve explicit optional links, distinct technology labels and authoritative empty states.
+- Keep credentials, raw cache, nonrendered records and CMS requests out of browser output.
+- Add adversarial parsing, HTTP and filesystem tests plus real offline browser proofs.
+- Verify initial, updated and empty builds against public HTTP and signed Worker fixtures.
+- Fix navigation contrast and the mobile footer link name without changing the design system.
+- Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
+- Document operations, security evidence, read-only CI proof and native editable diagrams.
+- Keep hosted dispatch and durable Astro destination receipts as separate future work.
 
-Tag: v1.0.0
-Previous release: none
-Strategy: Semantic Versioning
+Tag: none
+Previous checkpoint: 514a8b4
+Phase: Astro approved project and Profile build preview
 
 Tags:
-- Type: #feature #release #documentation
-- Project: #devalltect-homepage #developer-portal
-- Platform: #astro #typescript #pnpm #github-pages
-- Quality: #i18n #accessibility #responsive-ui #static-site
+- Type: #feature, #security, #testing, #documentation
+- Platform: #astro, #typescript, #github-pages
+- Content: #projects, #profile, #localization
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

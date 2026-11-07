@@ -7,6 +7,7 @@ export default [
   {
     ignores: [
       ".astro/**",
+      ".cms-cache/**",
       "dist/**",
       "node_modules/**",
       "docs/project_structure.md",

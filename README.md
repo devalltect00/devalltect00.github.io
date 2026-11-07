@@ -123,3 +123,11 @@ pnpm repository:metadata:sync --provider github
 Released under the [MIT License](LICENSE).
 
 _Pause · Think · Act_
+
+## Approved CMS build preview
+
+The optional [pinned CMS build guide](docs/cms-builds.md) explains anonymous public
+preparation, immutable release selection and static EN/ID output. Existing authored
+builds and Pages deployment remain the default. This checkpoint does not dispatch
+or finish a CMS destination job. See [security evidence](docs/security/cms-build-verification.md)
+and [editable diagrams](docs/diagrams/cms-builds.drawio).

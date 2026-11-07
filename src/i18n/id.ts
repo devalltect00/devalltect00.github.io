@@ -52,6 +52,17 @@ export const id: SiteCopy = {
     },
   },
   projects: {
+    website: "Kunjungi proyek",
+    empty: "Belum ada proyek yang dipublikasikan untuk beranda ini.",
+    technologies: "teknologi",
+    statuses: {
+      maintained: "Dipelihara",
+      "in-progress": "Sedang dikerjakan",
+      completed: "Selesai",
+      archived: "Diarsipkan",
+      planned: "Direncanakan",
+    },
+
     eyebrow: "02 / Ekosistem",
     title: "Alat-alat kecil yang terhubung dalam alur yang lebih besar.",
     description:
@@ -86,6 +97,18 @@ export const id: SiteCopy = {
     ],
   },
   contact: {
+    noContacts: "Tautan kontak publik belum ditambahkan.",
+    labels: {
+      email: "Email",
+      website: "Situs web",
+      github: "GitHub",
+      gitlab: "GitLab",
+      linkedin: "LinkedIn",
+      documentation: "Dokumentasi",
+      telegram: "Telegram",
+      youtube: "YouTube",
+      devto: "DEV Community",
+    },
     eyebrow: "04 / Lanjutkan perjalanan",
     title: "Ada cerita lebih jauh di balik setiap proyek.",
     description:

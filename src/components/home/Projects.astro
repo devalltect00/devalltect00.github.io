@@ -1,6 +1,6 @@
 ---
 import Icon from "../common/Icon.astro";
-import { projects } from "../../data/projects";
+import { homepageContent } from "../../data/homepage.ts";
 import type { Locale, SiteCopy } from "../../types/site";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { locale, copy } = Astro.props;
+const { projects, source } = homepageContent();
 ---
 
 <section class="section shell" id="projects">
@@ -17,35 +18,62 @@ const { locale, copy } = Astro.props;
     <h2>{copy.title}</h2>
     <p>{copy.description}</p>
   </div>
+  {projects.length === 0 ? <p class="projects-empty">{copy.empty}</p> : null}
   <div class="project-grid">
     {projects.map((project, index) => (
       <article
+        data-cms-project={
+          source === "cms-build-preview" ? project.id : undefined
+        }
         class={`project-card project-card--${project.accent} reveal`}
         style={`--delay: ${index * 65}ms`}
       >
         <div class="project-card__topline">
-          <span>{project.category}</span>
-          <span>{project.version}</span>
+          <span>
+            {project.status ? copy.statuses[project.status] : project.category}
+          </span>
+          {project.version ? <span>{project.version}</span> : null}
         </div>
         <div class="project-card__symbol" aria-hidden="true">
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
-        <h3>{project.name}</h3>
+        <h3>{project.localizedName?.[locale] ?? project.name}</h3>
         <p>{project.description[locale]}</p>
-        <ul class="tag-list" aria-label={`${project.name} technologies`}>
+        <ul
+          class="tag-list"
+          aria-label={`${project.localizedName?.[locale] ?? project.name} ${copy.technologies}`}
+        >
           {project.technologies.map((technology) => (
             <li>{technology}</li>
           ))}
         </ul>
         <div class="project-card__links">
-          <a href={project.documentation} target="_blank" rel="noreferrer">
-            {copy.documentation}
-            <Icon name="arrow" size={15} />
-          </a>
-          <a href={project.repository} target="_blank" rel="noreferrer">
-            {copy.repository}
-            <Icon name="arrow" size={15} />
-          </a>
+          {project.documentation ? (
+            <a
+              href={project.documentation}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.documentation}
+              <Icon name="arrow" size={15} />
+            </a>
+          ) : null}
+          {project.repository ? (
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.repository}
+              <Icon name="arrow" size={15} />
+            </a>
+          ) : null}
+          {project.website ? (
+            <a href={project.website} target="_blank" rel="noopener noreferrer">
+              {copy.website}
+              <Icon name="arrow" size={15} />
+            </a>
+          ) : null}
         </div>
       </article>
     ))}

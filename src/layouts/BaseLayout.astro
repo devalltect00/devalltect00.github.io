@@ -2,6 +2,7 @@
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/space-grotesk";
 import "../styles/global.css";
+import { homepageContent } from "../data/homepage.ts";
 import Navigation from "../components/navigation/Navigation.astro";
 import SiteFooter from "../components/common/SiteFooter.astro";
 import { site } from "../data/site";
@@ -16,7 +17,8 @@ const title =
   locale === "en"
     ? "Devalltect — Ideas become useful software"
     : "Devalltect — Ide menjadi perangkat lunak berguna";
-const description = copy.hero.description;
+const state = homepageContent();
+const description = state.profile?.summary[locale] ?? copy.hero.description;
 const canonicalPath = locale === "en" ? "/" : "/id/";
 const canonicalUrl = new URL(canonicalPath, site.url);
 ---
@@ -27,6 +29,12 @@ const canonicalUrl = new URL(canonicalPath, site.url);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    {state.snapshot ? (
+      <meta
+        name="homepage-content-release"
+        content={`${state.snapshot.releaseID}:${state.snapshot.sequence}:${state.snapshot.snapshotDigest}:${state.snapshot.projectionDigest}`}
+      />
+    ) : null}
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fafaf8" />
     <meta property="og:type" content="website" />
@@ -62,7 +70,7 @@ const canonicalUrl = new URL(canonicalPath, site.url);
     <div id="main-content">
       <slot />
     </div>
-    <SiteFooter message={copy.footer} />
+    <SiteFooter message={copy.footer} labels={copy.contact.labels} />
     <script>
       function setupRevealMotion() {
         const nodes = document.querySelectorAll<HTMLElement>(

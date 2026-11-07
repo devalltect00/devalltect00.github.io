@@ -31,3 +31,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: ✅ Validate homepage
         run: pnpm validate
+
+      - name: Install browser for public CMS fixture proof
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Verify pinned public CMS builds offline
+        run: pnpm test:cms

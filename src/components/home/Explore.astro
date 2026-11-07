@@ -1,4 +1,5 @@
 ---
+import { homepageContent } from "../../data/homepage.ts";
 import Icon from "../common/Icon.astro";
 import { site } from "../../data/site";
 import type { Destination, SiteCopy } from "../../types/site";
@@ -8,18 +9,23 @@ interface Props {
 }
 
 const { copy } = Astro.props;
+const state = homepageContent();
+const publicLink = (kind: string) =>
+  state.contacts.find((c) => c.kind === kind)?.href;
 const sources = [
   { id: "portfolio", href: site.portfolioUrl, icon: "portfolio" },
   { id: "docs", href: site.documentationUrl, icon: "docs" },
-  { id: "github", href: site.githubUrl, icon: "github" },
-  { id: "gitlab", href: site.gitlabUrl, icon: "gitlab" },
+  { id: "github", href: publicLink("github"), icon: "github" },
+  { id: "gitlab", href: publicLink("gitlab"), icon: "gitlab" },
 ] as const;
 
-const destinations: Destination[] = sources.map((source) => ({
-  ...source,
-  ...copy.labels[source.id],
-  external: true,
-}));
+const destinations: Destination[] = sources
+  .filter((s): s is typeof s & { href: string } => typeof s.href === "string")
+  .map((source) => ({
+    ...source,
+    ...copy.labels[source.id],
+    external: true,
+  }));
 ---
 
 <section class="section section--tinted" id="explore">

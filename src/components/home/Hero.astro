@@ -1,23 +1,29 @@
 ---
+import { homepageContent } from "../../data/homepage.ts";
+import type { Locale } from "../../types/site";
 import Icon from "../common/Icon.astro";
 import { site } from "../../data/site";
 import type { SiteCopy } from "../../types/site";
 
 interface Props {
   copy: SiteCopy["hero"];
+  locale: Locale;
 }
 
-const { copy } = Astro.props;
+const { copy, locale } = Astro.props;
+const state = homepageContent();
 ---
 
 <section class="hero shell" id="home">
   <div class="hero__content reveal">
-    <p class="eyebrow">{copy.eyebrow}</p>
+    <p class="eyebrow">{state.profile?.displayName ?? copy.eyebrow}</p>
     <h1>
       <span>{copy.titleLead}</span>
       <span class="gradient-text">{copy.titleAccent}</span>
     </h1>
-    <p class="hero__description">{copy.description}</p>
+    <p class="hero__description">
+      {state.profile?.summary[locale] ?? copy.description}
+    </p>
     <div class="hero__actions">
       <a
         class="button button--primary"

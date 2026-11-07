@@ -14,7 +14,17 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint 5ef4fb9 with synchronized consumer documentation.
+Extend checkpoint c01a528 with candidate content proof.
+
+### 📚 Documentation
+
+#### Content
+
+- Document the private CMS known-run checks and immutable metadata association.
+- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
+- Mirror the three-page draw.io diagram and reviewed previews.
+- Record local verification and the remaining destination completion gates.
+- Preserve homepage source, workflow permissions, authored content and dependencies.
 
 ### ✨ Features
 
@@ -50,19 +60,19 @@ Extend checkpoint 5ef4fb9 with synchronized consumer documentation.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
 
-### 📚 Documentation
+### 🧪 Tests
 
 #### Content
 
-- Document the private CMS known-run checks and immutable metadata association.
-- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
-- Mirror the three-page draw.io diagram and reviewed previews.
-- Record local verification and the remaining destination completion gates.
-- Preserve homepage source, workflow permissions, authored content and dependencies.
+- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
+- Exercise authenticated metadata and token-free download with synthetic provider authority.
+- Retain standalone public CI without private Go or credential requirements.
+- Synchronize consumer guidance, security evidence and three-page editable diagrams.
+- Preserve workflow permissions, authored content, dependencies and publication gates.
 
 **Tags**
 
-feature • docs • content
+feature • docs • tests • content
 
 ## v1.0.0 (2026-09-26)
 

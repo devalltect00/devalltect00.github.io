@@ -34,3 +34,7 @@ Next are bounded artifact retrieval/provenance, exact Go content proof,
 deployed-output verification and an atomic Astro receipt. Publication remains
 pending. See [security evidence](security/cms-run-observations-verification.md)
 and [three-page diagram](diagrams/cms-run-observations.drawio).
+
+## Follow-up: candidate ZIP proof (M5m)
+
+[Archive verification](cms-artifact-verification.md) now documents the private Owner content proof and optional compiled ZIP test hook. Metadata-only endpoints above remain separate. Workflow/deployment/completion authority is unchanged.

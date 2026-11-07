@@ -1,20 +1,20 @@
-docs(content): explain Astro run observation and pending proof gates
+test(content): verify compiled Astro archives through the Go artifact boundary
 
-Extend checkpoint 5ef4fb9 with synchronized consumer documentation.
+Extend checkpoint c01a528 with candidate content proof.
 
-- Document the private CMS known-run checks and immutable metadata association.
-- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
-- Mirror the three-page draw.io diagram and reviewed previews.
-- Record local verification and the remaining destination completion gates.
-- Preserve homepage source, workflow permissions, authored content and dependencies.
+- Add an optional private Go hook for real initial/update/empty compiled ZIPs.
+- Exercise authenticated metadata and token-free download with synthetic provider authority.
+- Retain standalone public CI without private Go or credential requirements.
+- Synchronize consumer guidance, security evidence and three-page editable diagrams.
+- Preserve workflow permissions, authored content, dependencies and publication gates.
 
 Tag: none
-Previous checkpoint: 5ef4fb9
-Phase: Owner Astro run observation and metadata reconciliation
+Previous checkpoint: c01a528
+Phase: Exact Astro artifact retrieval and frozen-content proof
 
 Tags:
-- Type: #documentation, #security, #testing
-- Platform: #astro, #github-actions
+- Type: #testing, #security, #documentation
+- Platform: #astro, #typescript, #golang
 - Content: #projects, #profile, #publishing
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

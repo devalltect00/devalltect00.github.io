@@ -27,3 +27,7 @@ or durable CMS job completion.
 ## Astro run observation (M5l)
 
 [cms-run-observations.drawio](cms-run-observations.drawio) contains three native editable pages: Owner/provider read flow, immutable revision rules, and proof limits/remaining gates. Previews: [01](previews/cms-run-observations-01.png), [02](previews/cms-run-observations-02.png), [03](previews/cms-run-observations-03.png). Run metadata leaves publication pending.
+
+## Exact candidate ZIP proof (M5m)
+
+[cms-artifact-verification.drawio](cms-artifact-verification.drawio) has three editable pages: credential-separated retrieval, in-memory ZIP/frozen content, and durable proof/remaining gates. Previews: [01](previews/cms-artifact-verification-01.png), [02](previews/cms-artifact-verification-02.png), [03](previews/cms-artifact-verification-03.png). Deployment and publication remain pending.

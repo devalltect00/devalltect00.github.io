@@ -218,6 +218,23 @@ try {
         {},
         process.argv[goFlag + 1],
       );
+    if (goFlag >= 0)
+      await command(
+        "artifact-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "test",
+          "-count=1",
+          "-run",
+          "^TestCompiledAstroArtifact$",
+          "./internal/platform/astrogithub",
+        ],
+        {
+          CMS_ASTRO_ARTIFACT_PACKAGE: packageFile,
+          CMS_ASTRO_ARTIFACT_DIST: path.resolve("dist"),
+        },
+        process.argv[goFlag + 1],
+      );
     const marker = JSON.parse(
       await fs.readFile("dist/.well-known/homepage-content.json", "utf8"),
     );

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { copy } = Astro.props;
-const { contacts } = homepageContent();
+const { contacts, source } = homepageContent();
 ---
 
 <section class="section contact shell reveal" id="contact">
@@ -31,6 +31,9 @@ const { contacts } = homepageContent();
     <div class="contact__links">
       {contacts.map((link) => (
         <a
+          data-astro-contact={
+            source === "cms-build-preview" ? link.kind : undefined
+          }
           href={link.href}
           target={link.kind === "email" ? undefined : "_blank"}
           rel={link.kind === "email" ? undefined : "noopener noreferrer"}
@@ -39,7 +42,15 @@ const { contacts } = homepageContent();
           <Icon name={link.icon} />
         </a>
       ))}
-      {contacts.length === 0 ? <p>{copy.noContacts}</p> : null}
+      {contacts.length === 0 ? (
+        <p
+          data-astro-empty={
+            source === "cms-build-preview" ? "contacts" : undefined
+          }
+        >
+          {copy.noContacts}
+        </p>
+      ) : null}
     </div>
   </div>
 </section>

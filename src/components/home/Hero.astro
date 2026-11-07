@@ -16,12 +16,20 @@ const state = homepageContent();
 
 <section class="hero shell" id="home">
   <div class="hero__content reveal">
-    <p class="eyebrow">{state.profile?.displayName ?? copy.eyebrow}</p>
+    <p
+      class="eyebrow"
+      data-astro-field={state.profile ? "profile-name" : undefined}
+    >
+      {state.profile?.displayName ?? copy.eyebrow}
+    </p>
     <h1>
       <span>{copy.titleLead}</span>
       <span class="gradient-text">{copy.titleAccent}</span>
     </h1>
-    <p class="hero__description">
+    <p
+      class="hero__description"
+      data-astro-field={state.profile ? "profile-summary" : undefined}
+    >
       {state.profile?.summary[locale] ?? copy.description}
     </p>
     <div class="hero__actions">

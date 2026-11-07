@@ -1,0 +1,60 @@
+name: Build exact CMS candidate (no deployment)
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: Exact approved public release UUID
+        required: true
+        type: string
+      sequence:
+        description: Exact public decimal sequence
+        required: true
+        type: string
+      snapshot_digest:
+        description: Exact approved snapshot SHA-256
+        required: true
+        type: string
+      projection_digest:
+        description: Go-planned Astro projection SHA-256
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: astro-cms-build-candidate
+  cancel-in-progress: false
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # The operator fixes this root HTTPS origin in repository variables; workflow inputs cannot choose a fetch destination.
+      HOMEPAGE_CMS_PUBLIC_ORIGIN: ${{ vars.HOMEPAGE_CMS_PUBLIC_ORIGIN }}
+      HOMEPAGE_CMS_RELEASE: ${{ inputs.release_id }}
+      HOMEPAGE_EXPECTED_SEQUENCE: ${{ inputs.sequence }}
+      HOMEPAGE_EXPECTED_SNAPSHOT_DIGEST: ${{ inputs.snapshot_digest }}
+      HOMEPAGE_EXPECTED_PROJECTION_DIGEST: ${{ inputs.projection_digest }}
+      HOMEPAGE_CMS_REQUEST: .cms-cache/build-request.json
+      PUBLIC_PORTFOLIO_URL: ${{ vars.PUBLIC_PORTFOLIO_URL }}
+      PUBLIC_DOCUMENTATION_URL: ${{ vars.PUBLIC_DOCUMENTATION_URL }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - name: Validate exact public request
+        run: node scripts/content/create-build-request.mjs
+      - name: Prepare only the requested release
+        run: pnpm content:cms:prepare --origin "$HOMEPAGE_CMS_PUBLIC_ORIGIN" --request "$HOMEPAGE_CMS_REQUEST"
+      - name: Build candidate (does not deploy Pages)
+        run: pnpm build
+      - name: Retain public candidate for one day
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: astro-cms-candidate
+          path: dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1

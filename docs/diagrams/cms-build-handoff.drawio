@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" agent="Devalltect" version="29.0.0">
+  <diagram id="astro-handoff-1" name="01 — Exact public build intent">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Exact public build intent" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=28;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1080" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="M5j • Exact build handoff implementation • 7 November 2026" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="60" y="83" width="1080" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b0" value="Frozen public package&#10;&#10;Existing anonymous approved data&#10;No CMS settings or live database&#10;Go validates complete frozen schema" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#e0f2fe;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="Independent Go plan&#10;&#10;Select enabled Astro projects + Profile&#10;Exact localized facts and optional links&#10;Compute the same projection digest" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#ede9fe;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="Public exact request&#10;&#10;UUID + decimal int64 sequence&#10;Snapshot and projection SHA-256&#10;No token, URL or approval authority" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#fef3c7;" vertex="1" parent="1">
+          <mxGeometry x="820" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="Pinned static build&#10;&#10;Request checked before cache writes&#10;Repeat identity before replacing dist&#10;Both locales from the same release" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#ede9fe;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="Read-only Go verification&#10;&#10;Fixed EN/ID HTML + public marker&#10;Independent facts, order and links&#10;Public byte hashes; no SQL or network" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#dcfce7;" vertex="1" parent="1">
+          <mxGeometry x="820" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="Optional manual candidate&#10;&#10;Operator-fixed root HTTPS source&#10;Strict environment input, pinned actions&#10;One-day artifact; no Pages permission" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#f1f5f9;" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b0" target="b1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970.0" y="320" />
+              <mxPoint x="590.0" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b5" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="PUBLIC REQUESTS ARE DATA — no Owner credential, deployment permission or destination success receipt." style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=17;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="60" y="570" width="1060" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-handoff-2" name="02 — Independent visitor-output verification">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Independent visitor-output verification" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=28;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1080" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="M5j • Exact build handoff implementation • 7 November 2026" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="60" y="83" width="1080" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b0" value="1. Decode exact inputs&#10;&#10;Bounded regular public files&#10;Duplicate / unknown JSON rejected&#10;Lossless identity and frozen digest" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#e0f2fe;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="2. Parse real HTML&#10;&#10;HTML5 nodes, not string coincidence&#10;Reject duplicate raw attributes first&#10;Bound tokens, bytes, nodes and depth" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#fef3c7;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="3. Check visitor facts&#10;&#10;Exact project IDs / order / locales&#10;Literal text + explicit link destinations&#10;Tech labels, status and optional absence" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#ede9fe;" vertex="1" parent="1">
+          <mxGeometry x="820" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="4. Check Profile and empty&#10;&#10;Real name / focus / contact anchors&#10;Removed content remains absent&#10;No old email or authored fallback" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#ede9fe;" vertex="1" parent="1">
+          <mxGeometry x="820" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="5. Produce local evidence&#10;&#10;Exact request + page/project counts&#10;EN/ID/marker byte SHA-256&#10;Does not authenticate deployment" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#dcfce7;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="6. Future authenticated delivery&#10;&#10;Owner + active-source + target fence&#10;Provider ref/run/deployment identity&#10;Durable attempts and atomic receipt" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#f1f5f9;" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b0" target="b1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="The source is stopped before compiled builds/browser checks. Only fixed local files are inspected; links are never fetched." style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=17;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="60" y="570" width="1060" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="astro-handoff-3" name="03 — Candidate authority and remaining gates">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Candidate authority and remaining gates" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=28;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1080" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="M5j • Exact build handoff implementation • 7 November 2026" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="60" y="83" width="1080" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b0" value="Local checks delivered&#10;&#10;Exact intent before preparation/build&#10;Go frozen plan + actual semantic HTML&#10;Public and signed-source compiled proof" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#dcfce7;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="Candidate workflow limits&#10;&#10;Contents-read repository authority&#10;Ten-minute job; one-day dist artifact&#10;No Pages/OIDC/CMS callback credentials" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#f1f5f9;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="Adversarial verification&#10;&#10;Stale input, scripts, hidden text, links&#10;Order, missing/extra rows and attributes&#10;Path/file limits and safe diagnostics" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#e0f2fe;" vertex="1" parent="1">
+          <mxGeometry x="820" y="130" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="Independent evidence scope&#10;&#10;Three fixed files and known templates&#10;Not arbitrary CSS or all asset bytes&#10;No continuous / all-replica certification" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#dcfce7;" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="Public report is not authority&#10;&#10;Hashes can detect changed bytes&#10;They do not authenticate approval&#10;No CMS job completion path added" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#fef3c7;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="Remaining rollout work&#10;&#10;Owner-authenticated dispatch service&#10;Run/target/lease and deployment proof&#10;Recovery + durable success/audit" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=middle;spacing=16;fontSize=16;fontFamily=Helvetica;fontColor=#0f172a;strokeColor=#64748b;strokeWidth=1.5;fillColor=#fee2e2;" vertex="1" parent="1">
+          <mxGeometry x="820" y="360" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b0" target="b4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210.0" y="320" />
+              <mxPoint x="590.0" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b2" target="b4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970.0" y="320" />
+              <mxPoint x="590.0" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b3" target="b4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#475569;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b4" target="b5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="LOCAL IMPLEMENTATION — no hosted workflow run or production deployment. Astro jobs remain pending." style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Helvetica;fontSize=17;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="60" y="570" width="1060" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -15,6 +15,7 @@ const root = process.cwd(),
   workerFlag = process.argv.indexOf("--worker"),
   goFlag = process.argv.indexOf("--go");
 await fs.mkdir(evidence, { recursive: true });
+const requestRoot = await fs.mkdtemp(path.join(evidence, "requests-"));
 /** Child output is retained locally; safe failures print only the stage label, never credentials or upstream bodies. */
 async function command(label, executable, args, env = {}, cwd = root) {
   const filename = path.join(evidence, label + ".log"),
@@ -103,7 +104,13 @@ try {
         ).arrayBuffer(),
       ),
       snapshot = inspectSnapshot(raw);
-    packages.push({ stage, snapshot });
+    const requestFile = path.join(requestRoot, stage + ".json");
+    const packageFile = path.resolve(
+      ".cms-cache/releases",
+      snapshot.releaseID,
+      "package.json",
+    );
+    packages.push({ stage, snapshot, requestFile, packageFile });
     await command("prepare-" + stage, process.execPath, [
       "scripts/content/prepare-cms.mjs",
       "--origin",
@@ -131,6 +138,46 @@ try {
         process.argv[goFlag + 1],
       );
     }
+    if (goFlag >= 0) {
+      await command(
+        "request-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "run",
+          "./cmd/cms",
+          "astro-build",
+          "request",
+          "--package",
+          packageFile,
+          "--out",
+          requestFile,
+        ],
+        {},
+        process.argv[goFlag + 1],
+      );
+    } else {
+      await fs.writeFile(
+        requestFile,
+        JSON.stringify({
+          schema_version: 1,
+          scope: "astro-project-profile-build-v1",
+          release_id: snapshot.releaseID,
+          sequence: snapshot.sequence,
+          snapshot_digest: snapshot.snapshotDigest,
+          projection_digest: snapshot.projectionDigest,
+        }),
+        { flag: "wx" },
+      );
+    }
+    // Preparation itself must enforce the intent before changing a retained cache.
+    await command("prepare-intent-" + stage, process.execPath, [
+      "scripts/content/prepare-cms.mjs",
+      "--origin",
+      origin,
+      "--allow-loopback",
+      "--request",
+      requestFile,
+    ]);
   }
   if (worker) {
     worker.stdin.write("stop\n");
@@ -142,13 +189,35 @@ try {
     sourceServer = undefined;
   }
   // All builds and browser reads below happen after the source has stopped.
-  for (const { stage, snapshot } of packages) {
+  for (const { stage, snapshot, requestFile, packageFile } of packages) {
     await command(
       "build-" + stage,
       process.execPath,
       ["scripts/content/build.mjs"],
-      { HOMEPAGE_CMS_RELEASE: snapshot.releaseID },
+      {
+        HOMEPAGE_CMS_RELEASE: snapshot.releaseID,
+        HOMEPAGE_CMS_REQUEST: requestFile,
+      },
     );
+    if (goFlag >= 0)
+      await command(
+        "verify-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "run",
+          "./cmd/cms",
+          "astro-build",
+          "verify",
+          "--package",
+          packageFile,
+          "--dist",
+          path.resolve("dist"),
+          "--request",
+          requestFile,
+        ],
+        {},
+        process.argv[goFlag + 1],
+      );
     const marker = JSON.parse(
       await fs.readFile("dist/.well-known/homepage-content.json", "utf8"),
     );
@@ -350,6 +419,24 @@ try {
     0,
   );
   assert.deepEqual(await fs.readFile("dist/index.html"), before);
+  const staleRequest = path.join(requestRoot, "stale.json");
+  const stale = JSON.parse(await fs.readFile(packages[0].requestFile, "utf8"));
+  stale.projection_digest = "0".repeat(64);
+  await fs.writeFile(staleRequest, JSON.stringify(stale));
+  const rejected = spawn(process.execPath, ["scripts/content/build.mjs"], {
+    env: {
+      ...process.env,
+      HOMEPAGE_CMS_RELEASE: packages[0].snapshot.releaseID,
+      HOMEPAGE_CMS_REQUEST: staleRequest,
+    },
+    stdio: "ignore",
+    windowsHide: true,
+  });
+  assert.notEqual(
+    await new Promise((resolve) => rejected.once("close", resolve)),
+    0,
+  );
+  assert.deepEqual(await fs.readFile("dist/index.html"), before);
   assert.ok(requests.every((name) => name === "/public/v1/content/en"));
   await fs.writeFile(
     path.join(evidence, "result.json"),
@@ -365,6 +452,8 @@ try {
           "empty-no-authored-fallback",
           "offline-build-and-browsing",
           "exact-build-marker",
+          "exact-release-request",
+          ...(goFlag >= 0 ? ["independent-go-semantic-html"] : []),
           "invalid-pin-retains-dist",
           "en-id-desktop-mobile-light-dark-accessibility",
         ],

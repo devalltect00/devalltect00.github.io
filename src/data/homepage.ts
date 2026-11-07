@@ -1,6 +1,8 @@
 /** Astro frontmatter reads one pinned build snapshot; browsers never contact the CMS or import server adapters. */
 import { projects } from "./projects.ts";
 import { site } from "./site.ts";
+import { readBuildRequest, assertBuildRequest } from "../server/cms/request.ts";
+import { CmsError } from "../server/cms/snapshot.ts";
 import { readPrepared, selectRelease } from "../server/cms/cache.ts";
 import type { GatewaySnapshot } from "../server/cms/snapshot.ts";
 import type { ContactLink, Project } from "../types/site.ts";
@@ -16,8 +18,12 @@ let memo: HomepageContent | undefined;
 export function homepageContent(): HomepageContent {
   if (memo) return memo;
   const id = selectRelease(process.env.HOMEPAGE_CMS_RELEASE);
+  const requestFile = process.env.HOMEPAGE_CMS_REQUEST;
+  if (requestFile !== undefined && !id) throw new CmsError();
   if (id) {
     const snapshot = readPrepared(process.cwd(), id);
+    if (requestFile !== undefined)
+      assertBuildRequest(readBuildRequest(requestFile), snapshot);
     memo = {
       source: "cms-build-preview",
       projects: snapshot.projects,

@@ -74,3 +74,9 @@ owns one explicit process-environment build pin. Keep the cache out of dist/clie
 code. Empty CMS content remains empty; only an absent selector enables authored
 mode. No public marker authorizes approval, deployment or job completion. Run
 pnpm test:cms after changes to projection/build output in addition to pnpm validate.
+
+Exact automation must pass HOMEPAGE_CMS_REQUEST along with the immutable release
+pin. Read docs/cms-build-handoff.md before changing semantic data attributes or
+candidate permissions. Do not replace visible fields with hidden proof payloads.
+The separate candidate workflow cannot deploy or finish a CMS job; keep its
+repository authority/input policy tests in scripts/repository/tests.

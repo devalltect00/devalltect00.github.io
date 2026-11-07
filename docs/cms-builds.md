@@ -140,3 +140,9 @@ Pages deployment remains authored until a separately reviewed dispatch/deploymen
 workflow explicitly prepares and pins a release. No credentials are required here.
 See [verification and limits](security/cms-build-verification.md) and the native
 [three-page diagram](diagrams/cms-builds.drawio).
+
+## Exact build handoff
+
+[The exact-request guide](cms-build-handoff.md) adds optional intent preflight and
+independent Go checks of visible output. Its manual candidate workflow stays separate
+from Pages. When returning to authored mode, also remove `HOMEPAGE_CMS_REQUEST` if set.

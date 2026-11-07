@@ -2,10 +2,20 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import fs from "node:fs";
+import {
+  readBuildRequest,
+  assertBuildRequest,
+} from "../../src/server/cms/request.ts";
 import { readPrepared, selectRelease } from "../../src/server/cms/cache.ts";
 try {
   const id = selectRelease(process.env.HOMEPAGE_CMS_RELEASE);
-  if (id) readPrepared(process.cwd(), id);
+  const requestFile = process.env.HOMEPAGE_CMS_REQUEST;
+  if (requestFile !== undefined && !id) throw Error();
+  if (id) {
+    const snapshot = readPrepared(process.cwd(), id);
+    if (requestFile !== undefined)
+      assertBuildRequest(readBuildRequest(requestFile), snapshot);
+  }
   const root = path.resolve("node_modules/astro"),
     pkg = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8")),
     cli = path.resolve(root, pkg.bin.astro);

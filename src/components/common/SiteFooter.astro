@@ -30,6 +30,9 @@ const year = new Date().getFullYear();
           .filter((link) => link.kind !== "email")
           .map((link) => (
             <a
+              data-astro-contact={
+                state.source === "cms-build-preview" ? link.kind : undefined
+              }
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"

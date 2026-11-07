@@ -11,3 +11,11 @@ are native editable elements; these diagrams describe the implemented local prev
 
 The same native source is mirrored in the CMS repository as astro-build-preview.drawio.
 No deployment or durable CMS destination completion is claimed. See [build guide](../cms-builds.md).
+
+## Exact Astro build handoff (M5j)
+
+Open [cms-build-handoff.drawio](cms-build-handoff.drawio). Three native editable pages cover exact intent,
+independent semantic output and candidate authority/remaining gates. Previews:
+[01](previews/cms-build-handoff-01.png), [02](previews/cms-build-handoff-02.png),
+[03](previews/cms-build-handoff-03.png). This is local build evidence, not hosted deployment
+or durable CMS job completion.

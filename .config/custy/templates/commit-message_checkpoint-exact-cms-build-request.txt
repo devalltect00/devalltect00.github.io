@@ -1,0 +1,26 @@
+feat(content): bind Astro CMS candidates to exact release requests
+
+Extend homepage checkpoint 3687134 with exact public build intent preflight.
+
+- Parse strict bounded requests with lossless sequence and snapshot/projection identity.
+- Reject stale source data before cache writes and mismatched intent before replacing dist.
+- Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
+- Mark actual localized project and Profile fields for independent Go semantic verification.
+- Generate Go requests and verify every real compiled initial, updated and empty fixture output.
+- Add a manually triggered candidate workflow with pinned actions and read repository permissions.
+- Keep untrusted inputs in environment data and fix the fetch origin in operator configuration.
+- Retain only public dist for one day without Pages deployment or CMS callback authority.
+- Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
+- Synchronize setup/security guides and mirrored native implementation diagrams.
+- Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
+
+Tag: none
+Previous checkpoint: 3687134
+Phase: Exact public CMS candidate build checkpoint
+
+Tags:
+- Type: #feature, #security, #testing, #documentation
+- Platform: #astro, #typescript, #github-actions
+- Content: #projects, #profile, #localization
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

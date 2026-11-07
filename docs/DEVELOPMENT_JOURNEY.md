@@ -4,7 +4,7 @@ This file records the architectural decisions and repeatable setup steps for
 the Devalltect homepage. It is an internal development record, not the public
 portfolio narrative.
 
-## 2026-09-21 — Initial Astro foundation
+## 2026-09-21 â€” Initial Astro foundation
 
 ### Objective
 
@@ -47,7 +47,7 @@ pnpm validate
   portfolio gallery.
 - Validate the production Pages URL on mobile and desktop after deployment.
 
-## 2026-09-21 — Configurable public destinations
+## 2026-09-21 â€” Configurable public destinations
 
 - Added optional `PUBLIC_PORTFOLIO_URL` and `PUBLIC_DOCUMENTATION_URL` build
   variables.
@@ -56,7 +56,7 @@ pnpm validate
   produce unsafe or broken navigation.
 - Exposed optional GitHub repository variables to validation and Pages builds.
 
-## 2026-09-24 — First stable release preparation
+## 2026-09-24 â€” First stable release preparation
 
 - Promoted the planned release baseline from the temporary `0.1.0` development
   version to the first stable Semantic Versioning release, `1.0.0`.
@@ -70,7 +70,7 @@ pnpm validate
 No commit, tag, release, deployment, push, or remote metadata mutation was
 performed as part of this preparation.
 
-## 2026-11-07 — Pinned CMS project/Profile build preview
+## 2026-11-07 â€” Pinned CMS project/Profile build preview
 
 - Added explicit anonymous public preparation and immutable local release pins.
 - Reused the concise bilingual gateway for selected Astro projects and public Profile.
@@ -81,3 +81,11 @@ performed as part of this preparation.
 
 This is a development checkpoint, not a release or hosted CMS job receipt. Existing
 Pages deployment remains authored pending separately reviewed dispatch integration.
+
+## 2026-11-07 — Exact CMS build requests and independent output verification
+
+- Bound optional candidate preparation/build to exact public release and projection.
+- Added semantic attributes to real fields without changing the gateway design.
+- Connected Go-generated intents and independent bilingual HTML checks to compiled proofs.
+- Added read-only candidate workflow and input/permission policy tests.
+- Retained explicit pending-job status; no hosted deployment or durable receipt.

@@ -18,7 +18,14 @@ const { projects, source } = homepageContent();
     <h2>{copy.title}</h2>
     <p>{copy.description}</p>
   </div>
-  {projects.length === 0 ? <p class="projects-empty">{copy.empty}</p> : null}
+  {projects.length === 0 ? (
+    <p
+      class="projects-empty"
+      data-astro-empty={source === "cms-build-preview" ? "projects" : undefined}
+    >
+      {copy.empty}
+    </p>
+  ) : null}
   <div class="project-grid">
     {projects.map((project, index) => (
       <article
@@ -29,27 +36,60 @@ const { projects, source } = homepageContent();
         style={`--delay: ${index * 65}ms`}
       >
         <div class="project-card__topline">
-          <span>
+          <span
+            data-astro-field={
+              source === "cms-build-preview" ? "status" : undefined
+            }
+          >
             {project.status ? copy.statuses[project.status] : project.category}
           </span>
-          {project.version ? <span>{project.version}</span> : null}
+          {project.version ? (
+            <span
+              data-astro-field={
+                source === "cms-build-preview" ? "version" : undefined
+              }
+            >
+              {project.version}
+            </span>
+          ) : null}
         </div>
         <div class="project-card__symbol" aria-hidden="true">
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
-        <h3>{project.localizedName?.[locale] ?? project.name}</h3>
-        <p>{project.description[locale]}</p>
+        <h3
+          data-astro-field={
+            source === "cms-build-preview" ? "title" : undefined
+          }
+        >
+          {project.localizedName?.[locale] ?? project.name}
+        </h3>
+        <p
+          data-astro-field={
+            source === "cms-build-preview" ? "summary" : undefined
+          }
+        >
+          {project.description[locale]}
+        </p>
         <ul
           class="tag-list"
           aria-label={`${project.localizedName?.[locale] ?? project.name} ${copy.technologies}`}
         >
           {project.technologies.map((technology) => (
-            <li>{technology}</li>
+            <li
+              data-astro-field={
+                source === "cms-build-preview" ? "technology" : undefined
+              }
+            >
+              {technology}
+            </li>
           ))}
         </ul>
         <div class="project-card__links">
           {project.documentation ? (
             <a
+              data-astro-link={
+                source === "cms-build-preview" ? "documentation" : undefined
+              }
               href={project.documentation}
               target="_blank"
               rel="noopener noreferrer"
@@ -60,6 +100,9 @@ const { projects, source } = homepageContent();
           ) : null}
           {project.repository ? (
             <a
+              data-astro-link={
+                source === "cms-build-preview" ? "repository" : undefined
+              }
               href={project.repository}
               target="_blank"
               rel="noopener noreferrer"
@@ -69,7 +112,14 @@ const { projects, source } = homepageContent();
             </a>
           ) : null}
           {project.website ? (
-            <a href={project.website} target="_blank" rel="noopener noreferrer">
+            <a
+              data-astro-link={
+                source === "cms-build-preview" ? "website" : undefined
+              }
+              href={project.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {copy.website}
               <Icon name="arrow" size={15} />
             </a>

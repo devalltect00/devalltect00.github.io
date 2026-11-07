@@ -122,7 +122,7 @@ pnpm repository:metadata:sync --provider github
 
 Released under the [MIT License](LICENSE).
 
-_Pause · Think · Act_
+_Pause Â· Think Â· Act_
 
 ## Approved CMS build preview
 
@@ -131,3 +131,7 @@ preparation, immutable release selection and static EN/ID output. Existing autho
 builds and Pages deployment remain the default. This checkpoint does not dispatch
 or finish a CMS destination job. See [security evidence](docs/security/cms-build-verification.md)
 and [editable diagrams](docs/diagrams/cms-builds.drawio).
+
+[Exact-release handoffs](docs/cms-build-handoff.md) now bind candidate builds to a
+strict public request and support independent Go checks of generated pages. The
+optional manual candidate workflow retains a public artifact; it does not deploy.

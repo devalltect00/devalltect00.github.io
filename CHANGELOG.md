@@ -14,7 +14,7 @@ Unreleased
 
 **Summary**
 
-Extend homepage checkpoint 514a8b4 with an explicit static CMS build consumer.
+Extend homepage checkpoint 3687134 with exact public build intent preflight.
 
 ### ✨ Features
 
@@ -31,6 +31,17 @@ Extend homepage checkpoint 514a8b4 with an explicit static CMS build consumer.
 - Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
+- Parse strict bounded requests with lossless sequence and snapshot/projection identity.
+- Reject stale source data before cache writes and mismatched intent before replacing dist.
+- Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
+- Mark actual localized project and Profile fields for independent Go semantic verification.
+- Generate Go requests and verify every real compiled initial, updated and empty fixture output.
+- Add a manually triggered candidate workflow with pinned actions and read repository permissions.
+- Keep untrusted inputs in environment data and fix the fetch origin in operator configuration.
+- Retain only public dist for one day without Pages deployment or CMS callback authority.
+- Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
+- Synchronize setup/security guides and mirrored native implementation diagrams.
+- Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
 
 **Tags**
 

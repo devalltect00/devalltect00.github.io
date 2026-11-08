@@ -153,3 +153,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Conservative staging recovery](docs/cms-stage-recovery.md) documents private retirement without changing hosted workflow permissions or enabling publishing.
 
 [Deployment receiver integrity](docs/cms-deployment-receiver.md) is local validation only; no deployment is enabled.
+
+[Receiver HTTPS exchange](docs/cms-receiver-https.md) is an unregistered local client prerequisite; no Pages writes are enabled.

@@ -104,3 +104,8 @@ or wrapper checks. No CLI/runtime/workflow exposes them. Public unsigned intent
 is not current CMS permission; do not attach Pages writes before authenticated
 fresh receiver authority and ordering are designed. Preserve complete canonical
 byte checks and rerun joint compiled initial/update/empty receiver proof.
+
+Receiver HTTPS code remains unregistered; read docs/cms-receiver-https.md before
+changing its origin/token handling. Reviewed configuration is not dispatch input.
+Keep complete byte verification before egress and never attach Pages writes before
+receiver-side ordering and protected runtime authority are implemented.

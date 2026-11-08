@@ -12,6 +12,60 @@ https://github.com/devalltect00/devalltect00.github.io/compare/v1.0.0...HEAD
 **Release**
 Unreleased
 
+### ✨ Features
+
+#### Content
+
+- Add independent public receiver intent and complete archive-integrity checks.
+- Connect private compiled output fixtures to public initial, update and empty proof.
+- Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
+- Keep deployment authority, workflow and runtime entry points disabled.
+- Document security limits and synchronize editable diagrams.
+- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
+- Guard workflow context before checkout and pin checkout without persisting credentials.
+- Validate explicit dispatch context before writing a public build request.
+- Correlate run and one-day public candidate artifact names with the permanent request UUID.
+- Test malformed/partial contexts and workflow authority/input policy.
+- Document provider credential scope, local verification, native diagrams and pending completion gates.
+- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
+- Parse strict bounded requests with lossless sequence and snapshot/projection identity.
+- Reject stale source data before cache writes and mismatched intent before replacing dist.
+- Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
+- Mark actual localized project and Profile fields for independent Go semantic verification.
+- Generate Go requests and verify every real compiled initial, updated and empty fixture output.
+- Add a manually triggered candidate workflow with pinned actions and read repository permissions.
+- Keep untrusted inputs in environment data and fix the fetch origin in operator configuration.
+- Retain only public dist for one day without Pages deployment or CMS callback authority.
+- Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
+- Synchronize setup/security guides and mirrored native implementation diagrams.
+- Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
+- Prepare anonymous approved public packages into an immutable ignored local cache.
+- Recheck complete Go-compatible identity and hashes before pinned static builds.
+- Render enabled Astro projects and concise Profile content in English and Indonesian.
+- Preserve explicit optional links, distinct technology labels and authoritative empty states.
+- Keep credentials, raw cache, nonrendered records and CMS requests out of browser output.
+- Add adversarial parsing, HTTP and filesystem tests plus real offline browser proofs.
+- Verify initial, updated and empty builds against public HTTP and signed Worker fixtures.
+- Fix navigation contrast and the mobile footer link name without changing the design system.
+- Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
+- Keep hosted dispatch and durable Astro destination receipts as separate future work.
+- Verify complete local candidate and uploaded content before authorization egress.
+- Bind one fixed-origin POST to exact intent, workflow run, canonical request hash and short expiry.
+- Reject redirects, retries, malformed decisions and unreviewed workflow configuration.
+- Test synthetic HTTP and local archive failures; document trust and ordering limits.
+- Keep runtime, OIDC acquisition and hosted Pages writes disabled.
+
+#### Publishing
+
+- Add a standard-library-only fixed-target GitHub acquisition and canonical repack tool.
+- Separate API credentials from bounded public-IP-pinned signed downloads.
+- Reject changed provenance, reruns, unsafe archives and source/payload pin mismatches.
+- Upload only the verified TAR through an off-by-default manual environment-gated workflow.
+- Keep Pages and OIDC-write permissions absent and preserve normal hosted workflows.
+- Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
+- Verify genuine private/public repacks through independent complete Node TAR checks.
+- Keep authenticated CMS coordination and actual deployment/completion as future gates.
+
 ### 📚 Documentation
 
 #### Content
@@ -51,56 +105,6 @@ Unreleased
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-
-### ✨ Features
-
-#### Content
-
-- Require public dispatch UUID and reviewed consumer-code SHA alongside exact content identity.
-- Guard workflow context before checkout and pin checkout without persisting credentials.
-- Validate explicit dispatch context before writing a public build request.
-- Correlate run and one-day public candidate artifact names with the permanent request UUID.
-- Test malformed/partial contexts and workflow authority/input policy.
-- Document provider credential scope, local verification, native diagrams and pending completion gates.
-- Preserve authored content, existing Pages deployment and candidate contents-read permissions.
-- Parse strict bounded requests with lossless sequence and snapshot/projection identity.
-- Reject stale source data before cache writes and mismatched intent before replacing dist.
-- Repeat intent checks in centralized frontmatter and preserve explicit preview compatibility.
-- Mark actual localized project and Profile fields for independent Go semantic verification.
-- Generate Go requests and verify every real compiled initial, updated and empty fixture output.
-- Add a manually triggered candidate workflow with pinned actions and read repository permissions.
-- Keep untrusted inputs in environment data and fix the fetch origin in operator configuration.
-- Retain only public dist for one day without Pages deployment or CMS callback authority.
-- Add stale-source, creator-input, workflow-policy and safe-failure regression tests.
-- Synchronize setup/security guides and mirrored native implementation diagrams.
-- Preserve JavaScript dependencies, application version, authored data and existing Pages deployment.
-- Prepare anonymous approved public packages into an immutable ignored local cache.
-- Recheck complete Go-compatible identity and hashes before pinned static builds.
-- Render enabled Astro projects and concise Profile content in English and Indonesian.
-- Preserve explicit optional links, distinct technology labels and authoritative empty states.
-- Keep credentials, raw cache, nonrendered records and CMS requests out of browser output.
-- Add adversarial parsing, HTTP and filesystem tests plus real offline browser proofs.
-- Verify initial, updated and empty builds against public HTTP and signed Worker fixtures.
-- Fix navigation contrast and the mobile footer link name without changing the design system.
-- Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
-- Document operations, security evidence, read-only CI proof and native editable diagrams.
-- Keep hosted dispatch and durable Astro destination receipts as separate future work.
-- Add independent public receiver intent and complete archive-integrity checks.
-- Connect private compiled output fixtures to public initial, update and empty proof.
-- Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
-- Keep deployment authority, workflow and runtime entry points disabled.
-
-#### Publishing
-
-- Add a standard-library-only fixed-target GitHub acquisition and canonical repack tool.
-- Separate API credentials from bounded public-IP-pinned signed downloads.
-- Reject changed provenance, reruns, unsafe archives and source/payload pin mismatches.
-- Upload only the verified TAR through an off-by-default manual environment-gated workflow.
-- Keep Pages and OIDC-write permissions absent and preserve normal hosted workflows.
-- Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
-- Verify genuine private/public repacks through independent complete Node TAR checks.
-- Synchronize public guidance, security evidence and editable staging diagrams.
-- Keep authenticated CMS coordination and actual deployment/completion as future gates.
 
 ### 🧪 Tests
 

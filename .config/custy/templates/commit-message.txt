@@ -1,17 +1,17 @@
-feat(content): validate exact deployment intent and archive bytes locally
+feat(content): validate one-shot receiver authorization over pinned HTTPS
 
-- Add independent public receiver intent and complete archive-integrity checks.
-- Connect private compiled output fixtures to public initial, update and empty proof.
-- Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
-- Keep deployment authority, workflow and runtime entry points disabled.
-- Document security limits and synchronize editable diagrams.
+- Verify complete local candidate and uploaded content before authorization egress.
+- Bind one fixed-origin POST to exact intent, workflow run, canonical request hash and short expiry.
+- Reject redirects, retries, malformed decisions and unreviewed workflow configuration.
+- Test synthetic HTTP and local archive failures; document trust and ordering limits.
+- Keep runtime, OIDC acquisition and hosted Pages writes disabled.
 
 Tag: none
-Phase: Independent deployment receiver integrity prerequisite
+Phase: Receiver fixed HTTPS client prerequisite
 
 Tags:
 - Type: #security, #documentation
 - Platform: #golang, #astro
-- Content: #publishing, #integrity, #receiver
+- Content: #publishing, #receiver, #https
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

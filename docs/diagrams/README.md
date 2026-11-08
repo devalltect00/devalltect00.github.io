@@ -49,3 +49,5 @@ or durable CMS job completion.
 [cms-owner-staging.drawio](cms-owner-staging.drawio) contains three native editable pages: current Owner/exact preparation flow, permanent SQL state and credential boundaries, and verification/remaining gates. Previews: [01](previews/cms-owner-staging-01.png), [02](previews/cms-owner-staging-02.png), [03](previews/cms-owner-staging-03.png). These diagrams mirror one another. Dispatch acknowledgement never means upload or publication.
 
 [cms-upload-verification.drawio](cms-upload-verification.drawio) documents the local uploaded-byte boundary and remaining authority gates. [Preview](previews/cms-upload-verification.png).
+
+[cms-stage-run-reader.drawio](cms-stage-run-reader.drawio) documents the fixed metadata reader and remaining authority gates. [Preview](previews/cms-stage-run-reader.png).

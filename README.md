@@ -145,3 +145,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [CMS Owner staging integration](docs/cms-owner-staging.md) documents the private coordinator and unchanged disabled uploader. This public checkpoint changes documentation/diagrams only.
 
 [Uploaded staging integrity](docs/cms-upload-verification.md) documents the local private verifier; public runtime/workflows are unchanged.
+
+[Staging-run reader boundary](docs/cms-stage-run-reader.md) documents the private provider integration; public workflows/runtime remain unchanged.

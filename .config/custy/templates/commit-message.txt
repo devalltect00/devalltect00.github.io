@@ -1,15 +1,15 @@
-docs(content): explain uploaded staging integrity boundary
+docs(content): explain fixed staging-run metadata checks
 
-Extend 649953f with the local upload-integrity prerequisite and honest authority limits.
+Extend 4b20dad with the staging provider observation boundary.
 
-- Document exact candidate reconstruction and single-member uploaded TAR comparison.
-- Cover hostile wrapping, extra entries, altered bytes, CRC failures and cancellation.
-- Synchronize operational/security evidence and mirrored editable diagrams.
-- Keep authenticated reconciliation, durable observations and deployment as next gates.
+- Separate staging run identity from the source candidate and bind the prepared tuple.
+- Share bounded provenance checks while preserving distinct workflow/title identities.
+- Exercise hostile metadata and zero-I/O staging preparation guards.
+- Synchronize evidence and native diagrams; keep durable Owner reconciliation as next work.
 
 Tag: none
-Previous checkpoint: 649953f
-Phase: Uploaded staging integrity prerequisite
+Previous checkpoint: 4b20dad
+Phase: Fixed staging-run metadata reader
 
 Tags:
 - Type: #security, #documentation

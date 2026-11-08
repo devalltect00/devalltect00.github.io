@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" version="29.0.0">
+  <diagram name="Fixed staging-run reader" id="stage-run-reader">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="M5r provider boundary — fixed staging-run metadata" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Trusted server work&#10;&#10;Prepared staging UUID + separate run ID&#10;Current candidate / staging target incarnations&#10;Exact release and prepared code match" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="One fixed authenticated GET&#10;&#10;Known repository and staging workflow&#10;No caller URL / no proxy / no redirects&#10;10 seconds / bounded JSON response" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Provenance and correlation&#10;&#10;Exact repository / code / main / first run&#10;No fork or PR; workflow_dispatch only&#10;Staging title binds the prepared UUID" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Finite state and time checks&#10;&#10;Canonical run URLs and admission window&#10;Monotonic valid timestamps / finite state&#10;Duplicate JSON and bad transport rejected" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Return metadata only&#10;&#10;Constant errors; no private diagnostics&#10;No database write / retry / retirement&#10;Success status is not artifact proof" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Next authority gates&#10;&#10;Acquire and verify exact uploaded artifact&#10;Repeat current Owner/source/target fences&#10;Retain evidence; add Owner API and UI" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="Metadata is not uploaded-byte proof • No hosted action • No migration • No publication completion" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

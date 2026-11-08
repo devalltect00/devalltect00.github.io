@@ -14,12 +14,16 @@ Unreleased
 
 **Summary**
 
-Extend 649953f with the local upload-integrity prerequisite and honest authority limits.
+Extend 4b20dad with the staging provider observation boundary.
 
 ### 📚 Documentation
 
 #### Content
 
+- Document exact candidate reconstruction and single-member uploaded TAR comparison.
+- Cover hostile wrapping, extra entries, altered bytes, CRC failures and cancellation.
+- Synchronize operational/security evidence and mirrored editable diagrams.
+- Keep authenticated reconciliation, durable observations and deployment as next gates.
 - Document durable current-candidate claims and exact preparation before one staging dispatch.
 - Separate private lifetime budgets and Owner authority from unsigned public request integrity.
 - Explain conservative uncertainty, unchanged hosted guards and pending deployment proof.
@@ -37,10 +41,10 @@ Extend 649953f with the local upload-integrity prerequisite and honest authority
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-- Document exact candidate reconstruction and single-member uploaded TAR comparison.
-- Cover hostile wrapping, extra entries, altered bytes, CRC failures and cancellation.
-- Synchronize operational/security evidence and mirrored editable diagrams.
-- Keep authenticated reconciliation, durable observations and deployment as next gates.
+- Separate staging run identity from the source candidate and bind the prepared tuple.
+- Share bounded provenance checks while preserving distinct workflow/title identities.
+- Exercise hostile metadata and zero-I/O staging preparation guards.
+- Synchronize evidence and native diagrams; keep durable Owner reconciliation as next work.
 
 ### ✨ Features
 

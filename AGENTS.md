@@ -92,3 +92,5 @@ M5o adds the local verifier in scripts/content/pages-payload.mjs; read docs/cms-
 M5p adds the optional standard-library Go stager in scripts/pages-tool and cms-pages-stage.yml. Read docs/cms-pages-staging.md. Keep the uploader disabled by default, main/first-attempt/code/environment gated, with no Pages/OIDC-write permission. Run standalone Go tests/vet plus public validation and joint private compiled proofs when either writer/contract changes.
 
 M5q documents the private Owner coordinator in docs/cms-owner-staging.md. Public request JSON remains unsigned; direct operator dispatch does not gain private SQL budget/current-Owner guarantees. Keep hosted uploader off by default and acceptance separate from artifact/deployment proof.
+
+M5s documents private successful-upload reconciliation in docs/cms-stage-reconciliation.md. Keep public workflows/tools unchanged and disabled by default. Historical uploaded-byte evidence does not authorize publication, retries or deployment.

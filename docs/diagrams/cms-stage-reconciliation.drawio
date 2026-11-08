@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" version="29.0.0">
+  <diagram name="01 — Exact upload verification" id="stage-proof-0">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Exact upload verification" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Current Owner confirmation&#10;&#10;Accepted selected staging request&#10;Strict staging UUID only&#10;Browser Origin/CSRF; pending disabled" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Short SQL preflight&#10;&#10;Current Owner/source/pending job&#10;Candidate proof/revision/both targets&#10;Exact prepared request + accepted run" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="GET-only provider checks&#10;&#10;Exact successful first staging run&#10;Reacquire verified candidate ZIP&#10;One fixed unexpired uploaded artifact" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Separated blob and exact bytes&#10;&#10;No API credentials on signed download&#10;Pinned ZIP size/hash; no extraction&#10;Compare complete candidate-derived TAR" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Repeat external and SQL fences&#10;&#10;Unchanged artifact/run/update time&#10;Current Owner/source/proof/target again&#10;No provider I/O under SQL locks" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Retain upload proof + audit&#10;&#10;Immutable astro-stage-upload-v1&#10;One SQL/audit transaction; safe replay&#10;Publication and deployment pending" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5s • Retained uploaded-byte proof is historical evidence • No deployment or publication completion" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="02 — Evidence and authority" id="stage-proof-1">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Evidence and authority" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Prepared immutable intent&#10;&#10;Stage UUID / candidate / original Owner&#10;Both target incarnations / observation&#10;Original accepted run stays unchanged" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="New astro_stage_proofs table&#10;&#10;FK to immutable prepared staging intent&#10;Whole ZIP/gzip/TAR hashes + TAR bytes&#10;Run/artifact IDs and timestamps" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Atomic audit and history&#10;&#10;astro.stage_artifact_verified action&#10;UPDATE/DELETE blocked; guarded down&#10;No job, outcome or budget mutation" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Owner API and Flutter&#10;&#10;GET reads current selected SQL proof&#10;POST confirms exact verification&#10;Visible safe error/reference + retry" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Replay and concurrent writes&#10;&#10;Exact cached proof skips all provider I/O&#10;Final SQL serialization retains one proof&#10;Different concurrent evidence conflicts" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Limits&#10;&#10;Accepted acknowledged uploads only&#10;Historical proof is not live availability&#10;Uncertain/failed work gets no reset" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5s • Retained uploaded-byte proof is historical evidence • No deployment or publication completion" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="03 — Checks and next gates" id="stage-proof-2">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Checks and next gates" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Real provider fixture&#10;&#10;Two real archives / fixed GET-only routes&#10;Credential separation / complete TAR&#10;Artifact/run drift and reruns rejected" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Real PostgreSQL / HTTP&#10;&#10;Owner/source/revision fences and replay&#10;Immutable row / atomic audit rollback&#10;Origin/CSRF/role and strict body checks" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Flutter and contract&#10;&#10;Strict lossless IDs / hashes / size / time&#10;Narrow dark confirmation/pending state&#10;Visible 409 and retained SQL refresh" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Local upgrade&#10;&#10;Stop old API; apply migration 27&#10;Restart API and Flutter afterward&#10;No new config/dependency/version" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Trust boundaries&#10;&#10;SQL/provider changes are not atomic&#10;No extraction or hosted action&#10;Trusted runner/admin/load remain limits" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Next gates&#10;&#10;Conservative failed/uncertain recovery&#10;Protected deployment + output proof&#10;Atomic Astro destination completion" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5s • Retained uploaded-byte proof is historical evidence • No deployment or publication completion" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

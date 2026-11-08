@@ -147,3 +147,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Uploaded staging integrity](docs/cms-upload-verification.md) documents the local private verifier; public runtime/workflows are unchanged.
 
 [Staging-run reader boundary](docs/cms-stage-run-reader.md) documents the private provider integration; public workflows/runtime remain unchanged.
+
+[Owner upload reconciliation](docs/cms-stage-reconciliation.md) documents the private API/UI and unchanged public staging contract.

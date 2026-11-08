@@ -1,18 +1,21 @@
-docs(content): explain fixed staging-run metadata checks
+docs(content): explain Owner staging upload reconciliation
 
-Extend 4b20dad with the staging provider observation boundary.
+Extend c9e02cb with exact accepted-upload reconciliation and honest authority limits.
 
-- Separate staging run identity from the source candidate and bind the prepared tuple.
-- Share bounded provenance checks while preserving distinct workflow/title identities.
-- Exercise hostile metadata and zero-I/O staging preparation guards.
-- Synchronize evidence and native diagrams; keep durable Owner reconciliation as next work.
+- Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
+- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
+- Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
+- Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
+- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
+- Keep failed/uncertain recovery, deployment and publication completion as separate gates.
 
 Tag: none
-Previous checkpoint: 4b20dad
-Phase: Fixed staging-run metadata reader
+Previous checkpoint: c9e02cb
+Phase: Owner staging upload reconciliation
 
 Tags:
-- Type: #security, #documentation
-- Content: #publishing, #integrity
+- Type: #feature, #security, #documentation
+- Platform: #golang, #postgresql, #flutter, #astro
+- Content: #publishing, #integrity, #audit
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

@@ -14,12 +14,16 @@ Unreleased
 
 **Summary**
 
-Extend 4b20dad with the staging provider observation boundary.
+Extend c9e02cb with exact accepted-upload reconciliation and honest authority limits.
 
 ### 📚 Documentation
 
 #### Content
 
+- Separate staging run identity from the source candidate and bind the prepared tuple.
+- Share bounded provenance checks while preserving distinct workflow/title identities.
+- Exercise hostile metadata and zero-I/O staging preparation guards.
+- Synchronize evidence and native diagrams; keep durable Owner reconciliation as next work.
 - Document exact candidate reconstruction and single-member uploaded TAR comparison.
 - Cover hostile wrapping, extra entries, altered bytes, CRC failures and cancellation.
 - Synchronize operational/security evidence and mirrored editable diagrams.
@@ -41,10 +45,12 @@ Extend 4b20dad with the staging provider observation boundary.
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-- Separate staging run identity from the source candidate and bind the prepared tuple.
-- Share bounded provenance checks while preserving distinct workflow/title identities.
-- Exercise hostile metadata and zero-I/O staging preparation guards.
-- Synchronize evidence and native diagrams; keep durable Owner reconciliation as next work.
+- Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
+- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
+- Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
+- Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
+- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
+- Keep failed/uncertain recovery, deployment and publication completion as separate gates.
 
 ### ✨ Features
 

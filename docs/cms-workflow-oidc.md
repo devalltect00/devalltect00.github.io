@@ -44,3 +44,5 @@ No CLI/runtime registration, workflow permissions, public output contract or sch
 changes (CMS remains 35). Next: connect guarded configuration and token acquisition
 to the sender in an explicitly reviewed runtime, then completion and hold release.
 Hosted publishing remains disabled.
+
+[Internal runtime](cms-deployment-runtime.md) joins the internal adapters; executable publishing remains disabled.

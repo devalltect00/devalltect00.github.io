@@ -57,6 +57,9 @@ Unreleased
 
 #### Publishing
 
+- Validate deployment context before accessing runner issuance credentials.
+- Pin the reviewed issuer origin, explicit audience and finite issuance budget.
+- Reject redirects, malformed responses and credential forwarding; keep CMS signature checks authoritative.
 - Reject substituted workflow, repository, code, origin and audience observations before credentials.
 - Require explicit opt-in and exact main first-attempt protected runtime context.
 - Document environment trust limits, tests and remaining OIDC acquisition gate.
@@ -76,9 +79,10 @@ Unreleased
 - Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
 - Verify genuine private/public repacks through independent complete Node TAR checks.
 - Keep authenticated CMS coordination and actual deployment/completion as future gates.
-- Validate deployment context before accessing runner issuance credentials.
-- Pin the reviewed issuer origin, explicit audience and finite issuance budget.
-- Reject redirects, malformed responses and credential forwarding; keep CMS signature checks authoritative.
+- Validate reviewed policy and complete local archives before credential access.
+- Compose fixed issuer, receiver and provider clients with bounded one-shot execution.
+- Preserve report-only recovery and close adapters without resetting admission budgets.
+- Verify joined local HTTP failures and document limits; keep executable publishing disabled.
 
 ### 📚 Documentation
 

@@ -143,3 +143,11 @@ independent and signed-source modes. Provider authority is synthetic. See
 Next: the authenticated CMS Owner coordinator with durable claims/audit and
 current source/target/proof fences, then protected deployment, independent
 deployed-output verification and atomic Astro destination completion.
+
+## M5q follow-up
+
+The statements above describe the original standalone M5p primitive. The new
+[private Owner coordinator](cms-owner-staging.md) now retains claims/preparations/outcomes
+and enforces current authority and a private lifetime budget. The standalone
+public workflow still does not enforce those private SQL rules. Deployment and
+completion remain unimplemented.

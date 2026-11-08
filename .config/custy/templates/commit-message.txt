@@ -1,24 +1,21 @@
-feat(publishing): add protected opt-in Pages artifact staging
+docs(content): explain Owner-coordinated exact Pages staging
 
-Extend checkpoint 9bd1121 with exact verified-TAR staging.
+Extend checkpoint 7e68be1 with the private coordinator integration contract.
 
-- Add a standard-library-only fixed-target GitHub acquisition and canonical repack tool.
-- Separate API credentials from bounded public-IP-pinned signed downloads.
-- Reject changed provenance, reruns, unsafe archives and source/payload pin mismatches.
-- Upload only the verified TAR through an off-by-default manual environment-gated workflow.
-- Keep Pages and OIDC-write permissions absent and preserve normal hosted workflows.
-- Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
-- Verify genuine private/public repacks through independent complete Node TAR checks.
-- Synchronize public guidance, security evidence and editable staging diagrams.
-- Keep authenticated CMS coordination and actual deployment/completion as future gates.
+- Document durable current-candidate claims and exact preparation before one staging dispatch.
+- Separate private lifetime budgets and Owner authority from unsigned public request integrity.
+- Explain conservative uncertainty, unchanged hosted guards and pending deployment proof.
+- Mirror three native diagram pages and their reviewed previews with the private CMS.
+- Record source-matched validation, compiled handoff checks and bounded security evidence.
+- Preserve Astro runtime, dependency locks and default-off public workflows.
 
 Tag: none
-Previous checkpoint: 9bd1121
-Phase: Protected exact Pages artifact staging
+Previous checkpoint: 7e68be1
+Phase: Owner staging integration documentation
 
 Tags:
-- Type: #feature, #security, #testing
-- Platform: #golang, #astro, #github
-- Content: #publishing, #artifacts, #diagrams
+- Type: #documentation, #security
+- Platform: #astro, #golang, #github
+- Content: #publishing, #staging, #integrity
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

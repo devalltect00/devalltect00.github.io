@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" agent="Devalltect" version="29.0.0">
+  <diagram id="owner-stage-1" name="01 — Owner exact staging flow">
+    <mxGraphModel dx="1240" dy="800" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1240" pageHeight="800">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Owner exact staging flow" style="text;html=0;align=left;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="24" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="subtitle" value="Current Owner consent binds the selected candidate; GitHub acknowledgement never proves upload or publication." style="text;html=0;whiteSpace=wrap;align=left;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="82" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="b0" value="01  Confirm reviewed candidate&#10;&#10;Owner session + browser Origin/CSRF&#10;Current release / candidate / content proof&#10;Only stage UUID + candidate UUID accepted&#10;Pending actions disabled; themed UI" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b1" value="02  Permanently claim in SQL&#10;&#10;Current Owner / active source / pending job&#10;Candidate + target + observation + proof&#10;Cross-namespace UUID and lifetime limit 3&#10;45-second lease + atomic safe audit" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b2" value="03  GET-only exact preparation&#10;&#10;Release SQL locks before provider calls&#10;Fixed first-run ZIP; token-free blob read&#10;Whole ZIP / bilingual content / TAR hash&#10;Preflight separate workflow + exact main" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b3" value="04  Commit exact public request&#10;&#10;Repeat current Owner/source/proof fence&#10;Retain precise request + atomic audit&#10;Repeat committed-byte and live-lease check&#10;No caller URL / workflow / token input" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b4" value="05  One fixed dispatch POST&#10;&#10;Private token only to fixed GitHub API&#10;Send reviewed code + exact hash tuple&#10;Loss or malformed ack becomes uncertain&#10;No automatic retry or alternative workflow" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b5" value="06  Retain acknowledgement&#10;&#10;Accepted / rejected / uncertain + audit&#10;SQL-only refresh and accepted replay&#10;No receipt or destination job update&#10;Upload / deployment evidence still pending" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="e01" edge="1" source="b0" target="b1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#547B92;strokeWidth=2;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e12" edge="1" source="b1" target="b2" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#547B92;strokeWidth=2;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e34" edge="1" source="b3" target="b4" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#547B92;strokeWidth=2;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e45" edge="1" source="b4" target="b5" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;strokeColor=#547B92;strokeWidth=2;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="footer" value="M5q • Private CMS coordination + unchanged public uploader • Accepted ≠ uploaded ≠ deployed ≠ published" style="rounded=1;html=0;whiteSpace=wrap;align=left;spacing=15;fillColor=#FFF3DD;strokeColor=#CBA458;fontSize=15;fontColor=#59431B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="707" width="1160" height="48" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="owner-stage-2" name="02 — Durable state and trust">
+    <mxGraphModel dx="1240" dy="800" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1240" pageHeight="800">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — Durable state and trust" style="text;html=0;align=left;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="24" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="subtitle" value="Three lifetime admissions per release include rejects and earlier candidates; latest evidence is current-candidate scoped." style="text;html=0;whiteSpace=wrap;align=left;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="82" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="b0" value="Permanent intent ledger&#10;&#10;astro_stage_attempts&#10;Owner / release / selected candidate&#10;Both target incarnations + observation&#10;UPDATE / DELETE blocked by trigger" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b1" value="Exact preparation ledger&#10;&#10;astro_stage_preparations&#10;Strict scope + server-derived byte tuple&#10;Committed only after GET-only verification&#10;Preparation/audit transaction is atomic" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b2" value="Immutable acknowledgement&#10;&#10;astro_stage_outcomes&#10;Accepted: positive separate staging run&#10;Rejected: preparation failed before POST&#10;Uncertain: no claim of safe retry" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b3" value="Live / expired state&#10;&#10;No outcome + live lease: preparing&#10;Prepared + live lease: dispatching&#10;Expired without outcome: uncertain&#10;Never resume / delete / reset a claim" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b4" value="Credential boundaries&#10;&#10;Owner session stays inside private API&#10;Actions-write token to fixed GitHub API&#10;Signed download uses no private headers&#10;Workflow receives unsigned public tuple" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b5" value="Independent hosted guards&#10;&#10;Uploader off by default; main / first run&#10;Exact code and source/payload checks&#10;Operator configures environment reviewers&#10;No Pages-write or OIDC-write permission" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="footer" value="M5q • Private CMS coordination + unchanged public uploader • Accepted ≠ uploaded ≠ deployed ≠ published" style="rounded=1;html=0;whiteSpace=wrap;align=left;spacing=15;fillColor=#FFF3DD;strokeColor=#CBA458;fontSize=15;fontColor=#59431B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="707" width="1160" height="48" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="owner-stage-3" name="03 — Proof and remaining gates">
+    <mxGraphModel dx="1240" dy="800" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1240" pageHeight="800">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Proof and remaining gates" style="text;html=0;align=left;fontSize=27;fontStyle=1;fontColor=#142B3A;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="24" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="subtitle" value="Implemented locally on 8 November 2026. Editing database migration and hosted configuration were not performed." style="text;html=0;whiteSpace=wrap;align=left;fontSize=15;fontColor=#43566B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="82" width="1160" height="48" />
+        </mxCell>
+        <mxCell id="b0" value="Private coordination proofs&#10;&#10;Real disposable PostgreSQL transactions&#10;One concurrent winner / immutable rows&#10;Audit rollback + revoked Owner/source&#10;Global budget and expired-lease blocking" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b1" value="Provider boundary proofs&#10;&#10;Real ZIP + canonical payload reconstruction&#10;Wrong workflow / code / repo rejected&#10;One POST; exact two workflow inputs&#10;Lost/source-run ack stays uncertain" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b2" value="Administration proofs&#10;&#10;Strict IDs / hashes / finite state decoding&#10;Narrow dark layout + pending disabled&#10;Reply loss retains explicit retry UUID&#10;Safe visible error / request reference" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="150" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b3" value="Upgrade and configuration&#10;&#10;Stop old API; apply private migration 26&#10;Restart API and Flutter after schema ready&#10;Optional stage workflow ID blank by default&#10;Homepage runtime/workflows unchanged" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b4" value="Distributed-state limits&#10;&#10;SQL and GitHub cannot commit atomically&#10;Authority/code can change after final fence&#10;Direct GitHub operators bypass CMS budget&#10;Compromised runner/admin remains a limit" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="b5" value="Next required boundaries&#10;&#10;Authenticated stage/artifact reconciliation&#10;Conservative stage failure recovery&#10;Protected exact deployment + output check&#10;Atomic Astro destination completion" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=18;fillColor=#F3F8FC;strokeColor=#8AA8C0;fontColor=#142B3A;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="840" y="415" width="360" height="215" />
+        </mxCell>
+        <mxCell id="footer" value="M5q • Private CMS coordination + unchanged public uploader • Accepted ≠ uploaded ≠ deployed ≠ published" style="rounded=1;html=0;whiteSpace=wrap;align=left;spacing=15;fillColor=#FFF3DD;strokeColor=#CBA458;fontSize=15;fontColor=#59431B;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="707" width="1160" height="48" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

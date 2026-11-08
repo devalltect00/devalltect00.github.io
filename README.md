@@ -141,3 +141,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Exact Pages payload preparation](docs/cms-pages-payload.md) now provides a local verified-byte archive handoff and independent complete-file checks. Hosted deployment/completion remain pending.
 
 [Exact optional Pages staging](docs/cms-pages-staging.md) adds a disabled manual verified-TAR uploader. Current CMS coordination and deployment/completion remain separate.
+
+[CMS Owner staging integration](docs/cms-owner-staging.md) documents the private coordinator and unchanged disabled uploader. This public checkpoint changes documentation/diagrams only.

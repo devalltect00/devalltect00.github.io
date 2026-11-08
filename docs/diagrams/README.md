@@ -43,3 +43,7 @@ or durable CMS job completion.
 ## Exact Pages artifact staging (M5p)
 
 [cms-pages-staging.drawio](cms-pages-staging.drawio) has three editable pages: checked request/upload flow, credentials and identity, and trust/remaining gates. Previews: [01](previews/cms-pages-staging-01.png), [02](previews/cms-pages-staging-02.png), [03](previews/cms-pages-staging-03.png). Artifact staging is not hosted publication.
+
+## Owner exact staging (M5q)
+
+[cms-owner-staging.drawio](cms-owner-staging.drawio) contains three native editable pages: current Owner/exact preparation flow, permanent SQL state and credential boundaries, and verification/remaining gates. Previews: [01](previews/cms-owner-staging-01.png), [02](previews/cms-owner-staging-02.png), [03](previews/cms-owner-staging-03.png). These diagrams mirror one another. Dispatch acknowledgement never means upload or publication.

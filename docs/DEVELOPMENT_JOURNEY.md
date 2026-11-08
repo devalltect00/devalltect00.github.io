@@ -89,3 +89,7 @@ Pages deployment remains authored pending separately reviewed dispatch integrati
 - Connected Go-generated intents and independent bilingual HTML checks to compiled proofs.
 - Added read-only candidate workflow and input/permission policy tests.
 - Retained explicit pending-job status; no hosted deployment or durable receipt.
+
+## 2026-11-08 — Private Owner staging integration (M5q)
+
+The private CMS adds exact preparation and durable Owner claims/acknowledgements. This homepage checkpoint updates documentation and mirrored native diagrams only; no workflow/tool/runtime change or hosted enablement. See [contract](cms-owner-staging.md) and [evidence](security/cms-owner-staging-verification.md).

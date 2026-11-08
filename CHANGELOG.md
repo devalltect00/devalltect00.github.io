@@ -14,7 +14,33 @@ Unreleased
 
 **Summary**
 
-Extend checkpoint 7e68be1 with the private coordinator integration contract.
+Extend 649953f with the local upload-integrity prerequisite and honest authority limits.
+
+### 📚 Documentation
+
+#### Content
+
+- Document durable current-candidate claims and exact preparation before one staging dispatch.
+- Separate private lifetime budgets and Owner authority from unsigned public request integrity.
+- Explain conservative uncertainty, unchanged hosted guards and pending deployment proof.
+- Mirror three native diagram pages and their reviewed previews with the private CMS.
+- Record source-matched validation, compiled handoff checks and bounded security evidence.
+- Preserve Astro runtime, dependency locks and default-off public workflows.
+- Document finite terminal failure, missing-artifact and expired-artifact evidence.
+- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
+- Record current authority, provider trust, permissions and deployment limitations.
+- Synchronize three editable recovery diagram pages and reviewed PNG previews.
+- Retain candidate/Pages workflows, authored content and compiled proof behavior.
+- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
+- Document the private CMS known-run checks and immutable metadata association.
+- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
+- Mirror the three-page draw.io diagram and reviewed previews.
+- Record local verification and the remaining destination completion gates.
+- Preserve homepage source, workflow permissions, authored content and dependencies.
+- Document exact candidate reconstruction and single-member uploaded TAR comparison.
+- Cover hostile wrapping, extra entries, altered bytes, CRC failures and cancellation.
+- Synchronize operational/security evidence and mirrored editable diagrams.
+- Keep authenticated reconciliation, durable observations and deployment as next gates.
 
 ### ✨ Features
 
@@ -78,28 +104,6 @@ Extend checkpoint 7e68be1 with the private coordinator integration contract.
 - Retain standalone public CI without private Go or credential requirements.
 - Synchronize consumer guidance, security evidence and three-page editable diagrams.
 - Preserve workflow permissions, authored content, dependencies and publication gates.
-
-### 📚 Documentation
-
-#### Content
-
-- Document finite terminal failure, missing-artifact and expired-artifact evidence.
-- Explain unchanged lifetime admissions, immutable history and separate fresh requests.
-- Record current authority, provider trust, permissions and deployment limitations.
-- Synchronize three editable recovery diagram pages and reviewed PNG previews.
-- Retain candidate/Pages workflows, authored content and compiled proof behavior.
-- Keep exact-byte deployment, deployed-output proof and atomic CMS receipts pending.
-- Document the private CMS known-run checks and immutable metadata association.
-- Explain correlation and token-scope limits without claiming input, artifact or deployment proof.
-- Mirror the three-page draw.io diagram and reviewed previews.
-- Record local verification and the remaining destination completion gates.
-- Preserve homepage source, workflow permissions, authored content and dependencies.
-- Document durable current-candidate claims and exact preparation before one staging dispatch.
-- Separate private lifetime budgets and Owner authority from unsigned public request integrity.
-- Explain conservative uncertainty, unchanged hosted guards and pending deployment proof.
-- Mirror three native diagram pages and their reviewed previews with the private CMS.
-- Record source-matched validation, compiled handoff checks and bounded security evidence.
-- Preserve Astro runtime, dependency locks and default-off public workflows.
 
 **Tags**
 

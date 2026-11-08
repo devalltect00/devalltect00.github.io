@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" version="29.0.0">
+  <diagram name="Uploaded staging integrity" id="uploaded-integrity">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="M5r prerequisite — exact uploaded staging bytes" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Trusted frozen inputs&#10;&#10;Prepared stage tuple + candidate ZIP&#10;Frozen projection / expected source hash&#10;Current authority is caller responsibility" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Reconstruct canonical TAR&#10;&#10;Independently verify candidate content&#10;Construct canonical gzip / check payload hash&#10;Bound decompression to canonical TAR limit" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Inspect uploaded ZIP&#10;&#10;Pinned whole ZIP; ordinary one-entry EOCD&#10;Exactly artifact.tar; Store / Deflate&#10;Finite size / directory; no links or extraction" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Compare complete bytes&#10;&#10;Exact expanded size / CRC / cancellation&#10;Compare all headers, assets, padding, endings&#10;Reject changed / truncated / trailing TAR" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Return integrity evidence&#10;&#10;Whole uploaded ZIP / payload / TAR hashes&#10;TAR byte count only; constant error on failure&#10;No SQL write, network call or credential" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Next authority gates&#10;&#10;Authenticate staging run and artifact&#10;Repeat current Owner/source/target fences&#10;Retain proof before recovery/deployment" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="Local integrity only • No authenticated reconciliation endpoint yet • No upload / deployment / publication authority" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

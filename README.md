@@ -143,3 +143,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Exact optional Pages staging](docs/cms-pages-staging.md) adds a disabled manual verified-TAR uploader. Current CMS coordination and deployment/completion remain separate.
 
 [CMS Owner staging integration](docs/cms-owner-staging.md) documents the private coordinator and unchanged disabled uploader. This public checkpoint changes documentation/diagrams only.
+
+[Uploaded staging integrity](docs/cms-upload-verification.md) documents the local private verifier; public runtime/workflows are unchanged.

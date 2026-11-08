@@ -1,4 +1,4 @@
-// Command pages-tool prepares a pinned TAR for a separate upload; it has no Pages deployment or CMS authority.
+// Command pages-tool prepares exact TARs and offers an explicitly gated operator deployment command.
 package main
 
 import (
@@ -45,8 +45,11 @@ func settings(get func(string) string, r StageRequest) (runtime, error) {
 	return runtime{repo, r.HeadSHA, token, rid, wid}, nil
 }
 
-// execute offers offline packing or workflow-only GET acquisition. Neither mode uploads, deploys or loads CMS settings.
+// execute separates packing/staging from the explicitly opted-in deployment command.
 func execute(args []string, get func(string) string, output io.Writer) error {
+	if len(args) > 0 && args[0] == "deploy-local" {
+		return runDeploymentCommand(args[1:], get, output)
+	}
 	if len(args) < 1 {
 		return errInvalid
 	}
@@ -115,7 +118,11 @@ func execute(args []string, get func(string) string, output io.Writer) error {
 // main emits only a constant diagnostic, never paths, capabilities or upstream bodies.
 func main() {
 	if execute(os.Args[1:], os.Getenv, os.Stdout) != nil {
-		fmt.Fprintln(os.Stderr, errInvalid)
+		diagnostic := errInvalid
+		if len(os.Args) > 1 && os.Args[1] == "deploy-local" {
+			diagnostic = errReceiver
+		}
+		fmt.Fprintln(os.Stderr, diagnostic)
 		os.Exit(1)
 	}
 }

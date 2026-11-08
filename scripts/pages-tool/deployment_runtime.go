@@ -1,4 +1,4 @@
-// Deployment runtime composes reviewed clients internally without registering an executable publishing command.
+// Deployment runtime composes reviewed clients for the explicitly gated local operator command.
 package main
 
 import (

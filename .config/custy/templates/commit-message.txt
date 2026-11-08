@@ -1,16 +1,16 @@
-feat(publishing): join guarded runtime verification issuance and sender
+feat(publishing): add gated local deployment command with pinned file inputs
 
-- Validate reviewed policy and complete local archives before credential access.
-- Compose fixed issuer, receiver and provider clients with bounded one-shot execution.
-- Preserve report-only recovery and close adapters without resetting admission budgets.
-- Verify joined local HTTP failures and document limits; keep executable publishing disabled.
+- Require explicit opt-in, reviewed policy hash and exact bounded local artifacts.
+- Reject ambiguous flags, policy substitution and unsafe file inputs before runtime work.
+- Route to the guarded runtime and emit only constant outcome diagnostics.
+- Document recovery limits and synchronize tested security evidence and diagrams; leave hosted workflows disabled.
 
 Tag: none
-Phase: Guarded internal deployment runtime
+Phase: Gated local deployment command
 
 Tags:
 - Type: #feature, #security
 - Platform: #golang, #astro
-- Content: #publishing, #runtime
+- Content: #publishing, #cli
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

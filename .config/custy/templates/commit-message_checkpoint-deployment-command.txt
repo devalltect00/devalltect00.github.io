@@ -1,0 +1,16 @@
+feat(publishing): add gated local deployment command with pinned file inputs
+
+- Require explicit opt-in, reviewed policy hash and exact bounded local artifacts.
+- Reject ambiguous flags, policy substitution and unsafe file inputs before runtime work.
+- Route to the guarded runtime and emit only constant outcome diagnostics.
+- Document recovery limits and synchronize tested security evidence and diagrams; leave hosted workflows disabled.
+
+Tag: none
+Phase: Gated local deployment command
+
+Tags:
+- Type: #feature, #security
+- Platform: #golang, #astro
+- Content: #publishing, #cli
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

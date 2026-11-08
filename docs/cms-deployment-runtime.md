@@ -44,3 +44,5 @@ artifacts, followed by independent terminal/output verification joined to atomic
 completion and ordering-hold release. No CLI, hosted workflow, permissions, live
 credentials, production copies or editing database were changed. A returned report
 is historical operation evidence, never deployment completion or hold discharge.
+
+[Local deployment command](cms-deployment-command.md) now exposes the explicitly gated operator boundary; hosted workflows remain unchanged.

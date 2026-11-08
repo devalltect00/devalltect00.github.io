@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" version="29.0.0">
+  <diagram name="01 — Proved staging retirement" id="stage-recovery-0">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="01 — Proved staging retirement" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Owner confirmation&#10;&#10;Current acknowledged accepted stage&#10;Strict UUID / session / Origin / CSRF&#10;Unknown dispatches stay blocked" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Short SQL authority fence&#10;&#10;Current Owner / source / candidate&#10;Exact proof / targets / accepted run&#10;Known uploaded artifact identity pinned" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Fixed provider GETs only&#10;&#10;Exact first completed staging run&#10;Stable failure or missing/expired upload&#10;No download or workflow mutation" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Repeat evidence and authority&#10;&#10;Second unchanged run / artifact list&#10;No live/rerun/usable/ambiguous state&#10;Final locked source/proof/Owner checks" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Immutable retirement + audit&#10;&#10;astro_stage_retirements / atomic audit&#10;Original outcomes/proofs stay intact&#10;Retired output cannot regain authority" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Separate later fresh admission&#10;&#10;Different UUID and new confirmation&#10;Only if current server eligibility allows&#10;All three lifetime admissions still count" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5t • Retirement is not dispatch, cancellation, deletion or publication • Unknown work stays blocked" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="02 — History and blocked states" id="stage-recovery-1">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="02 — History and blocked states" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Immutable ledger&#10;&#10;FK to original staging intent&#10;Finite reason / known run / reviewed code&#10;UPDATE/DELETE and nonempty down denied" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Projected retired state&#10;&#10;Original positive run/hash preserved&#10;Original accepted acknowledgement kept&#10;SQL-only replay / current-stage scoping" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Late-proof protection&#10;&#10;Retired work cannot write/replay proof&#10;Old uploaded evidence remains history&#10;New selection never inherits old proof" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Unknown is not failure&#10;&#10;Lost acknowledgement remains uncertain&#10;Lease expiry/404 is not safe proof&#10;No title-based discovery or retry reset" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Budget and replay&#10;&#10;Retirement does not erase an admission&#10;Retired UUID cannot be reused&#10;Three lifetime requests include all history" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="Next authority gates&#10;&#10;Trustworthy unknown-run reconciliation&#10;Protected exact deployment / readback&#10;Atomic Astro destination completion" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5t • Retirement is not dispatch, cancellation, deletion or publication • Unknown work stays blocked" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="03 — Verification and upgrade" id="stage-recovery-2">
+    <mxGraphModel page="1" pageWidth="1200" pageHeight="760">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="03 — Verification and upgrade" vertex="1" parent="1" style="text;html=0;fontSize=26;fontColor=#142B3A;align=left;">
+          <mxGeometry as="geometry" x="40" y="25" width="1120" height="65" />
+        </mxCell>
+        <mxCell id="n0" value="Provider protocol tests&#10;&#10;Fixed GETs / stable repeated evidence&#10;Missing/null/duplicate/inconsistent lists&#10;Wrong code/run/artifact and usable denied" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n1" value="Real PostgreSQL / HTTP&#10;&#10;Fresh IDs / exhausted budget / replay&#10;Owner/source/audit and late-proof fences&#10;Unknown requests perform no provider I/O" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n2" value="Flutter consent flow&#10;&#10;Strict state / lossless IDs / reasons&#10;Narrow dark pending/error/reference&#10;Fresh UUID only after separate confirmation" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="130" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n3" value="Upgrade locally&#10;&#10;Stop old API; apply migration 28&#10;Restart API and Flutter&#10;No new config/dependency/version" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="40" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n4" value="Explicit trust limits&#10;&#10;Stable observations are point-in-time&#10;SQL/network revocation not atomic&#10;Trusted runner/admin/load remain limits" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="430" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="n5" value="No hosted effects&#10;&#10;No cancellation/rerun/artifact deletion&#10;Hosted uploader remains disabled&#10;No deployment/publication completion" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fontSize=15;fontColor=#142B3A;fillColor=#F3F8FC;strokeColor=#8AA8C0;">
+          <mxGeometry as="geometry" x="820" y="390" width="340" height="215" />
+        </mxCell>
+        <mxCell id="limit" value="M5t • Retirement is not dispatch, cancellation, deletion or publication • Unknown work stays blocked" vertex="1" parent="1" style="rounded=1;html=0;whiteSpace=wrap;spacing=15;fontSize=15;fillColor=#FFF3DD;strokeColor=#CBA458;">
+          <mxGeometry as="geometry" x="40" y="670" width="1120" height="60" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

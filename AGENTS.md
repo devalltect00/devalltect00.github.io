@@ -94,3 +94,5 @@ M5p adds the optional standard-library Go stager in scripts/pages-tool and cms-p
 M5q documents the private Owner coordinator in docs/cms-owner-staging.md. Public request JSON remains unsigned; direct operator dispatch does not gain private SQL budget/current-Owner guarantees. Keep hosted uploader off by default and acceptance separate from artifact/deployment proof.
 
 M5s documents private successful-upload reconciliation in docs/cms-stage-reconciliation.md. Keep public workflows/tools unchanged and disabled by default. Historical uploaded-byte evidence does not authorize publication, retries or deployment.
+
+M5t documents conservative private retirement in docs/cms-stage-recovery.md. Public workflows/tools remain unchanged and disabled by default. Metadata retirement never cancels/deletes/deploys, and unknown dispatches do not gain retry authority.

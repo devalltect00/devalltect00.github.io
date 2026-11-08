@@ -53,3 +53,5 @@ or durable CMS job completion.
 [cms-stage-run-reader.drawio](cms-stage-run-reader.drawio) documents the fixed metadata reader and remaining authority gates. [Preview](previews/cms-stage-run-reader.png).
 
 [cms-stage-reconciliation.drawio](cms-stage-reconciliation.drawio) has three mirrored editable pages: exact acquisition, immutable authority/evidence, and checks/next gates. Previews: [01](previews/cms-stage-reconciliation-01.png), [02](previews/cms-stage-reconciliation-02.png), [03](previews/cms-stage-reconciliation-03.png).
+
+[cms-stage-recovery.drawio](cms-stage-recovery.drawio) has three mirrored editable pages: retirement flow, preserved history/blocked states, and tests/upgrade. Previews: [01](previews/cms-stage-recovery-01.png), [02](previews/cms-stage-recovery-02.png), [03](previews/cms-stage-recovery-03.png).

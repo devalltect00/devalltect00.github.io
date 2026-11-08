@@ -149,3 +149,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Staging-run reader boundary](docs/cms-stage-run-reader.md) documents the private provider integration; public workflows/runtime remain unchanged.
 
 [Owner upload reconciliation](docs/cms-stage-reconciliation.md) documents the private API/UI and unchanged public staging contract.
+
+[Conservative staging recovery](docs/cms-stage-recovery.md) documents private retirement without changing hosted workflow permissions or enabling publishing.

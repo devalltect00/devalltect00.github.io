@@ -1,21 +1,21 @@
-docs(content): explain Owner staging upload reconciliation
+docs(content): explain conservative staging retirement
 
-Extend c9e02cb with exact accepted-upload reconciliation and honest authority limits.
+Extend 9734df7 with explicit conservative staging recovery.
 
-- Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
-- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
-- Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
-- Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
-- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
-- Keep failed/uncertain recovery, deployment and publication completion as separate gates.
+- Verify known terminal failure or stable missing/expired upload with fixed repeated GETs.
+- Retain immutable retirement and atomic audit under current authority/proof/target fences.
+- Preserve original outcomes, proofs and three-admission lifetime budget; block late proof writes.
+- Require separate confirmation and a different UUID for any later eligible staging request.
+- Keep unknown dispatches blocked without automatic retry, cancellation or deletion.
+- Synchronize tests, migration guidance, API/REST examples, security evidence and native diagrams.
 
 Tag: none
-Previous checkpoint: c9e02cb
-Phase: Owner staging upload reconciliation
+Previous checkpoint: 9734df7
+Phase: Conservative staging recovery
 
 Tags:
-- Type: #feature, #security, #documentation
+- Type: #security, #documentation
 - Platform: #golang, #postgresql, #flutter, #astro
-- Content: #publishing, #integrity, #audit
+- Content: #publishing, #recovery, #audit
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

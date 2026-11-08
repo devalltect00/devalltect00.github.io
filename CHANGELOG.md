@@ -14,12 +14,18 @@ Unreleased
 
 **Summary**
 
-Extend c9e02cb with exact accepted-upload reconciliation and honest authority limits.
+Extend 9734df7 with explicit conservative staging recovery.
 
 ### 📚 Documentation
 
 #### Content
 
+- Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
+- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
+- Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
+- Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
+- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
+- Keep failed/uncertain recovery, deployment and publication completion as separate gates.
 - Separate staging run identity from the source candidate and bind the prepared tuple.
 - Share bounded provenance checks while preserving distinct workflow/title identities.
 - Exercise hostile metadata and zero-I/O staging preparation guards.
@@ -45,12 +51,10 @@ Extend c9e02cb with exact accepted-upload reconciliation and honest authority li
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-- Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
-- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
-- Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
-- Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
-- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
-- Keep failed/uncertain recovery, deployment and publication completion as separate gates.
+- Verify known terminal failure or stable missing/expired upload with fixed repeated GETs.
+- Preserve original outcomes, proofs and three-admission lifetime budget; block late proof writes.
+- Require separate confirmation and a different UUID for any later eligible staging request.
+- Keep unknown dispatches blocked without automatic retry, cancellation or deletion.
 
 ### ✨ Features
 

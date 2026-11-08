@@ -1,0 +1,16 @@
+feat(publishing): join workflow-owned Pages creation and receiver reporting
+
+- Join complete local verification, one-use admission, one provider POST and authenticated reporting.
+- Separate workflow provider credentials from private CMS dispatch credentials.
+- Preserve actual acknowledgements for report-only recovery without repeating deployment creation.
+- Verify joined loopback failures and update security evidence and diagrams; keep hosted runtime disabled.
+
+Tag: none
+Phase: Workflow-owned protected sender boundary
+
+Tags:
+- Type: #feature, #security
+- Platform: #golang, #astro
+- Content: #publishing, #receiver, #https
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

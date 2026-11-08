@@ -61,3 +61,5 @@ Independent verification, atomic completion and ordering-hold release remain
 separate gates. No editing database, live secret or production copy was changed.
 
 See [security evidence](security/cms-receiver-exchange.md) and [diagram](diagrams/receiver-client-exchange.drawio).
+
+[Protected sender](cms-protected-sender.md) documents the joined internal flow and workflow credential ownership. Hosted runtime remains disabled.

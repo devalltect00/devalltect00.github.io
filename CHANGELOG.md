@@ -57,6 +57,10 @@ Unreleased
 
 #### Publishing
 
+- Reject substituted workflow, repository, code, origin and audience observations before credentials.
+- Require explicit opt-in and exact main first-attempt protected runtime context.
+- Document environment trust limits, tests and remaining OIDC acquisition gate.
+- Synchronize security evidence and native diagrams without enabling hosted publishing.
 - Join complete local verification, one-use admission, one provider POST and authenticated reporting.
 - Separate workflow provider credentials from private CMS dispatch credentials.
 - Preserve actual acknowledgements for report-only recovery without repeating deployment creation.
@@ -64,7 +68,6 @@ Unreleased
 - Independently verify complete archives before exact machine admission and report exchanges.
 - Enforce one-shot admission, bounded no-store responses and exact plan/deadline binding.
 - Keep explicit receipt replay separate from provider writes and document security limits.
-- Update tests, security evidence and native diagrams without enabling hosted publishing.
 - Add a standard-library-only fixed-target GitHub acquisition and canonical repack tool.
 - Separate API credentials from bounded public-IP-pinned signed downloads.
 - Reject changed provenance, reruns, unsafe archives and source/payload pin mismatches.
@@ -73,9 +76,9 @@ Unreleased
 - Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
 - Verify genuine private/public repacks through independent complete Node TAR checks.
 - Keep authenticated CMS coordination and actual deployment/completion as future gates.
-- Reject substituted workflow, repository, code, origin and audience observations before credentials.
-- Require explicit opt-in and exact main first-attempt protected runtime context.
-- Document environment trust limits, tests and remaining OIDC acquisition gate.
+- Validate deployment context before accessing runner issuance credentials.
+- Pin the reviewed issuer origin, explicit audience and finite issuance budget.
+- Reject redirects, malformed responses and credential forwarding; keep CMS signature checks authoritative.
 
 ### 📚 Documentation
 

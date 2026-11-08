@@ -31,3 +31,5 @@ is unchanged; no database code changed and no migration is needed (schema 35).
 
 Next: bounded OIDC acquisition and verified runtime wiring. Deployment, completion
 and ordering-hold release remain disabled. Production copies remain untouched.
+
+[OIDC acquisition](cms-workflow-oidc.md) is implemented internally; executable publishing remains disabled.

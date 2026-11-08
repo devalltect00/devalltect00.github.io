@@ -1,0 +1,16 @@
+feat(publishing): acquire bounded workflow OIDC tokens from a pinned origin
+
+- Validate deployment context before accessing runner issuance credentials.
+- Pin the reviewed issuer origin, explicit audience and finite issuance budget.
+- Reject redirects, malformed responses and credential forwarding; keep CMS signature checks authoritative.
+- Document local tests and trust limits and synchronize diagrams without enabling hosted runtime.
+
+Tag: none
+Phase: Bounded workflow OIDC acquisition
+
+Tags:
+- Type: #feature, #security
+- Platform: #golang, #astro
+- Content: #publishing, #oidc
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

@@ -1,16 +1,16 @@
-feat(publishing): validate reviewed deployment workflow configuration
+feat(publishing): acquire bounded workflow OIDC tokens from a pinned origin
 
-- Reject substituted workflow, repository, code, origin and audience observations before credentials.
-- Require explicit opt-in and exact main first-attempt protected runtime context.
-- Document environment trust limits, tests and remaining OIDC acquisition gate.
-- Synchronize security evidence and native diagrams without enabling hosted publishing.
+- Validate deployment context before accessing runner issuance credentials.
+- Pin the reviewed issuer origin, explicit audience and finite issuance budget.
+- Reject redirects, malformed responses and credential forwarding; keep CMS signature checks authoritative.
+- Document local tests and trust limits and synchronize diagrams without enabling hosted runtime.
 
 Tag: none
-Phase: Deployment configuration guard
+Phase: Bounded workflow OIDC acquisition
 
 Tags:
 - Type: #feature, #security
 - Platform: #golang, #astro
-- Content: #publishing, #configuration
+- Content: #publishing, #oidc
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

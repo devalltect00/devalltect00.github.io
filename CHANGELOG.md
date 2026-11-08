@@ -16,6 +16,11 @@ Unreleased
 
 #### Content
 
+- Verify complete local candidate and uploaded content before authorization egress.
+- Bind one fixed-origin POST to exact intent, workflow run, canonical request hash and short expiry.
+- Reject redirects, retries, malformed decisions and unreviewed workflow configuration.
+- Test synthetic HTTP and local archive failures; document trust and ordering limits.
+- Keep runtime, OIDC acquisition and hosted Pages writes disabled.
 - Add independent public receiver intent and complete archive-integrity checks.
 - Connect private compiled output fixtures to public initial, update and empty proof.
 - Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
@@ -49,11 +54,6 @@ Unreleased
 - Fix navigation contrast and the mobile footer link name without changing the design system.
 - Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
-- Verify complete local candidate and uploaded content before authorization egress.
-- Bind one fixed-origin POST to exact intent, workflow run, canonical request hash and short expiry.
-- Reject redirects, retries, malformed decisions and unreviewed workflow configuration.
-- Test synthetic HTTP and local archive failures; document trust and ordering limits.
-- Keep runtime, OIDC acquisition and hosted Pages writes disabled.
 
 #### Publishing
 
@@ -65,6 +65,10 @@ Unreleased
 - Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
 - Verify genuine private/public repacks through independent complete Node TAR checks.
 - Keep authenticated CMS coordination and actual deployment/completion as future gates.
+- Independently verify complete archives before exact machine admission and report exchanges.
+- Enforce one-shot admission, bounded no-store responses and exact plan/deadline binding.
+- Keep explicit receipt replay separate from provider writes and document security limits.
+- Update tests, security evidence and native diagrams without enabling hosted publishing.
 
 ### 📚 Documentation
 
@@ -125,7 +129,7 @@ Unreleased
 
 **Tags**
 
-feature • docs • tests • content
+feature • docs • tests • publishing
 
 ## v1.0.0 (2026-09-26)
 

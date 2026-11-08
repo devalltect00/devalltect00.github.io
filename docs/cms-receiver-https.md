@@ -33,7 +33,7 @@ must recheck it with `validFor` immediately before use; that check alone does no
 prove current SQL authority after consumption or serialize remote writes.
 
 Each client instance atomically spends its one POST opportunity before sending.
-It never retries—even on denial, 429, redirect, outage or lost reply. Invalid local
+It never retriesâ€”even on denial, 429, redirect, outage or lost reply. Invalid local
 content does not send. Across process restarts the server's permanent one-use ledger
 still applies; the local spent bit is not durable replay protection. A lost consumed
 reply cannot safely become permission to launch another attempt. These availability
@@ -55,3 +55,5 @@ adds production source. Production copies, live credentials and hosted settings 
 untouched. Existing writers, contracts and compiled-output semantics are unchanged.
 
 See [evidence](security/cms-receiver-https.md) and [diagram](diagrams/cms-receiver-exchange.drawio).
+
+[Admission/report extension](cms-receiver-exchange.md) documents the next, still unregistered receiver boundary.

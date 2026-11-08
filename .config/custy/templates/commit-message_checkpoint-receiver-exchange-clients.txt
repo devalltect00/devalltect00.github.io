@@ -1,0 +1,16 @@
+feat(publishing): validate receiver admission and report over fixed HTTPS
+
+- Independently verify complete archives before exact machine admission and report exchanges.
+- Enforce one-shot admission, bounded no-store responses and exact plan/deadline binding.
+- Keep explicit receipt replay separate from provider writes and document security limits.
+- Update tests, security evidence and native diagrams without enabling hosted publishing.
+
+Tag: none
+Phase: Receiver admission and report HTTPS clients
+
+Tags:
+- Type: #feature, #security
+- Platform: #golang, #astro
+- Content: #publishing, #receiver, #https
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

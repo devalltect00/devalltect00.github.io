@@ -151,3 +151,5 @@ optional manual candidate workflow retains a public artifact; it does not deploy
 [Owner upload reconciliation](docs/cms-stage-reconciliation.md) documents the private API/UI and unchanged public staging contract.
 
 [Conservative staging recovery](docs/cms-stage-recovery.md) documents private retirement without changing hosted workflow permissions or enabling publishing.
+
+[Deployment receiver integrity](docs/cms-deployment-receiver.md) is local validation only; no deployment is enabled.

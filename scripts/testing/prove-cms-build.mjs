@@ -246,6 +246,20 @@ try {
     if (goFlag >= 0) {
       const stageRoot = path.join(requestRoot, "pages-" + stage);
       await command(
+        "deployment-receiver-" + stage,
+        process.env.HOMEPAGE_GO_BINARY ?? "go",
+        [
+          "-C",
+          path.resolve("scripts/pages-tool"),
+          "test",
+          ".",
+          "-run",
+          "^TestCompiledDeployReceiver$",
+          "-count=1",
+        ],
+        { CMS_DEPLOY_RECEIVER_FIXTURE: stageRoot },
+      );
+      await command(
         "stage-request-" + stage,
         process.env.HOMEPAGE_GO_BINARY ?? "go",
         [

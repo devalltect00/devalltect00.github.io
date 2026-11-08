@@ -1,21 +1,17 @@
-docs(content): explain conservative staging retirement
+feat(content): validate exact deployment intent and archive bytes locally
 
-Extend 9734df7 with explicit conservative staging recovery.
-
-- Verify known terminal failure or stable missing/expired upload with fixed repeated GETs.
-- Retain immutable retirement and atomic audit under current authority/proof/target fences.
-- Preserve original outcomes, proofs and three-admission lifetime budget; block late proof writes.
-- Require separate confirmation and a different UUID for any later eligible staging request.
-- Keep unknown dispatches blocked without automatic retry, cancellation or deletion.
-- Synchronize tests, migration guidance, API/REST examples, security evidence and native diagrams.
+- Add independent public receiver intent and complete archive-integrity checks.
+- Connect private compiled output fixtures to public initial, update and empty proof.
+- Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
+- Keep deployment authority, workflow and runtime entry points disabled.
+- Document security limits and synchronize editable diagrams.
 
 Tag: none
-Previous checkpoint: 9734df7
-Phase: Conservative staging recovery
+Phase: Independent deployment receiver integrity prerequisite
 
 Tags:
 - Type: #security, #documentation
-- Platform: #golang, #postgresql, #flutter, #astro
-- Content: #publishing, #recovery, #audit
+- Platform: #golang, #astro
+- Content: #publishing, #integrity, #receiver
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

@@ -12,19 +12,19 @@ https://github.com/devalltect00/devalltect00.github.io/compare/v1.0.0...HEAD
 **Release**
 Unreleased
 
-**Summary**
-
-Extend 9734df7 with explicit conservative staging recovery.
-
 ### 📚 Documentation
 
 #### Content
 
+- Verify known terminal failure or stable missing/expired upload with fixed repeated GETs.
+- Retain immutable retirement and atomic audit under current authority/proof/target fences.
+- Preserve original outcomes, proofs and three-admission lifetime budget; block late proof writes.
+- Require separate confirmation and a different UUID for any later eligible staging request.
+- Keep unknown dispatches blocked without automatic retry, cancellation or deletion.
+- Synchronize tests, migration guidance, API/REST examples, security evidence and native diagrams.
 - Connect fixed run metadata, credential-separated artifact acquisition and complete TAR comparison.
-- Retain immutable proof and atomic audit under repeated current Owner/source/proof/target checks.
 - Add strict authenticated API, lossless Flutter types and confirmed responsive verification controls.
 - Exercise real archive/SQL/HTTP boundaries and genuine compiled handoff inputs.
-- Synchronize migration guidance, contract, REST examples, security evidence and native diagrams.
 - Keep failed/uncertain recovery, deployment and publication completion as separate gates.
 - Separate staging run identity from the source candidate and bind the prepared tuple.
 - Share bounded provenance checks while preserving distinct workflow/title identities.
@@ -51,10 +51,6 @@ Extend 9734df7 with explicit conservative staging recovery.
 - Mirror the three-page draw.io diagram and reviewed previews.
 - Record local verification and the remaining destination completion gates.
 - Preserve homepage source, workflow permissions, authored content and dependencies.
-- Verify known terminal failure or stable missing/expired upload with fixed repeated GETs.
-- Preserve original outcomes, proofs and three-admission lifetime budget; block late proof writes.
-- Require separate confirmation and a different UUID for any later eligible staging request.
-- Keep unknown dispatches blocked without automatic retry, cancellation or deletion.
 
 ### ✨ Features
 
@@ -89,6 +85,10 @@ Extend 9734df7 with explicit conservative staging recovery.
 - Remediate locked toolchain advisories and stabilize the checker WASM peer resolution.
 - Document operations, security evidence, read-only CI proof and native editable diagrams.
 - Keep hosted dispatch and durable Astro destination receipts as separate future work.
+- Add independent public receiver intent and complete archive-integrity checks.
+- Connect private compiled output fixtures to public initial, update and empty proof.
+- Reject hostile metadata, changed bytes, wrapper inventory errors and cancellation.
+- Keep deployment authority, workflow and runtime entry points disabled.
 
 #### Publishing
 

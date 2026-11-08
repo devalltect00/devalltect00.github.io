@@ -96,3 +96,11 @@ M5q documents the private Owner coordinator in docs/cms-owner-staging.md. Public
 M5s documents private successful-upload reconciliation in docs/cms-stage-reconciliation.md. Keep public workflows/tools unchanged and disabled by default. Historical uploaded-byte evidence does not authorize publication, retries or deployment.
 
 M5t documents conservative private retirement in docs/cms-stage-recovery.md. Public workflows/tools remain unchanged and disabled by default. Metadata retirement never cancels/deletes/deploys, and unknown dispatches do not gain retry authority.
+
+## Deployment receiver integrity prerequisite
+
+Read docs/cms-deployment-receiver.md before changing the independent local intent
+or wrapper checks. No CLI/runtime/workflow exposes them. Public unsigned intent
+is not current CMS permission; do not attach Pages writes before authenticated
+fresh receiver authority and ordering are designed. Preserve complete canonical
+byte checks and rerun joint compiled initial/update/empty receiver proof.

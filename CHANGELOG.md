@@ -57,6 +57,10 @@ Unreleased
 
 #### Publishing
 
+- Join complete local verification, one-use admission, one provider POST and authenticated reporting.
+- Separate workflow provider credentials from private CMS dispatch credentials.
+- Preserve actual acknowledgements for report-only recovery without repeating deployment creation.
+- Verify joined loopback failures and update security evidence and diagrams; keep hosted runtime disabled.
 - Independently verify complete archives before exact machine admission and report exchanges.
 - Enforce one-shot admission, bounded no-store responses and exact plan/deadline binding.
 - Keep explicit receipt replay separate from provider writes and document security limits.
@@ -69,10 +73,9 @@ Unreleased
 - Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
 - Verify genuine private/public repacks through independent complete Node TAR checks.
 - Keep authenticated CMS coordination and actual deployment/completion as future gates.
-- Join complete local verification, one-use admission, one provider POST and authenticated reporting.
-- Separate workflow provider credentials from private CMS dispatch credentials.
-- Preserve actual acknowledgements for report-only recovery without repeating deployment creation.
-- Verify joined loopback failures and update security evidence and diagrams; keep hosted runtime disabled.
+- Reject substituted workflow, repository, code, origin and audience observations before credentials.
+- Require explicit opt-in and exact main first-attempt protected runtime context.
+- Document environment trust limits, tests and remaining OIDC acquisition gate.
 
 ### 📚 Documentation
 

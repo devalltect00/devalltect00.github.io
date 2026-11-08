@@ -1,0 +1,16 @@
+feat(publishing): validate reviewed deployment workflow configuration
+
+- Reject substituted workflow, repository, code, origin and audience observations before credentials.
+- Require explicit opt-in and exact main first-attempt protected runtime context.
+- Document environment trust limits, tests and remaining OIDC acquisition gate.
+- Synchronize security evidence and native diagrams without enabling hosted publishing.
+
+Tag: none
+Phase: Deployment configuration guard
+
+Tags:
+- Type: #feature, #security
+- Platform: #golang, #astro
+- Content: #publishing, #configuration
+- Delivery: #checkpoint, #untagged
+- Quality: #tested, #documented

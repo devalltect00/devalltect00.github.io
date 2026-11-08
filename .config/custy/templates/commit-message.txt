@@ -1,16 +1,16 @@
-feat(publishing): join workflow-owned Pages creation and receiver reporting
+feat(publishing): validate reviewed deployment workflow configuration
 
-- Join complete local verification, one-use admission, one provider POST and authenticated reporting.
-- Separate workflow provider credentials from private CMS dispatch credentials.
-- Preserve actual acknowledgements for report-only recovery without repeating deployment creation.
-- Verify joined loopback failures and update security evidence and diagrams; keep hosted runtime disabled.
+- Reject substituted workflow, repository, code, origin and audience observations before credentials.
+- Require explicit opt-in and exact main first-attempt protected runtime context.
+- Document environment trust limits, tests and remaining OIDC acquisition gate.
+- Synchronize security evidence and native diagrams without enabling hosted publishing.
 
 Tag: none
-Phase: Workflow-owned protected sender boundary
+Phase: Deployment configuration guard
 
 Tags:
 - Type: #feature, #security
 - Platform: #golang, #astro
-- Content: #publishing, #receiver, #https
+- Content: #publishing, #configuration
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

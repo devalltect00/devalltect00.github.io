@@ -71,3 +71,5 @@ unchanged. No current editing DB or production copy was touched.
 Next: bounded protected runtime configuration and OIDC acquisition, followed by
 independent terminal/public-output proof joined to atomic completion and hold release.
 No successful sender result certifies deployment completion or releases ordering.
+
+[Configuration guard](cms-deployment-settings.md) is implemented internally; token acquisition remains separate.

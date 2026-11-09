@@ -47,6 +47,9 @@ func settings(get func(string) string, r StageRequest) (runtime, error) {
 
 // execute separates packing/staging from the explicitly opted-in deployment command.
 func execute(args []string, get func(string) string, output io.Writer) error {
+	if len(args) > 0 && args[0] == "deploy-workflow" {
+		return runWorkflowDeployment(args[1:], get, output)
+	}
 	if len(args) > 0 && args[0] == "deploy-local" {
 		return runDeploymentCommand(args[1:], get, output)
 	}
@@ -119,7 +122,7 @@ func execute(args []string, get func(string) string, output io.Writer) error {
 func main() {
 	if execute(os.Args[1:], os.Getenv, os.Stdout) != nil {
 		diagnostic := errInvalid
-		if len(os.Args) > 1 && os.Args[1] == "deploy-local" {
+		if len(os.Args) > 1 && (os.Args[1] == "deploy-local" || os.Args[1] == "deploy-workflow") {
 			diagnostic = errReceiver
 		}
 		fmt.Fprintln(os.Stderr, diagnostic)

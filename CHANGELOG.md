@@ -57,6 +57,9 @@ Unreleased
 
 #### Publishing
 
+- Require explicit opt-in, reviewed policy hash and exact bounded local artifacts.
+- Reject ambiguous flags, policy substitution and unsafe file inputs before runtime work.
+- Route to the guarded runtime and emit only constant outcome diagnostics.
 - Validate reviewed policy and complete local archives before credential access.
 - Compose fixed issuer, receiver and provider clients with bounded one-shot execution.
 - Preserve report-only recovery and close adapters without resetting admission budgets.
@@ -83,9 +86,11 @@ Unreleased
 - Add credential-free Go CI, hostile protocol/archive/context and executable workflow guard tests.
 - Verify genuine private/public repacks through independent complete Node TAR checks.
 - Keep authenticated CMS coordination and actual deployment/completion as future gates.
-- Require explicit opt-in, reviewed policy hash and exact bounded local artifacts.
-- Reject ambiguous flags, policy substitution and unsafe file inputs before runtime work.
-- Route to the guarded runtime and emit only constant outcome diagnostics.
+- Gate main first-attempt deployment on separately reviewed policy and exact source pins.
+- Acquire exact candidate/upload archives and verify complete bytes before OIDC and one-shot Pages authority.
+- Preserve authored mode while disabled and prevent competing authored deployment during CMS mode.
+- Test provenance, byte corruption and actual pre-checkout guard rejection paths.
+- Document CMS completion/recovery, synchronized diagrams, local acceptance and unexecuted hosted rollout.
 
 ### 📚 Documentation
 

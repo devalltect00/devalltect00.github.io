@@ -1,0 +1,88 @@
+# One protected CMS writer. Enabling repository variables/environment is a separate reviewed rollout action.
+name: Deploy exact CMS Pages release
+run-name: CMS Astro deployment ${{ inputs.deployment_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_id:
+        description: Permanent CMS deployment UUID
+        required: true
+        type: string
+      request:
+        description: Exact approved astro-pages-deploy-v1 request; never policy or credentials
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: ${{ vars.HOMEPAGE_CMS_DEPLOY_ENABLED == 'true' && github.ref == 'refs/heads/main' && github.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: github-pages
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    env:
+      CMS_DEPLOY_ENABLED: ${{ vars.HOMEPAGE_CMS_DEPLOY_ENABLED }}
+      CMS_DEPLOY_ENVIRONMENT: github-pages
+      CMS_RECEIVER_ORIGIN: ${{ vars.HOMEPAGE_CMS_RECEIVER_ORIGIN }}
+      CMS_OIDC_AUDIENCE: ${{ vars.HOMEPAGE_CMS_OIDC_AUDIENCE }}
+      CMS_CANDIDATE_WORKFLOW_ID: ${{ vars.HOMEPAGE_CMS_CANDIDATE_WORKFLOW_ID }}
+      CMS_STAGE_WORKFLOW_ID: ${{ vars.HOMEPAGE_CMS_STAGE_WORKFLOW_ID }}
+      CMS_REVIEWED_POLICY: ${{ vars.HOMEPAGE_CMS_DEPLOY_POLICY }}
+      CMS_POLICY_SHA256: ${{ vars.HOMEPAGE_CMS_DEPLOY_POLICY_SHA256 }}
+      CMS_DEPLOYMENT_ID: ${{ inputs.deployment_id }}
+      CMS_DEPLOYMENT_REQUEST: ${{ inputs.request }}
+    steps:
+      - name: Validate reviewed code, policy pin and public correlation before checkout
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re
+          def unique(pairs):
+              out = {}
+              for key, value in pairs:
+                  if key in out: raise ValueError()
+                  out[key] = value
+              return out
+          try:
+              raw = os.environ['CMS_REVIEWED_POLICY'].encode('utf-8')
+              pin = os.environ['CMS_POLICY_SHA256']
+              if not 0 < len(raw) <= 8192 or not re.fullmatch('[a-f0-9]{64}', pin) or hashlib.sha256(raw).hexdigest() != pin: raise ValueError()
+              policy = json.loads(raw, object_pairs_hook=unique)
+              request_raw = os.environ['CMS_DEPLOYMENT_REQUEST'].encode('utf-8')
+              if not 0 < len(request_raw) <= 12288: raise ValueError()
+              request = json.loads(request_raw, object_pairs_hook=unique)
+              identity = os.environ['CMS_DEPLOYMENT_ID']
+              if not re.fullmatch('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}', identity): raise ValueError()
+              if request['request_id'] != identity or request['stage']['head_sha'] != os.environ['GITHUB_SHA']: raise ValueError()
+              if policy['head_sha'] != os.environ['GITHUB_SHA'] or policy['head_sha'] != os.environ['GITHUB_WORKFLOW_SHA']: raise ValueError()
+              if policy['repository'] != os.environ['GITHUB_REPOSITORY'] or policy['repository_id'] != os.environ['GITHUB_REPOSITORY_ID']: raise ValueError()
+              if policy['workflow_ref'] != os.environ['GITHUB_WORKFLOW_REF'] or os.environ['GITHUB_REF'] != 'refs/heads/main' or os.environ['GITHUB_RUN_ATTEMPT'] != '1': raise ValueError()
+              root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'cms-pages-deploy'
+              root.mkdir(mode=0o700)
+              for name, body in [('policy.json', raw), ('request.json', request_raw)]:
+                  with (root / name).open('xb') as output: output.write(body)
+          except Exception:
+              raise SystemExit('PAGES_RECEIVER_UNVERIFIED')
+          PY
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: scripts/pages-tool/go.mod
+          cache: false
+      - name: Acquire exact artifacts and execute the guarded one-shot receiver
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          go -C scripts/pages-tool run . deploy-workflow --policy "$RUNNER_TEMP/cms-pages-deploy/policy.json" --policy-sha256 "$CMS_POLICY_SHA256" --request "$RUNNER_TEMP/cms-pages-deploy/request.json"

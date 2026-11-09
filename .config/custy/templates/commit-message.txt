@@ -1,16 +1,17 @@
-feat(publishing): add gated local deployment command with pinned file inputs
+feat(publishing): add protected exact-content Pages workflow
 
-- Require explicit opt-in, reviewed policy hash and exact bounded local artifacts.
-- Reject ambiguous flags, policy substitution and unsafe file inputs before runtime work.
-- Route to the guarded runtime and emit only constant outcome diagnostics.
-- Document recovery limits and synchronize tested security evidence and diagrams; leave hosted workflows disabled.
+- Gate main first-attempt deployment on separately reviewed policy and exact source pins.
+- Acquire exact candidate/upload archives and verify complete bytes before OIDC and one-shot Pages authority.
+- Preserve authored mode while disabled and prevent competing authored deployment during CMS mode.
+- Test provenance, byte corruption and actual pre-checkout guard rejection paths.
+- Document CMS completion/recovery, synchronized diagrams, local acceptance and unexecuted hosted rollout.
 
 Tag: none
-Phase: Gated local deployment command
+Phase: Astro publishing milestone
 
 Tags:
 - Type: #feature, #security
-- Platform: #golang, #astro
-- Content: #publishing, #cli
+- Platform: #golang, #astro, #flutter
+- Content: #publishing, #recovery
 - Delivery: #checkpoint, #untagged
 - Quality: #tested, #documented

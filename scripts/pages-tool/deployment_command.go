@@ -73,26 +73,7 @@ func deploymentCommandWith(args []string, get func(string) string, output io.Wri
 		}
 		flags[key] = value
 	}
-	if !digest.MatchString(flags["--policy-sha256"]) {
-		return errReceiver
-	}
-	raw, e := readDeploymentFile(flags["--policy"], 8192)
-	if e != nil {
-		return errReceiver
-	}
-	hash := sha256.Sum256(raw)
-	if hex.EncodeToString(hash[:]) != flags["--policy-sha256"] {
-		return errReceiver
-	}
-	var file deploymentPolicyFile
-	if jsonv2.Unmarshal(raw, &file, jsonv2.RejectUnknownMembers(true)) != nil || file.SchemaVersion != 1 || file.Scope != "astro-protected-runtime-policy-v1" || file.IssuerOrigin == "" {
-		return errReceiver
-	}
-	policy := deploymentPolicy{file.Repository, file.RepositoryID, file.WorkflowRef, file.HeadSHA, file.ReceiverOrigin, file.Audience}
-	if _, e = validateDeploymentSettings(policy, get); e != nil {
-		return errReceiver
-	}
-	request, e := readDeploymentFile(flags["--request"], 12288)
+	policy, file, request, e := loadDeploymentPolicy(flags, get)
 	if e != nil {
 		return errReceiver
 	}
@@ -115,4 +96,32 @@ func deploymentCommandWith(args []string, get func(string) string, output io.Wri
 		return errReceiver
 	}
 	return nil
+}
+
+// loadDeploymentPolicy pins operator-reviewed configuration and validates exact workflow observations before artifact acquisition.
+func loadDeploymentPolicy(flags map[string]string, get func(string) string) (deploymentPolicy, deploymentPolicyFile, []byte, error) {
+	if !digest.MatchString(flags["--policy-sha256"]) {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	raw, e := readDeploymentFile(flags["--policy"], 8192)
+	if e != nil {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	hash := sha256.Sum256(raw)
+	if hex.EncodeToString(hash[:]) != flags["--policy-sha256"] {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	var file deploymentPolicyFile
+	if jsonv2.Unmarshal(raw, &file, jsonv2.RejectUnknownMembers(true)) != nil || file.SchemaVersion != 1 || file.Scope != "astro-protected-runtime-policy-v1" || file.IssuerOrigin == "" {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	policy := deploymentPolicy{file.Repository, file.RepositoryID, file.WorkflowRef, file.HeadSHA, file.ReceiverOrigin, file.Audience}
+	if _, e = validateDeploymentSettings(policy, get); e != nil {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	request, e := readDeploymentFile(flags["--request"], 12288)
+	if e != nil {
+		return deploymentPolicy{}, deploymentPolicyFile{}, nil, errReceiver
+	}
+	return policy, file, request, nil
 }

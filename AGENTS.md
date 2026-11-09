@@ -97,15 +97,14 @@ M5s documents private successful-upload reconciliation in docs/cms-stage-reconci
 
 M5t documents conservative private retirement in docs/cms-stage-recovery.md. Public workflows/tools remain unchanged and disabled by default. Metadata retirement never cancels/deletes/deploys, and unknown dispatches do not gain retry authority.
 
-## Deployment receiver integrity prerequisite
+## Protected CMS deployment boundary
 
-Read docs/cms-deployment-receiver.md before changing the independent local intent
-or wrapper checks. No CLI/runtime/workflow exposes them. Public unsigned intent
-is not current CMS permission; do not attach Pages writes before authenticated
-fresh receiver authority and ordering are designed. Preserve complete canonical
-byte checks and rerun joint compiled initial/update/empty receiver proof.
-
-Receiver HTTPS code remains unregistered; read docs/cms-receiver-https.md before
-changing its origin/token handling. Reviewed configuration is not dispatch input.
-Keep complete byte verification before egress and never attach Pages writes before
-receiver-side ordering and protected runtime authority are implemented.
+Read docs/cms-publishing.md for the current opt-in workflow and completion contract.
+Earlier receiver/runtime documents describe historical prerequisites. Keep hosted
+publishing disabled unless separately reviewed and authorized. Public unsigned
+requests never grant CMS permission. Preserve complete byte verification before
+OIDC/Pages writes, one-use durable admission, non-retrying creation, exact private
+completion proof and independent public-file inspection. Do not widen workflow
+permissions, accept dispatch-selected policy, bypass failed admission or reset
+attempt history. Run Go tests/vet, workflow guard tests and pnpm validate for this
+boundary; writer/content-contract changes also require joint compiled fixtures.

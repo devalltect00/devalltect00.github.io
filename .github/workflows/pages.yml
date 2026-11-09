@@ -15,11 +15,12 @@ env:
   PUBLIC_DOCUMENTATION_URL: ${{ vars.PUBLIC_DOCUMENTATION_URL }}
 
 concurrency:
-  group: github-pages
-  cancel-in-progress: true
+  group: ${{ vars.HOMEPAGE_CMS_DEPLOY_ENABLED == 'true' && 'github-pages-authored-disabled' || 'github-pages' }}
+  cancel-in-progress: false
 
 jobs:
   build:
+    if: ${{ vars.HOMEPAGE_CMS_DEPLOY_ENABLED != 'true' }}
     name: 🏗️ Build Astro homepage
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,48 @@
+# Bootstrap public key/origin metadata only. This workflow cannot deploy Pages or complete CMS work.
+name: Inspect CMS workflow identity (no deployment)
+run-name: CMS Astro identity preflight ${{ github.run_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      expected_head_sha:
+        description: Exact reviewed main-branch source commit
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: astro-cms-identity-preflight
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: ${{ github.ref == 'refs/heads/main' && github.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    environment: github-pages
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      ASTRO_EXPECTED_HEAD_SHA: ${{ inputs.expected_head_sha }}
+    steps:
+      - name: Check reviewed source before checkout
+        shell: bash
+        run: |
+          [[ "$ASTRO_EXPECTED_HEAD_SHA" =~ ^[a-f0-9]{40}$ ]] || exit 1
+          [[ "$GITHUB_SHA" == "$ASTRO_EXPECTED_HEAD_SHA" ]] || exit 1
+          [[ "$GITHUB_WORKFLOW_SHA" == "$ASTRO_EXPECTED_HEAD_SHA" ]] || exit 1
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Inspect public identity metadata without logging a JWT
+        run: python3 scripts/content/oidc-preflight.py
+      - name: Display only the allowlisted public metadata
+        run: cat "$RUNNER_TEMP/astro-oidc-preflight.json"
+      - name: Retain public metadata for one day
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: astro-cms-oidc-preflight-${{ github.run_id }}
+          path: ${{ runner.temp }}/astro-oidc-preflight.json
+          if-no-files-found: error
+          retention-days: 1

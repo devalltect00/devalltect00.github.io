@@ -1,5 +1,15 @@
 # Development Journey
 
+## 2026-11-26 — Patched Pages tool and deployment-free identity bootstrap
+
+Pin the existing Go tool/CI to 1.27.4 and add a separate manual identity-only
+workflow. Its public key/origin observations expose no JWT/capability and grant
+no CMS/Pages permission. Pure Python negative tests run through normal pnpm
+repository validation. Existing candidate/stage/deploy contracts remain intact.
+The initial hosted inspection found remote main missing the CMS workflows, so
+source publication/pinning precede any actual dispatch. No site deployment or CMS
+receipt is implied. See [operator guide](cms-hosted-preflight.md).
+
 This file records the architectural decisions and repeatable setup steps for
 the Devalltect homepage. It is an internal development record, not the public
 portfolio narrative.

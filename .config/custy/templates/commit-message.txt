@@ -1,17 +1,16 @@
-feat(publishing): add protected exact-content Pages workflow
+fix(ops): prepare patched Pages tooling and safe identity preflight
 
-- Gate main first-attempt deployment on separately reviewed policy and exact source pins.
-- Acquire exact candidate/upload archives and verify complete bytes before OIDC and one-shot Pages authority.
-- Preserve authored mode while disabled and prevent competing authored deployment during CMS mode.
-- Test provenance, byte corruption and actual pre-checkout guard rejection paths.
-- Document CMS completion/recovery, synchronized diagrams, local acceptance and unexecuted hosted rollout.
+- Pin the Pages tool to Go 1.27.4 while preserving its existing race and vulnerability CI gates.
+- Add a separate main-only identity metadata workflow without Pages-write or CMS authority.
+- Reject stale contexts and ambiguous metadata without exposing runtime capabilities or JWTs.
+- Run the Python security cases through the existing repository validation command.
+- Document exact source/policy setup and preserve the current public site until verified rollout.
 
 Tag: none
-Phase: Astro publishing milestone
+Phase: CMS Pages source and identity-preflight readiness
 
 Tags:
-- Type: #feature, #security
-- Platform: #golang, #astro, #flutter
-- Content: #publishing, #recovery
+- Type: #fix
+- Platform: #astro, #github, #golang, #python
+- Content: #deployment, #security, #testing, #documentation
 - Delivery: #checkpoint, #untagged
-- Quality: #tested, #documented

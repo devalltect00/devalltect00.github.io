@@ -1,5 +1,11 @@
 # CMS build diagrams
 
+## Hosted identity preflight
+
+[Editable overview](cms-hosted-preflight.drawio) and [PNG preview](previews/cms-hosted-preflight.png) separate
+source publication, identity metadata, private configuration and the existing
+protected CMS deployment/receipt flow. No hosted activation is implied.
+
 Open [cms-builds.drawio](cms-builds.drawio) in draw.io Desktop. All nodes and edges
 are native editable elements; these diagrams describe the implemented local preview.
 

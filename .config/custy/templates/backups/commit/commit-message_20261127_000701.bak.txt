@@ -1,0 +1,16 @@
+fix(ops): prepare patched Pages tooling and safe identity preflight
+
+- Pin the Pages tool to Go 1.27.4 while preserving its existing race and vulnerability CI gates.
+- Add a separate main-only identity metadata workflow without Pages-write or CMS authority.
+- Reject stale contexts and ambiguous metadata without exposing runtime capabilities or JWTs.
+- Run the Python security cases through the existing repository validation command.
+- Document exact source/policy setup and preserve the current public site until verified rollout.
+
+Tag: none
+Phase: CMS Pages source and identity-preflight readiness
+
+Tags:
+- Type: #fix
+- Platform: #astro, #github, #golang, #python
+- Content: #deployment, #security, #testing, #documentation
+- Delivery: #checkpoint, #untagged

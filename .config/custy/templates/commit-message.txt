@@ -1,16 +1,16 @@
-fix(ops): prepare patched Pages tooling and safe identity preflight
+fix(security): match immutable GitHub preflight identity
 
-- Pin the Pages tool to Go 1.27.4 while preserving its existing race and vulnerability CI gates.
-- Add a separate main-only identity metadata workflow without Pages-write or CMS authority.
-- Reject stale contexts and ambiguous metadata without exposing runtime capabilities or JWTs.
-- Run the Python security cases through the existing repository validation command.
-- Document exact source/policy setup and preserve the current public site until verified rollout.
+- Pin the repository's reviewed immutable subject and independently compare owner and runner claims.
+- Emit only fixed diagnostic codes without JWTs, claim values or upstream errors.
+- Extend pure Python regressions for foreign and legacy subjects and no-leak failures.
+- Document new-source first-attempt execution and synchronize the editable diagram.
+- Keep Pages writes and CMS authorization outside the bootstrap workflow.
 
 Tag: none
-Phase: CMS Pages source and identity-preflight readiness
+Phase: Immutable GitHub OIDC subject compatibility
 
 Tags:
-- Type: #fix
-- Platform: #astro, #github, #golang, #python
-- Content: #deployment, #security, #testing, #documentation
+- Type: #fix, #security
+- Platform: #github, #astro, #golang, #python
+- Content: #authentication, #deployment, #testing, #documentation
 - Delivery: #checkpoint, #untagged

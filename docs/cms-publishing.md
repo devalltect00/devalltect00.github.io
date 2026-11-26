@@ -44,7 +44,13 @@ Deployment stays disabled when both new settings are absent:
 
 The existing candidate/staging configuration and private token file are still
 required. The fixed audience is `https://github.com/<repository-owner>`; the
-subject is `repo:<owner>/<repo>:environment:github-pages`. Never put token contents
+default subject is `repo:<owner>/<repo>:environment:github-pages`. For repositories
+using immutable subjects, explicitly set trusted `CMS_ASTRO_OIDC_SUBJECT` to
+`repo:<owner>@<owner-id>/<repo>@<repo-id>:environment:github-pages` after reading
+the repository OIDC policy. The API validates configured names/repository ID and
+a canonical owner ID, then requires that single exact signed subject; it never
+accepts both formats automatically. Blank preserves the legacy configuration.
+Never put token contents
 in dotenv, workflow dispatch inputs, Git, screenshots or documentation.
 The current local production-like Compose profile does not expose the optional
 publishing configuration or mount its credential file. Use the existing native

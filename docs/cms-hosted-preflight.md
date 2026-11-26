@@ -1,5 +1,28 @@
 # Hosted CMS identity preflight
 
+## Immutable subject correction — 27 November 2026
+
+The repository's read-only OIDC policy reports `use_immutable_subject:true`.
+The preflight therefore pins this exact public identity:
+`repo:devalltect00@62181469/devalltect00.github.io@1389151718:environment:github-pages`.
+Owner/repository IDs and environment/runner/branch metadata are also compared
+independently. Legacy or foreign identities are rejected. Public metadata now
+includes the reviewed subject and owner ID; JWTs and capabilities stay in memory.
+
+Failed runs report only fixed reason codes, such as `CLAIM_SUB`,
+`ISSUANCE_REQUEST_FAILED` or `UNEXPECTED`, after `OIDC_PREFLIGHT_UNVERIFIED:`.
+No token, claim value, URL or upstream diagnostic is echoed. The original generic
+failure cannot establish which guard ran last, but its legacy subject expectation
+is incompatible with the verified GitHub policy. This corrects the reader policy;
+it does not change GitHub identity settings or grant deployment permission.
+
+Commit/push this correction, confirm new-source CI, then create a **new** manual
+first-attempt preflight with the **new full main SHA**. Do not rerun a prior attempt
+or use historical SHA `4098e40` for corrected code. The private CMS must install the
+corresponding reviewed `CMS_ASTRO_OIDC_SUBJECT` and patched API through its later
+operator handoff before protected publication. No migration is required.
+See [GitHub immutable subject documentation](https://docs.github.com/en/actions/reference/security/oidc#immutable-subject-claims).
+
 The homepage keeps its existing static English `/` and Indonesian `/id/` routes.
 The protected [publishing workflow](cms-publishing.md) remains the sole CMS Pages
 writer. This guide adds an operator bootstrap check, not a new publishing authority.

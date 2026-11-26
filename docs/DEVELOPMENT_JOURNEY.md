@@ -1,5 +1,15 @@
 # Development Journey
 
+## 2026-11-27 — Pin immutable GitHub workflow identity
+
+Read-only provider settings revealed immutable OIDC subjects with owner and
+repository IDs. Correct the identity-only preflight, independently check owner/
+environment/runner fields and report only fixed diagnostic codes on failure.
+Ten pure Python cases include foreign/legacy subject and no-leak regressions.
+The private CMS receives a separate exact trusted subject configuration; neither
+side accepts token-selected policy or relaxes signature/SQL authority. No hosted
+preflight success or deployment is implied by local source. See the operator guide.
+
 ## 2026-11-26 — Patched Pages tool and deployment-free identity bootstrap
 
 Pin the existing Go tool/CI to 1.27.4 and add a separate manual identity-only

@@ -1,0 +1,16 @@
+fix(security): match immutable GitHub preflight identity
+
+- Pin the repository's reviewed immutable subject and independently compare owner and runner claims.
+- Emit only fixed diagnostic codes without JWTs, claim values or upstream errors.
+- Extend pure Python regressions for foreign and legacy subjects and no-leak failures.
+- Document new-source first-attempt execution and synchronize the editable diagram.
+- Keep Pages writes and CMS authorization outside the bootstrap workflow.
+
+Tag: none
+Phase: Immutable GitHub OIDC subject compatibility
+
+Tags:
+- Type: #fix, #security
+- Platform: #github, #astro, #golang, #python
+- Content: #authentication, #deployment, #testing, #documentation
+- Delivery: #checkpoint, #untagged

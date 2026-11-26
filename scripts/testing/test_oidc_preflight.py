@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+from unittest import mock
 
 SPEC = importlib.util.spec_from_file_location(
     "oidc_preflight", Path(__file__).resolve().parents[1] / "content" / "oidc-preflight.py")
@@ -18,7 +19,9 @@ def environment():
     return {"GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "workflow_dispatch",
             "RUNNER_ENVIRONMENT": "github-hosted", "GITHUB_SERVER_URL": "https://github.com",
             "GITHUB_API_URL": "https://api.github.com", "GITHUB_REPOSITORY": PREFLIGHT.REPOSITORY,
-            "GITHUB_REPOSITORY_ID": PREFLIGHT.REPOSITORY_ID, "GITHUB_REF": "refs/heads/main",
+            "GITHUB_REPOSITORY_ID": PREFLIGHT.REPOSITORY_ID,
+            "GITHUB_REPOSITORY_OWNER": PREFLIGHT.OWNER,
+            "GITHUB_REPOSITORY_OWNER_ID": PREFLIGHT.OWNER_ID, "GITHUB_REF": "refs/heads/main",
             "GITHUB_RUN_ATTEMPT": "1", "GITHUB_SHA": SHA, "GITHUB_WORKFLOW_SHA": SHA,
             "GITHUB_WORKFLOW_REF": PREFLIGHT.WORKFLOW, "GITHUB_RUN_ID": "77",
             "ASTRO_EXPECTED_HEAD_SHA": SHA,
@@ -29,8 +32,10 @@ def environment():
 def claims():
     """Fixture claims are observations only; their synthetic signature grants no authority."""
     return {"iss": PREFLIGHT.ISSUER, "aud": PREFLIGHT.AUDIENCE,
-            "sub": "repo:" + PREFLIGHT.REPOSITORY + ":environment:github-pages",
+            "sub": PREFLIGHT.SUBJECT,
             "repository": PREFLIGHT.REPOSITORY, "repository_id": PREFLIGHT.REPOSITORY_ID,
+            "repository_owner": PREFLIGHT.OWNER, "repository_owner_id": PREFLIGHT.OWNER_ID,
+            "ref_type": "branch", "runner_environment": "github-hosted", "environment": "github-pages",
             "ref": "refs/heads/main", "event_name": "workflow_dispatch", "run_id": "77",
             "run_attempt": "1", "sha": SHA, "workflow_sha": SHA,
             "workflow_ref": PREFLIGHT.WORKFLOW, "iat": NOW, "nbf": NOW-5, "exp": NOW+300}
@@ -59,7 +64,8 @@ class PreflightTests(unittest.TestCase):
         for key, value in [("GITHUB_REF", "refs/heads/foreign"), ("GITHUB_RUN_ATTEMPT", "2"),
                            ("RUNNER_ENVIRONMENT", "self-hosted"), ("GITHUB_WORKFLOW_SHA", "b"*40),
                            ("GITHUB_WORKFLOW_REF", PREFLIGHT.REPOSITORY + "/.github/workflows/cms-pages-deploy.yml@refs/heads/main"),
-                           ("GITHUB_REPOSITORY_ID", "9"), ("GITHUB_RUN_ID", "077")]:
+                           ("GITHUB_REPOSITORY_ID", "9"), ("GITHUB_REPOSITORY_OWNER_ID", "9"),
+                           ("GITHUB_REPOSITORY_OWNER", "foreign"), ("GITHUB_RUN_ID", "077")]:
             with self.subTest(key=key):
                 env=Guarded(environment());env[key]=value
                 with self.assertRaises(ValueError):
@@ -112,6 +118,53 @@ class PreflightTests(unittest.TestCase):
                      {"keys":[{"kid":"public-fixture-key","kty":"EC"}]}]:
             with self.subTest(keys=keys),self.assertRaises(ValueError):
                 PREFLIGHT.observed_identity(jwt(),keys,SHA,"77",NOW)
+
+    def test_immutable_subject_exact_ids_and_environment(self):
+        """Accept only the reviewed immutable subject, never legacy or other owners/repositories."""
+        for value in ["repo:" + PREFLIGHT.REPOSITORY + ":environment:github-pages",
+                      PREFLIGHT.SUBJECT.replace("@62181469/", "@9/"),
+                      PREFLIGHT.SUBJECT.replace("@1389151718:", "@9:"),
+                      PREFLIGHT.SUBJECT.replace(":github-pages", ":foreign")]:
+            payload = claims(); payload["sub"] = value
+            with self.subTest(subject=value), self.assertRaises(PREFLIGHT.PreflightError) as failure:
+                PREFLIGHT.observed_identity(jwt(payload), self.keys, SHA, "77", NOW)
+            self.assertEqual(failure.exception.code, "CLAIM_SUB")
+        result = PREFLIGHT.observed_identity(jwt(), self.keys, SHA, "77", NOW)
+        self.assertEqual(result["subject"], PREFLIGHT.SUBJECT)
+        self.assertEqual(result["repository_owner_id"], PREFLIGHT.OWNER_ID)
+
+    def test_immutable_owner_and_hosted_claims_are_required(self):
+        """An exact subject does not replace independent signed metadata comparisons."""
+        for key in ["repository_owner", "repository_owner_id", "environment", "ref_type", "runner_environment"]:
+            for replacement in [None, "foreign"]:
+                payload = claims(); payload[key] = replacement
+                with self.subTest(key=key), self.assertRaises(PREFLIGHT.PreflightError) as failure:
+                    PREFLIGHT.observed_identity(jwt(payload), self.keys, SHA, "77", NOW)
+                self.assertEqual(failure.exception.code, "CLAIM_" + key.upper())
+
+    def test_provider_errors_become_fixed_phase_codes(self):
+        """Upstream exceptions can contain private URLs/headers; never preserve their message."""
+        for stage in [1, 2]:
+            calls = []
+            def fetch(url, bearer=None):
+                calls.append(url)
+                if len(calls) == stage:
+                    raise RuntimeError("synthetic-private-upstream-canary")
+                return {"value": jwt()}
+            with self.subTest(stage=stage), self.assertRaises(PREFLIGHT.PreflightError) as failure:
+                PREFLIGHT.collect(environment(), fetch=fetch, now=NOW)
+            self.assertEqual(failure.exception.code, "ISSUANCE_REQUEST_FAILED" if stage == 1 else "PUBLIC_KEYS_REQUEST_FAILED")
+            self.assertNotIn("canary", str(failure.exception))
+
+    def test_main_exposes_only_fixed_diagnostics(self):
+        """Even unexpected errors or unrecognized reason codes cannot put input into console output."""
+        for failure, expected in [(PREFLIGHT.PreflightError("CLAIM_SUB"), "CLAIM_SUB"),
+                                  (PREFLIGHT.PreflightError("PRIVATE_CANARY"), "UNEXPECTED"),
+                                  (RuntimeError("synthetic-private-upstream-canary"), "UNEXPECTED")]:
+            with self.subTest(expected=expected), mock.patch.object(PREFLIGHT, "collect", side_effect=failure):
+                with self.assertRaises(SystemExit) as output:
+                    PREFLIGHT.main()
+                self.assertEqual(str(output.exception), "OIDC_PREFLIGHT_UNVERIFIED:" + expected)
 
     def test_ambiguous_oversized_or_nonfinite_json_rejected(self):
         for raw in [b'{"kid":"one","kid":"two"}',b'{"x":NaN}',b' '*65537,b'\xff']:

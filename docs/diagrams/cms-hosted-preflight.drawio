@@ -8,16 +8,16 @@
         <mxCell id="title" parent="1" vertex="1" value="ASTRO HOSTED READINESS • prepared source / no deployment&#10;Existing homepage stays live; Astro CMS job remains pending" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#f1f5f9;strokeColor=#64748b;">
           <mxGeometry as="geometry" x="35" y="20" width="1430" height="80" />
         </mxCell>
-        <mxCell id="source" parent="1" vertex="1" value="Development source&#10;Go 1.27.4 + identity-only workflow&#10;Local tests and finite egress guards&#10;Operator commit / push required" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#dbeafe;strokeColor=#64748b;">
+        <mxCell id="source" parent="1" vertex="1" value="Subject compatibility correction&#10;Go 1.27.4 + ten Python regressions&#10;Fixed public diagnostic codes&#10;Operator commits and pushes reviewed fix" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#dbeafe;strokeColor=#64748b;">
           <mxGeometry as="geometry" x="35" y="160" width="610" height="155" />
         </mxCell>
-        <mxCell id="github" parent="1" vertex="1" value="GitHub main prerequisite&#10;Initial remote lacks CMS workflows&#10;Preserve site; pause authored deploys&#10;Review exact SHA + workflow numeric IDs" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#fef3c7;strokeColor=#64748b;">
+        <mxCell id="github" parent="1" vertex="1" value="GitHub main prerequisite&#10;Prior source CI passed; workflows registered&#10;Authored deployment remains paused&#10;Corrected source needs new SHA / CI" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#fef3c7;strokeColor=#64748b;">
           <mxGeometry as="geometry" x="855" y="160" width="610" height="155" />
         </mxCell>
-        <mxCell id="preflight" parent="1" vertex="1" value="Identity preflight — no Pages writes&#10;Main / first run / hosted / github-pages&#10;JWT + request capability stay in memory&#10;Only public key ID and origin are reported" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#e0e7ff;strokeColor=#64748b;">
+        <mxCell id="preflight" parent="1" vertex="1" value="Identity preflight — no Pages writes&#10;Pinned immutable owner/repository IDs&#10;JWT + request capability stay in memory&#10;New first attempt after corrected source push" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#e0e7ff;strokeColor=#64748b;">
           <mxGeometry as="geometry" x="855" y="435" width="610" height="175" />
         </mxCell>
-        <mxCell id="policy" parent="1" vertex="1" value="Reviewed runtime policy&#10;Exact code / repository / workflow IDs&#10;Fixed CMS HTTPS origin and audience&#10;Observed key/origin; not CMS permission" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#dbeafe;strokeColor=#64748b;">
+        <mxCell id="policy" parent="1" vertex="1" value="Reviewed runtime policy&#10;Exact code / repository / workflow IDs&#10;Pinned subject + issuer key and origin&#10;CMS signature / SQL authority still required" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#dbeafe;strokeColor=#64748b;">
           <mxGeometry as="geometry" x="35" y="435" width="610" height="175" />
         </mxCell>
         <mxCell id="secret" parent="1" vertex="1" value="Private runtime token / setup&#10;One repository: Actions RW, Contents R&#10;Protected local file / server mode 600&#10;No token in Git or workflow inputs" style="rounded=1;whiteSpace=wrap;html=0;spacing=14;fontSize=19;fillColor=#e0e7ff;strokeColor=#64748b;">

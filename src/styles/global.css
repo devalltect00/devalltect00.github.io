@@ -535,7 +535,10 @@ a {
   width: fit-content;
 }
 
+/* Column flow reserves real space for wrapped localized copy, technology tags and link rows. */
 .project-card {
+  display: flex;
+  flex-direction: column;
   background: var(--surface-raised);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -624,12 +627,13 @@ a {
   font-weight: 650;
   padding: 0.38rem 0.65rem;
 }
+/* Natural-flow links cannot cover long tag lists; auto margin still aligns stretched grid cards. */
 .project-card__links {
-  bottom: 2.2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
-  position: absolute;
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 .project-card__links a:hover {
   color: var(--card-accent);

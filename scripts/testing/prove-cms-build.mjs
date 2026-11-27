@@ -36,6 +36,50 @@ async function command(label, executable, args, env = {}, cwd = root) {
     await log.close();
   }
 }
+/** Stress the real card CSS with long copy and many tags without altering any frozen proof fixture. */
+async function assertWrappedProjectLinks(page) {
+  const bounds = await page.evaluate(() => {
+    const template = document.querySelector(".project-card");
+    if (!template) throw Error("LAYOUT_FIXTURE_CARD_MISSING");
+    const card = template.cloneNode(true);
+    card.removeAttribute("data-cms-project");
+    card.classList.remove("reveal");
+    card.querySelector("h3").textContent =
+      "Long bilingual project title / Judul proyek dwibahasa yang panjang";
+    card.querySelector("p").textContent =
+      "A realistic project description with enough detail to wrap across several lines. ".repeat(
+        4,
+      );
+    const tags = card.querySelector(".tag-list");
+    tags.replaceChildren(
+      ...Array.from({ length: 20 }, (_, index) => {
+        const item = document.createElement("li");
+        item.textContent = "Technology label " + (index + 1);
+        return item;
+      }),
+    );
+    const links = card.querySelector(".project-card__links");
+    const link = document.createElement("a");
+    link.href = "#projects";
+    link.textContent = "View project / Kunjungi proyek";
+    links.replaceChildren(link);
+    document.querySelector(".project-grid").append(card);
+    try {
+      const tagBox = tags.getBoundingClientRect();
+      const linkBox = link.getBoundingClientRect();
+      const cardBox = card.getBoundingClientRect();
+      return {
+        gap: linkBox.top - tagBox.bottom,
+        insideCard: linkBox.bottom <= cardBox.bottom,
+      };
+    } finally {
+      card.remove();
+    }
+  });
+  assert.ok(bounds.gap >= 16, "Project links overlap wrapped technology tags");
+  assert.equal(bounds.insideCard, true, "Project links escape the card");
+}
+
 let worker, lines, iterator, sourceServer, origin;
 /** Only public origin/identity is read from the existing private test fixture protocol. */
 async function line() {
@@ -457,6 +501,7 @@ try {
               () => document.documentElement.scrollWidth <= innerWidth,
             ),
           );
+          await assertWrappedProjectLinks(page);
           const accessibility = await new AxeBuilder({ page })
             .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
             .analyze();
@@ -476,6 +521,7 @@ try {
             "data-theme",
             "dark",
           );
+          await assertWrappedProjectLinks(page);
           const dark = await new AxeBuilder({ page })
             .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
             .analyze();
@@ -553,6 +599,7 @@ try {
             : []),
           "invalid-pin-retains-dist",
           "en-id-desktop-mobile-light-dark-accessibility",
+          "wrapped-project-copy-tags-links-do-not-overlap",
         ],
         releases: packages.map((p) => ({
           stage: p.stage,

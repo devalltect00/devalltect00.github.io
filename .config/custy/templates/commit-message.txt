@@ -1,16 +1,16 @@
-fix(security): match immutable GitHub preflight identity
+fix(ui): keep project links below wrapped technology tags
 
-- Pin the repository's reviewed immutable subject and independently compare owner and runner claims.
-- Emit only fixed diagnostic codes without JWTs, claim values or upstream errors.
-- Extend pure Python regressions for foreign and legacy subjects and no-leak failures.
-- Document new-source first-attempt execution and synchronize the editable diagram.
-- Keep Pages writes and CMS authorization outside the bootstrap workflow.
+- Keep project cards and CTA rows in normal column flow with explicit spacing.
+- Preserve bilingual content, technology labels, themes and exact CMS proof fields.
+- Reproduce the old overlap with the four-card editorial preview.
+- Add long-copy and twenty-tag geometry checks to the existing compiled browser proof.
+- Verify responsive layouts and accessibility without deployment or provider changes.
 
 Tag: none
-Phase: Immutable GitHub OIDC subject compatibility
+Phase: Local Astro card layout correction before content rollout
 
 Tags:
-- Type: #fix, #security
-- Platform: #github, #astro, #golang, #python
-- Content: #authentication, #deployment, #testing, #documentation
+- Type: #fix, #ui, #testing, #documentation
+- Platform: #astro, #css, #typescript
+- Content: #projects, #responsive, #accessibility
 - Delivery: #checkpoint, #untagged

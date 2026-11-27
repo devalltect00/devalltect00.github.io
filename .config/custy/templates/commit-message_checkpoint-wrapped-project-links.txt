@@ -1,0 +1,16 @@
+fix(ui): keep project links below wrapped technology tags
+
+- Keep project cards and CTA rows in normal column flow with explicit spacing.
+- Preserve bilingual content, technology labels, themes and exact CMS proof fields.
+- Reproduce the old overlap with the four-card editorial preview.
+- Add long-copy and twenty-tag geometry checks to the existing compiled browser proof.
+- Verify responsive layouts and accessibility without deployment or provider changes.
+
+Tag: none
+Phase: Local Astro card layout correction before content rollout
+
+Tags:
+- Type: #fix, #ui, #testing, #documentation
+- Platform: #astro, #css, #typescript
+- Content: #projects, #responsive, #accessibility
+- Delivery: #checkpoint, #untagged

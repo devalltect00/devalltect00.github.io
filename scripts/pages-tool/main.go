@@ -39,7 +39,7 @@ func settings(get func(string) string, r StageRequest) (runtime, error) {
 	rid, e := strconv.ParseInt(get("GITHUB_REPOSITORY_ID"), 10, 64)
 	wid, f := strconv.ParseInt(get("CMS_CANDIDATE_WORKFLOW_ID"), 10, 64)
 	token := get("GITHUB_TOKEN")
-	if get("CMS_STAGE_ENABLED") != "true" || get("GITHUB_REF") != "refs/heads/main" || get("GITHUB_RUN_ATTEMPT") != "1" || get("CMS_STAGE_ID") != r.ID || get("GITHUB_SHA") != r.HeadSHA || !regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]{0,99}/[A-Za-z0-9][A-Za-z0-9._-]{0,99}$`).MatchString(repo) || e != nil || f != nil || rid < 1 || wid < 1 || !regexp.MustCompile(`^[A-Za-z0-9_]{32,512}$`).MatchString(token) {
+	if get("CMS_STAGE_ENABLED") != "true" || get("GITHUB_REF") != "refs/heads/main" || get("GITHUB_RUN_ATTEMPT") != "1" || get("CMS_STAGE_ID") != r.ID || get("GITHUB_SHA") != r.HeadSHA || !regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]{0,99}/[A-Za-z0-9][A-Za-z0-9._-]{0,99}$`).MatchString(repo) || e != nil || f != nil || rid < 1 || wid < 1 || !validProviderToken(token) {
 		return runtime{}, errInvalid
 	}
 	return runtime{repo, r.HeadSHA, token, rid, wid}, nil

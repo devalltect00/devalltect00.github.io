@@ -23,7 +23,7 @@ func newDeploymentAcquirer(settings deploymentSettings, get func(string) string)
 		return nil, errReceiver
 	}
 	token := get("GITHUB_TOKEN")
-	if !providerToken.MatchString(token) {
+	if !validProviderToken(token) {
 		return nil, errReceiver
 	}
 	return &deploymentAcquirer{newClient(runtime{settings.Repository, settings.Receiver.HeadSHA, token, repo, candidate}), stage}, nil

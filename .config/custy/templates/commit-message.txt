@@ -1,16 +1,16 @@
-fix(ui): keep project links below wrapped technology tags
+fix(publishing): accept bounded opaque GitHub installation credentials
 
-- Keep project cards and CTA rows in normal column flow with explicit spacing.
-- Preserve bilingual content, technology labels, themes and exact CMS proof fields.
-- Reproduce the old overlap with the four-card editorial preview.
-- Add long-copy and twenty-tag geometry checks to the existing compiled browser proof.
-- Verify responsive layouts and accessibility without deployment or provider changes.
+- Share provider-token header validation across staging, acquisition and Pages creation.
+- Support modern longer installation credentials without decoding their claims.
+- Preserve finite size, injection rejection, fixed origins and existing authorization fences.
+- Add synthetic format, boundary and three-client regression coverage.
+- Document local verification and the separate guarded hosted source-repin requirement.
 
 Tag: none
-Phase: Local Astro card layout correction before content rollout
+Phase: Astro token compatibility checkpoint; hosted adoption remains gated
 
 Tags:
-- Type: #fix, #ui, #testing, #documentation
-- Platform: #astro, #css, #typescript
-- Content: #projects, #responsive, #accessibility
+- Type: #fix, #publishing
+- Platform: #golang, #github, #astro
+- Content: #compatibility, #security, #tests
 - Delivery: #checkpoint, #untagged

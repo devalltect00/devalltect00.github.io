@@ -40,7 +40,7 @@ func pagesCreatorAt(owner, repo, token string, plan receiverPlan, origin string)
 	run, f := positiveProviderID(plan.RunID)
 	_, g := positiveProviderID(plan.ArtifactID)
 	sum := sha256.Sum256([]byte("devalltect.astro.pages-operation.v1\n" + strconv.FormatInt(run, 10) + "\n" + plan.RequestHash))
-	if !providerName.MatchString(owner) || !providerName.MatchString(repo) || !providerToken.MatchString(token) || !uuid.MatchString(plan.AttemptID) || f != nil || g != nil || !digest.MatchString(plan.RequestHash) || plan.BuildVersion != hex.EncodeToString(sum[:20]) || e != nil || u.User != nil || u.Path != "" || u.RawQuery != "" || u.ForceQuery || u.Fragment != "" || origin != u.Scheme+"://"+u.Host || origin != "https://api.github.com" && (u.Scheme != "http" || (u.Hostname() != "127.0.0.1" && u.Hostname() != "::1")) {
+	if !providerName.MatchString(owner) || !providerName.MatchString(repo) || !validProviderToken(token) || !uuid.MatchString(plan.AttemptID) || f != nil || g != nil || !digest.MatchString(plan.RequestHash) || plan.BuildVersion != hex.EncodeToString(sum[:20]) || e != nil || u.User != nil || u.Path != "" || u.RawQuery != "" || u.ForceQuery || u.Fragment != "" || origin != u.Scheme+"://"+u.Host || origin != "https://api.github.com" && (u.Scheme != "http" || (u.Hostname() != "127.0.0.1" && u.Hostname() != "::1")) {
 		return nil, errReceiver
 	}
 	t := &http.Transport{Proxy: nil, DialContext: (&net.Dialer{Timeout: 3 * time.Second}).DialContext, TLSClientConfig: &tls.Config{MinVersion: tls.VersionTLS12}, TLSHandshakeTimeout: 3 * time.Second, ResponseHeaderTimeout: 5 * time.Second, MaxResponseHeaderBytes: 8192, DisableCompression: true, MaxIdleConnsPerHost: 1}
@@ -105,7 +105,6 @@ func (c *pagesCreator) create(ctx context.Context, plan receiverPlan, oidc strin
 
 // Reviewed repository segments and ephemeral provider credentials never come from deployment JSON.
 var providerName = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$`)
-var providerToken = regexp.MustCompile(`^[A-Za-z0-9_]{32,512}$`)
 
 // positiveProviderID rejects noncanonical decimal identifiers before numeric JSON conversion.
 func positiveProviderID(s string) (int64, error) {

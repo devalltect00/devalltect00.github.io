@@ -1,0 +1,16 @@
+fix(publishing): accept bounded opaque GitHub installation credentials
+
+- Share provider-token header validation across staging, acquisition and Pages creation.
+- Support modern longer installation credentials without decoding their claims.
+- Preserve finite size, injection rejection, fixed origins and existing authorization fences.
+- Add synthetic format, boundary and three-client regression coverage.
+- Document local verification and the separate guarded hosted source-repin requirement.
+
+Tag: none
+Phase: Astro token compatibility checkpoint; hosted adoption remains gated
+
+Tags:
+- Type: #fix, #publishing
+- Platform: #golang, #github, #astro
+- Content: #compatibility, #security, #tests
+- Delivery: #checkpoint, #untagged
